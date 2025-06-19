@@ -1,0 +1,610 @@
+2025-06-19 10:24:21,061 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-06-19 10:24:21,071 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-06-19 10:25:10,401 - INFO - 
+--- Evaluation: XGBoost ---
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.77      0.58      0.66       268
+           1       0.87      0.90      0.89       268
+           2       0.78      0.86      0.82       268
+           3       0.90      0.96      0.93       268
+           4       0.93      0.96      0.95       268
+           5       0.96      0.98      0.97       268
+
+    accuracy                           0.87      1608
+   macro avg       0.87      0.87      0.87      1608
+weighted avg       0.87      0.87      0.87      1608
+
+Confusion Matrix:
+[[155  25  49  20  11   8]
+ [ 11 242   8   1   4   2]
+ [ 25   6 230   4   2   1]
+ [  5   3   3 257   0   0]
+ [  4   2   1   2 258   1]
+ [  1   0   2   1   1 263]]
+Balanced Accuracy: 0.8737562189054726
+F1 Macro: 0.8690149158135193
+--------------------------------------------------------------------------------
+2025-06-19 10:25:28,771 - INFO - 
+--- Evaluation: Random Forest ---
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.78      0.62      0.69       268
+           1       0.86      0.90      0.88       268
+           2       0.83      0.88      0.85       268
+           3       0.92      0.97      0.94       268
+           4       0.95      0.94      0.95       268
+           5       0.95      0.99      0.97       268
+
+    accuracy                           0.88      1608
+   macro avg       0.88      0.88      0.88      1608
+weighted avg       0.88      0.88      0.88      1608
+
+Confusion Matrix:
+[[167  26  35  19  11  10]
+ [ 15 241   6   1   2   3]
+ [ 23   6 235   3   1   0]
+ [  4   3   1 260   0   0]
+ [  3   4   7   0 253   1]
+ [  2   1   0   0   0 265]]
+Balanced Accuracy: 0.8837064676616916
+F1 Macro: 0.8801349499168717
+--------------------------------------------------------------------------------
+2025-06-19 10:26:03,188 - INFO - 
+--- Evaluation: SVM ---
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.89      0.63      0.74       268
+           1       0.88      0.96      0.91       268
+           2       0.82      0.84      0.83       268
+           3       0.92      0.99      0.95       268
+           4       0.91      0.96      0.94       268
+           5       0.96      1.00      0.98       268
+
+    accuracy                           0.90      1608
+   macro avg       0.90      0.90      0.89      1608
+weighted avg       0.90      0.90      0.89      1608
+
+Confusion Matrix:
+[[169  26  42  12  11   8]
+ [  2 256   4   0   5   1]
+ [ 18   9 226   5   8   2]
+ [  0   0   2 265   1   0]
+ [  1   1   3   5 258   0]
+ [  0   0   0   1   0 267]]
+Balanced Accuracy: 0.8961442786069652
+F1 Macro: 0.8915622159628237
+--------------------------------------------------------------------------------
+2025-06-19 10:26:04,263 - INFO - 
+--- Evaluation: Logistic Regression ---
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.33      0.28      0.30       268
+           1       0.49      0.58      0.53       268
+           2       0.26      0.15      0.19       268
+           3       0.41      0.49      0.45       268
+           4       0.45      0.46      0.46       268
+           5       0.56      0.68      0.62       268
+
+    accuracy                           0.44      1608
+   macro avg       0.42      0.44      0.42      1608
+weighted avg       0.42      0.44      0.42      1608
+
+Confusion Matrix:
+[[ 74  39  33  50  28  44]
+ [ 27 156  16  17  26  26]
+ [ 45  53  39  65  47  19]
+ [ 20  16  36 130  35  31]
+ [ 18  37  23  45 124  21]
+ [ 41  17   2   8  17 183]]
+Balanced Accuracy: 0.43905472636815923
+F1 Macro: 0.4231557746128722
+--------------------------------------------------------------------------------
+2025-06-19 10:26:04,763 - INFO - 
+--- Evaluation: KNN ---
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.88      0.28      0.42       268
+           1       0.81      0.96      0.88       268
+           2       0.84      0.94      0.88       268
+           3       0.87      0.99      0.93       268
+           4       0.89      1.00      0.94       268
+           5       0.89      0.99      0.94       268
+
+    accuracy                           0.86      1608
+   macro avg       0.86      0.86      0.83      1608
+weighted avg       0.86      0.86      0.83      1608
+
+Confusion Matrix:
+[[ 74  57  45  32  29  31]
+ [  2 258   4   0   2   2]
+ [  7   2 251   6   1   1]
+ [  1   1   0 266   0   0]
+ [  0   0   0   1 267   0]
+ [  0   1   0   1   0 266]]
+Balanced Accuracy: 0.859452736318408
+F1 Macro: 0.8314252145583804
+--------------------------------------------------------------------------------
+2025-06-19 10:26:04,768 - INFO - 
+Confronto Finale:
+                 Model                                        Best Params  \
+2                  SVM  {'classifier__kernel': 'rbf', 'classifier__C':...   
+1        Random Forest  {'classifier__n_estimators': 200, 'classifier_...   
+0              XGBoost  {'classifier__n_estimators': 300, 'classifier_...   
+4                  KNN  {'classifier__weights': 'distance', 'classifie...   
+3  Logistic Regression  {'classifier__solver': 'saga', 'classifier__pe...   
+
+   Balanced Accuracy  F1 Macro  
+2           0.896144  0.891562  
+1           0.883706  0.880135  
+0           0.873756  0.869015  
+4           0.859453  0.831425  
+3           0.439055  0.423156  
+2025-06-19 10:31:17,765 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-06-19 10:31:17,773 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-06-19 10:32:14,702 - INFO - 
+--- Evaluation: XGBoost ---
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.75      0.56      0.64       268
+           1       0.86      0.92      0.89       268
+           2       0.80      0.83      0.81       268
+           3       0.86      0.91      0.88       268
+           4       0.91      0.94      0.92       268
+           5       0.94      0.99      0.96       268
+
+    accuracy                           0.86      1608
+   macro avg       0.85      0.86      0.85      1608
+weighted avg       0.85      0.86      0.85      1608
+
+Confusion Matrix:
+[[151  23  40  30  13  11]
+ [ 12 246   2   0   6   2]
+ [ 23  13 222   5   4   1]
+ [ 11   2   6 244   2   3]
+ [  3   1   8   5 251   0]
+ [  2   1   0   0   1 264]]
+Balanced Accuracy: 0.8569651741293532
+F1 Macro: 0.85178902826682
+--------------------------------------------------------------------------------
+2025-06-19 10:32:33,808 - INFO - 
+--- Evaluation: Random Forest ---
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.73      0.59      0.65       268
+           1       0.82      0.87      0.84       268
+           2       0.79      0.78      0.79       268
+           3       0.89      0.91      0.90       268
+           4       0.90      0.94      0.92       268
+           5       0.92      0.99      0.95       268
+
+    accuracy                           0.85      1608
+   macro avg       0.84      0.85      0.84      1608
+weighted avg       0.84      0.85      0.84      1608
+
+Confusion Matrix:
+[[159  22  38  22  15  12]
+ [ 15 232   8   1   8   4]
+ [ 27  19 210   3   6   3]
+ [ 12   3   5 245   0   3]
+ [  3   4   4   4 253   0]
+ [  2   2   0   0   0 264]]
+Balanced Accuracy: 0.847636815920398
+F1 Macro: 0.8435687575786686
+--------------------------------------------------------------------------------
+2025-06-19 10:33:14,613 - INFO - 
+--- Evaluation: SVM ---
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.84      0.63      0.72       268
+           1       0.86      0.93      0.89       268
+           2       0.79      0.85      0.82       268
+           3       0.91      0.97      0.94       268
+           4       0.93      0.94      0.94       268
+           5       0.99      1.00      0.99       268
+
+    accuracy                           0.89      1608
+   macro avg       0.89      0.89      0.88      1608
+weighted avg       0.89      0.89      0.88      1608
+
+Confusion Matrix:
+[[168  33  40  17   6   4]
+ [  6 250   9   0   3   0]
+ [ 20   8 227   5   8   0]
+ [  3   0   4 260   1   0]
+ [  3   1   7   4 253   0]
+ [  1   0   0   0   0 267]]
+Balanced Accuracy: 0.8861940298507464
+F1 Macro: 0.8825700504206505
+--------------------------------------------------------------------------------
+2025-06-19 10:33:23,028 - INFO - 
+--- Evaluation: Logistic Regression ---
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.36      0.35      0.35       268
+           1       0.49      0.58      0.53       268
+           2       0.34      0.18      0.23       268
+           3       0.41      0.48      0.44       268
+           4       0.39      0.38      0.39       268
+           5       0.65      0.78      0.71       268
+
+    accuracy                           0.46      1608
+   macro avg       0.44      0.46      0.44      1608
+weighted avg       0.44      0.46      0.44      1608
+
+Confusion Matrix:
+[[ 93  45  31  32  37  30]
+ [ 31 155  13  11  38  20]
+ [ 44  37  48  73  40  26]
+ [ 33  18  27 128  40  22]
+ [ 20  57  22  54 103  12]
+ [ 36   5   0  14   5 208]]
+Balanced Accuracy: 0.45708955223880593
+F1 Macro: 0.44302387686260714
+--------------------------------------------------------------------------------
+2025-06-19 10:33:31,195 - INFO - 
+--- Evaluation: KNN ---
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.88      0.29      0.44       268
+           1       0.84      0.93      0.88       268
+           2       0.80      0.89      0.84       268
+           3       0.85      0.99      0.91       268
+           4       0.86      0.97      0.91       268
+           5       0.87      0.99      0.92       268
+
+    accuracy                           0.84      1608
+   macro avg       0.85      0.84      0.82      1608
+weighted avg       0.85      0.84      0.82      1608
+
+Confusion Matrix:
+[[ 78  38  49  39  29  35]
+ [  4 249   8   1   4   2]
+ [  7   5 239   5   9   3]
+ [  0   1   1 266   0   0]
+ [  0   4   3   1 260   0]
+ [  0   0   0   2   1 265]]
+Balanced Accuracy: 0.8439054726368158
+F1 Macro: 0.8182781240358223
+--------------------------------------------------------------------------------
+2025-06-19 10:33:31,198 - INFO - 
+Confronto Finale:
+                 Model                                        Best Params  \
+2                  SVM  {'classifier__kernel': 'rbf', 'classifier__C':...   
+0              XGBoost  {'classifier__n_estimators': 300, 'classifier_...   
+1        Random Forest  {'classifier__n_estimators': 200, 'classifier_...   
+4                  KNN  {'classifier__weights': 'distance', 'classifie...   
+3  Logistic Regression  {'classifier__solver': 'saga', 'classifier__pe...   
+
+   Balanced Accuracy  F1 Macro  
+2           0.886194  0.882570  
+0           0.856965  0.851789  
+1           0.847637  0.843569  
+4           0.843905  0.818278  
+3           0.457090  0.443024  
+2025-06-19 10:38:34,384 - INFO - 
+--- Evaluation: XGBoost ---
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.64      0.60      0.62       268
+           1       0.46      0.54      0.50        69
+           2       0.35      0.33      0.34        87
+           3       0.07      0.09      0.08        35
+           4       0.24      0.21      0.22        29
+           5       0.22      0.30      0.26        20
+
+    accuracy                           0.48       508
+   macro avg       0.33      0.34      0.34       508
+weighted avg       0.49      0.48      0.48       508
+
+Confusion Matrix:
+[[162  24  33  22  12  15]
+ [ 20  37   8   1   1   2]
+ [ 33  10  29  10   4   1]
+ [ 20   2   6   3   2   2]
+ [  9   4   5   4   6   1]
+ [  8   3   2   1   0   6]]
+Balanced Accuracy: 0.3444422777950044
+F1 Macro: 0.33623107142443615
+--------------------------------------------------------------------------------
+2025-06-19 10:47:20,008 - INFO - 
+--- Evaluation: XGBoost ---
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.64      0.60      0.62       268
+           1       0.46      0.54      0.50        69
+           2       0.35      0.33      0.34        87
+           3       0.07      0.09      0.08        35
+           4       0.24      0.21      0.22        29
+           5       0.22      0.30      0.26        20
+
+    accuracy                           0.48       508
+   macro avg       0.33      0.34      0.34       508
+weighted avg       0.49      0.48      0.48       508
+
+Confusion Matrix:
+[[162  24  33  22  12  15]
+ [ 20  37   8   1   1   2]
+ [ 33  10  29  10   4   1]
+ [ 20   2   6   3   2   2]
+ [  9   4   5   4   6   1]
+ [  8   3   2   1   0   6]]
+Balanced Accuracy: 0.3444422777950044
+F1 Macro: 0.33623107142443615
+--------------------------------------------------------------------------------
+2025-06-19 10:47:41,667 - INFO - 
+--- Evaluation: Random Forest ---
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.68      0.57      0.62       268
+           1       0.46      0.55      0.50        69
+           2       0.29      0.33      0.31        87
+           3       0.12      0.11      0.12        35
+           4       0.22      0.28      0.25        29
+           5       0.23      0.35      0.27        20
+
+    accuracy                           0.47       508
+   macro avg       0.33      0.37      0.34       508
+weighted avg       0.50      0.47      0.48       508
+
+Confusion Matrix:
+[[152  26  40  18  16  16]
+ [ 14  38  10   2   0   5]
+ [ 34  11  29   5   7   1]
+ [  9   2  13   4   5   2]
+ [  8   3   6   4   8   0]
+ [  8   3   1   1   0   7]]
+Balanced Accuracy: 0.365228322228367
+F1 Macro: 0.3441777493484562
+--------------------------------------------------------------------------------
+2025-06-19 10:48:21,619 - INFO - 
+--- Evaluation: SVM ---
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.72      0.47      0.57       268
+           1       0.53      0.62      0.57        69
+           2       0.28      0.28      0.28        87
+           3       0.12      0.23      0.16        35
+           4       0.14      0.28      0.18        29
+           5       0.28      0.55      0.37        20
+
+    accuracy                           0.44       508
+   macro avg       0.34      0.40      0.36       508
+weighted avg       0.53      0.44      0.46       508
+
+Confusion Matrix:
+[[127  21  44  30  32  14]
+ [ 10  43   3   2   3   8]
+ [ 24   9  24  19   9   2]
+ [  7   2   9   8   6   3]
+ [  6   3   5   6   8   1]
+ [  3   3   2   1   0  11]]
+Balanced Accuracy: 0.4045607615524151
+F1 Macro: 0.35586452710769273
+--------------------------------------------------------------------------------
+2025-06-19 10:48:29,457 - INFO - 
+--- Evaluation: Logistic Regression ---
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.77      0.33      0.46       268
+           1       0.38      0.58      0.46        69
+           2       0.25      0.22      0.23        87
+           3       0.14      0.29      0.19        35
+           4       0.13      0.31      0.18        29
+           5       0.22      0.75      0.34        20
+
+    accuracy                           0.36       508
+   macro avg       0.31      0.41      0.31       508
+weighted avg       0.52      0.36      0.38       508
+
+Confusion Matrix:
+[[89 37 45 30 36 31]
+ [ 5 40  4  2  5 13]
+ [14 15 19 22 14  3]
+ [ 2  7  6 10  5  5]
+ [ 3  6  3  7  9  1]
+ [ 3  1  0  1  0 15]]
+Balanced Accuracy: 0.41270826917742265
+F1 Macro: 0.3106483815050013
+--------------------------------------------------------------------------------
+2025-06-19 10:48:35,978 - INFO - 
+--- Evaluation: KNN ---
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.69      0.35      0.46       268
+           1       0.32      0.46      0.38        69
+           2       0.24      0.23      0.24        87
+           3       0.07      0.14      0.10        35
+           4       0.14      0.34      0.20        29
+           5       0.21      0.55      0.31        20
+
+    accuracy                           0.34       508
+   macro avg       0.28      0.35      0.28       508
+weighted avg       0.47      0.34      0.37       508
+
+Confusion Matrix:
+[[93 37 42 37 35 24]
+ [11 32  9  5  6  6]
+ [18 16 20 16 12  5]
+ [ 6  7  6  5  9  2]
+ [ 4  4  3  4 10  4]
+ [ 2  5  2  0  0 11]]
+Balanced Accuracy: 0.34639213797507784
+F1 Macro: 0.279576353192341
+--------------------------------------------------------------------------------
+2025-06-19 10:48:35,981 - INFO - 
+Confronto Finale:
+                 Model                                        Best Params  \
+2                  SVM  {'classifier__kernel': 'rbf', 'classifier__C': 1}   
+1        Random Forest  {'classifier__n_estimators': 200, 'classifier_...   
+0              XGBoost  {'classifier__n_estimators': 300, 'classifier_...   
+3  Logistic Regression  {'classifier__solver': 'saga', 'classifier__pe...   
+4                  KNN  {'classifier__weights': 'uniform', 'classifier...   
+
+   Balanced Accuracy  F1 Macro  
+2           0.404561  0.355865  
+1           0.365228  0.344178  
+0           0.344442  0.336231  
+3           0.412708  0.310648  
+4           0.346392  0.279576  
+2025-06-19 10:57:09,152 - INFO - 
+--- Evaluation: XGBoost ---
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.64      0.60      0.62       268
+           1       0.46      0.54      0.50        69
+           2       0.35      0.33      0.34        87
+           3       0.07      0.09      0.08        35
+           4       0.24      0.21      0.22        29
+           5       0.22      0.30      0.26        20
+
+    accuracy                           0.48       508
+   macro avg       0.33      0.34      0.34       508
+weighted avg       0.49      0.48      0.48       508
+
+Confusion Matrix:
+[[162  24  33  22  12  15]
+ [ 20  37   8   1   1   2]
+ [ 33  10  29  10   4   1]
+ [ 20   2   6   3   2   2]
+ [  9   4   5   4   6   1]
+ [  8   3   2   1   0   6]]
+Balanced Accuracy: 0.3444422777950044
+F1 Macro: 0.33623107142443615
+--------------------------------------------------------------------------------
+2025-06-19 10:57:30,639 - INFO - 
+--- Evaluation: Random Forest ---
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.68      0.57      0.62       268
+           1       0.46      0.55      0.50        69
+           2       0.29      0.33      0.31        87
+           3       0.12      0.11      0.12        35
+           4       0.22      0.28      0.25        29
+           5       0.23      0.35      0.27        20
+
+    accuracy                           0.47       508
+   macro avg       0.33      0.37      0.34       508
+weighted avg       0.50      0.47      0.48       508
+
+Confusion Matrix:
+[[152  26  40  18  16  16]
+ [ 14  38  10   2   0   5]
+ [ 34  11  29   5   7   1]
+ [  9   2  13   4   5   2]
+ [  8   3   6   4   8   0]
+ [  8   3   1   1   0   7]]
+Balanced Accuracy: 0.365228322228367
+F1 Macro: 0.3441777493484562
+--------------------------------------------------------------------------------
+2025-06-19 10:58:10,812 - INFO - 
+--- Evaluation: SVM ---
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.72      0.47      0.57       268
+           1       0.53      0.62      0.57        69
+           2       0.28      0.28      0.28        87
+           3       0.12      0.23      0.16        35
+           4       0.14      0.28      0.18        29
+           5       0.28      0.55      0.37        20
+
+    accuracy                           0.44       508
+   macro avg       0.34      0.40      0.36       508
+weighted avg       0.53      0.44      0.46       508
+
+Confusion Matrix:
+[[127  21  44  30  32  14]
+ [ 10  43   3   2   3   8]
+ [ 24   9  24  19   9   2]
+ [  7   2   9   8   6   3]
+ [  6   3   5   6   8   1]
+ [  3   3   2   1   0  11]]
+Balanced Accuracy: 0.4045607615524151
+F1 Macro: 0.35586452710769273
+--------------------------------------------------------------------------------
+2025-06-19 10:58:17,943 - INFO - 
+--- Evaluation: Logistic Regression ---
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.77      0.33      0.46       268
+           1       0.38      0.58      0.46        69
+           2       0.25      0.22      0.23        87
+           3       0.14      0.29      0.19        35
+           4       0.13      0.31      0.18        29
+           5       0.22      0.75      0.34        20
+
+    accuracy                           0.36       508
+   macro avg       0.31      0.41      0.31       508
+weighted avg       0.52      0.36      0.38       508
+
+Confusion Matrix:
+[[89 37 45 30 36 31]
+ [ 5 40  4  2  5 13]
+ [14 15 19 22 14  3]
+ [ 2  7  6 10  5  5]
+ [ 3  6  3  7  9  1]
+ [ 3  1  0  1  0 15]]
+Balanced Accuracy: 0.41270826917742265
+F1 Macro: 0.3106483815050013
+--------------------------------------------------------------------------------
+2025-06-19 10:58:24,529 - INFO - 
+--- Evaluation: KNN ---
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.69      0.35      0.46       268
+           1       0.32      0.46      0.38        69
+           2       0.24      0.23      0.24        87
+           3       0.07      0.14      0.10        35
+           4       0.14      0.34      0.20        29
+           5       0.21      0.55      0.31        20
+
+    accuracy                           0.34       508
+   macro avg       0.28      0.35      0.28       508
+weighted avg       0.47      0.34      0.37       508
+
+Confusion Matrix:
+[[93 37 42 37 35 24]
+ [11 32  9  5  6  6]
+ [18 16 20 16 12  5]
+ [ 6  7  6  5  9  2]
+ [ 4  4  3  4 10  4]
+ [ 2  5  2  0  0 11]]
+Balanced Accuracy: 0.34639213797507784
+F1 Macro: 0.279576353192341
+--------------------------------------------------------------------------------
+2025-06-19 10:58:24,532 - INFO - 
+Confronto Finale:
+                 Model                                        Best Params  \
+2                  SVM  {'classifier__kernel': 'rbf', 'classifier__C': 1}   
+1        Random Forest  {'classifier__n_estimators': 200, 'classifier_...   
+0              XGBoost  {'classifier__n_estimators': 300, 'classifier_...   
+3  Logistic Regression  {'classifier__solver': 'saga', 'classifier__pe...   
+4                  KNN  {'classifier__weights': 'uniform', 'classifier...   
+
+   Balanced Accuracy  F1 Macro  
+2           0.404561  0.355865  
+1           0.365228  0.344178  
+0           0.344442  0.336231  
+3           0.412708  0.310648  
+4           0.346392  0.279576  
