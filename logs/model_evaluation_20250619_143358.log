@@ -1,0 +1,70 @@
+2025-06-19 14:34:21,617 - INFO - Best parameters for SVM: {'classifier__kernel': 'rbf', 'classifier__gamma': 0.001, 'classifier__degree': 4, 'classifier__C': 1000}
+2025-06-19 14:34:21,617 - INFO - Best score for SVM: 0.3403
+2025-06-19 14:34:21,814 - INFO - 
+--- Evaluation: SVM ---
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.73      0.47      0.58       268
+           1       0.39      0.57      0.46        69
+           2       0.21      0.20      0.20        87
+           3       0.16      0.23      0.19        35
+           4       0.12      0.28      0.16        29
+           5       0.22      0.40      0.28        20
+
+    accuracy                           0.41       508
+   macro avg       0.31      0.36      0.31       508
+weighted avg       0.50      0.41      0.43       508
+
+Confusion Matrix:
+[[127  33  43  22  28  15]
+ [ 12  39   4   2   6   6]
+ [ 20  14  17  13  20   3]
+ [  5   3   8   8   7   4]
+ [  5   5   6   4   8   1]
+ [  4   6   2   0   0   8]]
+Balanced Accuracy: 0.3564889641177989
+F1 Macro: 0.3125897076191975
+--------------------------------------------------------------------------------
+2025-06-19 14:34:21,820 - INFO - 
+Confronto Finale:
+  Model                                        Best Params  Balanced Accuracy  \
+0   SVM  {'classifier__kernel': 'rbf', 'classifier__gam...           0.356489   
+
+   F1 Macro  
+0   0.31259  
+2025-06-19 14:36:20,317 - INFO - Best parameters for SVM: {'selector__k': 'all', 'classifier__kernel': 'rbf', 'classifier__C': 1}
+2025-06-19 14:36:20,317 - INFO - Best score for SVM: 0.4049
+2025-06-19 14:36:23,041 - INFO - 
+--- Evaluation: SVM ---
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.70      0.62      0.66       268
+           1       0.49      0.61      0.54        69
+           2       0.28      0.30      0.29        87
+           3       0.22      0.23      0.22        35
+           4       0.22      0.28      0.24        29
+           5       0.59      0.50      0.54        20
+
+    accuracy                           0.51       508
+   macro avg       0.42      0.42      0.42       508
+weighted avg       0.53      0.51      0.52       508
+
+Confusion Matrix:
+[[167  23  42  15  18   3]
+ [ 14  42  10   0   0   3]
+ [ 34  11  26  11   5   0]
+ [ 10   2   9   8   5   1]
+ [  7   6   6   2   8   0]
+ [  6   2   0   1   1  10]]
+Balanced Accuracy: 0.4225190087969519
+F1 Macro: 0.4160150715550435
+--------------------------------------------------------------------------------
+2025-06-19 14:36:23,044 - INFO - 
+Confronto Finale:
+  Model                                        Best Params  Balanced Accuracy  \
+0   SVM  {'selector__k': 'all', 'classifier__kernel': '...           0.422519   
+
+   F1 Macro  
+0  0.416015  
