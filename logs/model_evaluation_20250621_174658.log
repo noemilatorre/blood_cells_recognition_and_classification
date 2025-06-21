@@ -1,0 +1,142 @@
+2025-06-21 17:51:58,929 - INFO - Best parameters for XGBoost: {'classifier__n_estimators': 300, 'classifier__max_depth': 10, 'classifier__learning_rate': 0.01}
+2025-06-21 17:51:58,931 - INFO - Best score for XGBoost: 0.6568
+2025-06-21 17:51:59,306 - INFO - 
+--- Evaluation: XGBoost ---
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.99      0.91      0.95     14214
+           1       0.23      0.78      0.35       488
+
+    accuracy                           0.90     14702
+   macro avg       0.61      0.84      0.65     14702
+weighted avg       0.97      0.90      0.93     14702
+
+Confusion Matrix:
+[[12923  1291]
+ [  109   379]]
+Balanced Accuracy: 0.8429066990060596
+F1 Macro: 0.6499337345655894
+--------------------------------------------------------------------------------
+2025-06-21 17:51:59,312 - INFO - 
+Confronto Finale:
+     Model                                        Best Params  \
+0  XGBoost  {'classifier__n_estimators': 300, 'classifier_...   
+
+   Balanced Accuracy  F1 Macro  
+0           0.842907  0.649934  
+2025-06-21 17:55:44,086 - INFO - Best parameters for XGBoost: {'classifier__n_estimators': 300, 'classifier__max_depth': 10, 'classifier__learning_rate': 0.01}
+2025-06-21 17:55:44,086 - INFO - Best score for XGBoost: 0.6568
+2025-06-21 17:55:44,610 - INFO - 
+--- Evaluation: XGBoost ---
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.99      0.91      0.95     14214
+           1       0.23      0.78      0.35       488
+
+    accuracy                           0.90     14702
+   macro avg       0.61      0.84      0.65     14702
+weighted avg       0.97      0.90      0.93     14702
+
+Confusion Matrix:
+[[12923  1291]
+ [  109   379]]
+Balanced Accuracy: 0.8429066990060596
+F1 Macro: 0.6499337345655894
+--------------------------------------------------------------------------------
+2025-06-21 18:01:11,140 - INFO - Best parameters for Random Forest: {'classifier__n_estimators': 200, 'classifier__min_samples_split': 5, 'classifier__max_depth': 5}
+2025-06-21 18:01:11,140 - INFO - Best score for Random Forest: 0.6559
+2025-06-21 18:01:11,781 - INFO - 
+--- Evaluation: Random Forest ---
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.99      0.91      0.95     14214
+           1       0.22      0.78      0.35       488
+
+    accuracy                           0.90     14702
+   macro avg       0.61      0.84      0.65     14702
+weighted avg       0.97      0.90      0.93     14702
+
+Confusion Matrix:
+[[12908  1306]
+ [  109   379]]
+Balanced Accuracy: 0.8423790502090989
+F1 Macro: 0.6484318353299293
+--------------------------------------------------------------------------------
+2025-06-21 18:06:30,799 - INFO - Best parameters for SVM: {'selector__k': 50, 'classifier__C': 0.1}
+2025-06-21 18:06:30,799 - INFO - Best score for SVM: 0.6271
+2025-06-21 18:06:38,586 - INFO - 
+--- Evaluation: SVM ---
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.99      0.88      0.94     14214
+           1       0.19      0.78      0.30       488
+
+    accuracy                           0.88     14702
+   macro avg       0.59      0.83      0.62     14702
+weighted avg       0.96      0.88      0.91     14702
+
+Confusion Matrix:
+[[12578  1636]
+ [  107   381]]
+Balanced Accuracy: 0.8328199570038313
+F1 Macro: 0.6196968344436818
+--------------------------------------------------------------------------------
+2025-06-21 18:09:24,387 - INFO - Best parameters for Logistic Regression: {'classifier__solver': 'liblinear', 'classifier__penalty': 'l1', 'classifier__C': 10}
+2025-06-21 18:09:24,387 - INFO - Best score for Logistic Regression: 0.6511
+2025-06-21 18:09:24,835 - INFO - 
+--- Evaluation: Logistic Regression ---
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.99      0.90      0.95     14214
+           1       0.22      0.79      0.34       488
+
+    accuracy                           0.90     14702
+   macro avg       0.61      0.85      0.65     14702
+weighted avg       0.97      0.90      0.93     14702
+
+Confusion Matrix:
+[[12844  1370]
+ [  101   387]]
+Balanced Accuracy: 0.848324469986875
+F1 Macro: 0.6453018112999657
+--------------------------------------------------------------------------------
+2025-06-21 18:12:08,937 - INFO - Best parameters for KNN: {'classifier__weights': 'uniform', 'classifier__p': 1, 'classifier__n_neighbors': 3}
+2025-06-21 18:12:08,937 - INFO - Best score for KNN: 0.6267
+2025-06-21 18:12:09,721 - INFO - 
+--- Evaluation: KNN ---
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.99      0.89      0.94     14214
+           1       0.19      0.78      0.31       488
+
+    accuracy                           0.88     14702
+   macro avg       0.59      0.83      0.62     14702
+weighted avg       0.96      0.88      0.91     14702
+
+Confusion Matrix:
+[[12590  1624]
+ [  107   381]]
+Balanced Accuracy: 0.8332420760413999
+F1 Macro: 0.6206663485525068
+--------------------------------------------------------------------------------
+2025-06-21 18:12:09,724 - INFO - 
+Confronto Finale:
+                 Model                                        Best Params  \
+0              XGBoost  {'classifier__n_estimators': 300, 'classifier_...   
+1        Random Forest  {'classifier__n_estimators': 200, 'classifier_...   
+3  Logistic Regression  {'classifier__solver': 'liblinear', 'classifie...   
+4                  KNN  {'classifier__weights': 'uniform', 'classifier...   
+2                  SVM          {'selector__k': 50, 'classifier__C': 0.1}   
+
+   Balanced Accuracy  F1 Macro  
+0           0.842907  0.649934  
+1           0.842379  0.648432  
+3           0.848324  0.645302  
+4           0.833242  0.620666  
+2           0.832820  0.619697  
