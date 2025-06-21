@@ -1,0 +1,419 @@
+2025-06-21 14:42:05,598 - INFO - Best parameters for XGBoost: {'selector__k': 30, 'classifier__n_estimators': 300, 'classifier__max_depth': 3, 'classifier__learning_rate': 0.01}
+2025-06-21 14:42:05,599 - INFO - Best score for XGBoost: 0.3301
+2025-06-21 14:42:05,650 - INFO - 
+--- Evaluation: XGBoost ---
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.73      0.41      0.53       268
+           1       0.40      0.58      0.48        69
+           2       0.25      0.22      0.23        87
+           3       0.15      0.31      0.20        35
+           4       0.13      0.31      0.18        29
+           5       0.28      0.55      0.37        20
+
+    accuracy                           0.39       508
+   macro avg       0.32      0.40      0.33       508
+weighted avg       0.51      0.39      0.42       508
+
+Confusion Matrix:
+[[110  40  39  34  33  12]
+ [  6  40   4   4   6   9]
+ [ 20  10  19  21  15   2]
+ [  2   3   9  11   7   3]
+ [  7   4   3   3   9   3]
+ [  6   2   1   0   0  11]]
+Balanced Accuracy: 0.39719654209853145
+F1 Macro: 0.3313344325807863
+--------------------------------------------------------------------------------
+2025-06-21 14:42:21,707 - INFO - Best parameters for Random Forest: {'selector__k': 30, 'classifier__n_estimators': 200, 'classifier__min_samples_split': 5, 'classifier__max_depth': None}
+2025-06-21 14:42:21,707 - INFO - Best score for Random Forest: 0.3391
+2025-06-21 14:42:21,761 - INFO - 
+--- Evaluation: Random Forest ---
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.71      0.49      0.58       268
+           1       0.43      0.58      0.49        69
+           2       0.25      0.25      0.25        87
+           3       0.16      0.26      0.20        35
+           4       0.15      0.28      0.19        29
+           5       0.30      0.45      0.36        20
+
+    accuracy                           0.43       508
+   macro avg       0.33      0.38      0.35       508
+weighted avg       0.51      0.43      0.46       508
+
+Confusion Matrix:
+[[132  32  46  25  24   9]
+ [ 10  40   8   2   3   6]
+ [ 23  10  22  18  13   1]
+ [  5   4   8   9   6   3]
+ [ 10   4   3   2   8   2]
+ [  6   3   2   0   0   9]]
+Balanced Accuracy: 0.38468765794785625
+F1 Macro: 0.34598303999836705
+--------------------------------------------------------------------------------
+2025-06-21 14:42:33,351 - INFO - Best parameters for SVM: {'selector__k': 40, 'classifier__kernel': 'rbf', 'classifier__C': 0.1}
+2025-06-21 14:42:33,351 - INFO - Best score for SVM: 0.3575
+2025-06-21 14:42:33,483 - INFO - 
+--- Evaluation: SVM ---
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.76      0.48      0.59       268
+           1       0.48      0.64      0.55        69
+           2       0.22      0.20      0.21        87
+           3       0.18      0.29      0.22        35
+           4       0.13      0.34      0.19        29
+           5       0.39      0.70      0.50        20
+
+    accuracy                           0.44       508
+   macro avg       0.36      0.44      0.37       508
+weighted avg       0.54      0.44      0.46       508
+
+Confusion Matrix:
+[[128  27  43  22  37  11]
+ [  6  44   4   3   5   7]
+ [ 23  12  17  17  18   0]
+ [  3   3   8  10   8   3]
+ [  5   5   4   4  10   1]
+ [  3   1   1   1   0  14]]
+Balanced Accuracy: 0.4402062117484257
+F1 Macro: 0.3742273466005758
+--------------------------------------------------------------------------------
+2025-06-21 14:42:43,354 - INFO - Best parameters for Logistic Regression: {'selector__k': 30, 'classifier__solver': 'saga', 'classifier__penalty': 'l2', 'classifier__C': 100}
+2025-06-21 14:42:43,358 - INFO - Best score for Logistic Regression: 0.3190
+2025-06-21 14:42:43,401 - INFO - 
+--- Evaluation: Logistic Regression ---
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.74      0.34      0.47       268
+           1       0.42      0.61      0.49        69
+           2       0.23      0.18      0.21        87
+           3       0.13      0.29      0.18        35
+           4       0.15      0.41      0.22        29
+           5       0.22      0.60      0.32        20
+
+    accuracy                           0.36       508
+   macro avg       0.31      0.41      0.31       508
+weighted avg       0.51      0.36      0.39       508
+
+Confusion Matrix:
+[[92 37 39 36 37 27]
+ [ 7 42  4  3  6  7]
+ [16 11 16 22 18  4]
+ [ 3  4  7 10  8  3]
+ [ 3  4  3  5 12  2]
+ [ 3  3  0  2  0 12]]
+Balanced Accuracy: 0.40589911156717307
+F1 Macro: 0.31396776265222764
+--------------------------------------------------------------------------------
+2025-06-21 14:42:53,284 - INFO - Best parameters for KNN: {'selector__k': 'all', 'classifier__weights': 'distance', 'classifier__p': 2, 'classifier__n_neighbors': 5}
+2025-06-21 14:42:53,285 - INFO - Best score for KNN: 0.3364
+2025-06-21 14:42:53,329 - INFO - 
+--- Evaluation: KNN ---
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.66      0.48      0.56       268
+           1       0.43      0.52      0.47        69
+           2       0.30      0.39      0.34        87
+           3       0.19      0.20      0.19        35
+           4       0.15      0.28      0.19        29
+           5       0.31      0.45      0.37        20
+
+    accuracy                           0.44       508
+   macro avg       0.34      0.39      0.35       508
+weighted avg       0.49      0.44      0.45       508
+
+Confusion Matrix:
+[[128  28  56  15  30  11]
+ [ 16  36   6   3   3   5]
+ [ 23  10  34  10   9   1]
+ [ 13   2   8   7   3   2]
+ [  9   3   7   1   8   1]
+ [  4   4   1   1   1   9]]
+Balanced Accuracy: 0.3860029562333261
+F1 Macro: 0.35421162573662457
+--------------------------------------------------------------------------------
+2025-06-21 14:42:53,338 - INFO - 
+Confronto Finale:
+                 Model                                        Best Params  \
+2                  SVM  {'selector__k': 40, 'classifier__kernel': 'rbf...   
+4                  KNN  {'selector__k': 'all', 'classifier__weights': ...   
+1        Random Forest  {'selector__k': 30, 'classifier__n_estimators'...   
+0              XGBoost  {'selector__k': 30, 'classifier__n_estimators'...   
+3  Logistic Regression  {'selector__k': 30, 'classifier__solver': 'sag...   
+
+   Balanced Accuracy  F1 Macro  
+2           0.440206  0.374227  
+4           0.386003  0.354212  
+1           0.384688  0.345983  
+0           0.397197  0.331334  
+3           0.405899  0.313968  
+2025-06-21 14:45:33,450 - INFO - Best parameters for XGBoost: {'selector__k': 30, 'classifier__n_estimators': 300, 'classifier__max_depth': 3, 'classifier__learning_rate': 0.01}
+2025-06-21 14:45:33,450 - INFO - Best score for XGBoost: 0.3301
+2025-06-21 14:45:33,505 - INFO - 
+--- Evaluation: XGBoost ---
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.73      0.41      0.53       268
+           1       0.40      0.58      0.48        69
+           2       0.25      0.22      0.23        87
+           3       0.15      0.31      0.20        35
+           4       0.13      0.31      0.18        29
+           5       0.28      0.55      0.37        20
+
+    accuracy                           0.39       508
+   macro avg       0.32      0.40      0.33       508
+weighted avg       0.51      0.39      0.42       508
+
+Confusion Matrix:
+[[110  40  39  34  33  12]
+ [  6  40   4   4   6   9]
+ [ 20  10  19  21  15   2]
+ [  2   3   9  11   7   3]
+ [  7   4   3   3   9   3]
+ [  6   2   1   0   0  11]]
+Balanced Accuracy: 0.39719654209853145
+F1 Macro: 0.3313344325807863
+--------------------------------------------------------------------------------
+2025-06-21 14:45:49,311 - INFO - Best parameters for Random Forest: {'selector__k': 30, 'classifier__n_estimators': 200, 'classifier__min_samples_split': 5, 'classifier__max_depth': None}
+2025-06-21 14:45:49,311 - INFO - Best score for Random Forest: 0.3391
+2025-06-21 14:45:49,366 - INFO - 
+--- Evaluation: Random Forest ---
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.71      0.49      0.58       268
+           1       0.43      0.58      0.49        69
+           2       0.25      0.25      0.25        87
+           3       0.16      0.26      0.20        35
+           4       0.15      0.28      0.19        29
+           5       0.30      0.45      0.36        20
+
+    accuracy                           0.43       508
+   macro avg       0.33      0.38      0.35       508
+weighted avg       0.51      0.43      0.46       508
+
+Confusion Matrix:
+[[132  32  46  25  24   9]
+ [ 10  40   8   2   3   6]
+ [ 23  10  22  18  13   1]
+ [  5   4   8   9   6   3]
+ [ 10   4   3   2   8   2]
+ [  6   3   2   0   0   9]]
+Balanced Accuracy: 0.38468765794785625
+F1 Macro: 0.34598303999836705
+--------------------------------------------------------------------------------
+2025-06-21 14:46:04,185 - INFO - Best parameters for SVM: {'selector__k': 'all', 'classifier__kernel': 'rbf', 'classifier__C': 0.01}
+2025-06-21 14:46:04,186 - INFO - Best score for SVM: 0.3808
+2025-06-21 14:46:04,297 - INFO - 
+--- Evaluation: SVM ---
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.67      0.59      0.63       268
+           1       0.51      0.55      0.53        69
+           2       0.26      0.32      0.29        87
+           3       0.10      0.09      0.09        35
+           4       0.20      0.31      0.25        29
+           5       0.54      0.35      0.42        20
+
+    accuracy                           0.48       508
+   macro avg       0.38      0.37      0.37       508
+weighted avg       0.51      0.48      0.49       508
+
+Confusion Matrix:
+[[159  19  56  14  17   3]
+ [ 16  38   7   4   2   2]
+ [ 31   9  28   9  10   0]
+ [ 14   2  10   3   5   1]
+ [  9   3   7   1   9   0]
+ [  8   4   0   0   1   7]]
+Balanced Accuracy: 0.36865106892182903
+F1 Macro: 0.3677311821452605
+--------------------------------------------------------------------------------
+2025-06-21 14:46:12,548 - INFO - Best parameters for Logistic Regression: {'selector__k': 30, 'classifier__solver': 'saga', 'classifier__penalty': 'l2', 'classifier__C': 100}
+2025-06-21 14:46:12,548 - INFO - Best score for Logistic Regression: 0.3190
+2025-06-21 14:46:12,594 - INFO - 
+--- Evaluation: Logistic Regression ---
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.74      0.34      0.47       268
+           1       0.42      0.61      0.49        69
+           2       0.23      0.18      0.21        87
+           3       0.13      0.29      0.18        35
+           4       0.15      0.41      0.22        29
+           5       0.22      0.60      0.32        20
+
+    accuracy                           0.36       508
+   macro avg       0.31      0.41      0.31       508
+weighted avg       0.51      0.36      0.39       508
+
+Confusion Matrix:
+[[92 37 39 36 37 27]
+ [ 7 42  4  3  6  7]
+ [16 11 16 22 18  4]
+ [ 3  4  7 10  8  3]
+ [ 3  4  3  5 12  2]
+ [ 3  3  0  2  0 12]]
+Balanced Accuracy: 0.40589911156717307
+F1 Macro: 0.31396776265222764
+--------------------------------------------------------------------------------
+2025-06-21 14:46:21,011 - INFO - Best parameters for KNN: {'selector__k': 'all', 'classifier__weights': 'distance', 'classifier__p': 2, 'classifier__n_neighbors': 5}
+2025-06-21 14:46:21,011 - INFO - Best score for KNN: 0.3364
+2025-06-21 14:46:21,063 - INFO - 
+--- Evaluation: KNN ---
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.66      0.48      0.56       268
+           1       0.43      0.52      0.47        69
+           2       0.30      0.39      0.34        87
+           3       0.19      0.20      0.19        35
+           4       0.15      0.28      0.19        29
+           5       0.31      0.45      0.37        20
+
+    accuracy                           0.44       508
+   macro avg       0.34      0.39      0.35       508
+weighted avg       0.49      0.44      0.45       508
+
+Confusion Matrix:
+[[128  28  56  15  30  11]
+ [ 16  36   6   3   3   5]
+ [ 23  10  34  10   9   1]
+ [ 13   2   8   7   3   2]
+ [  9   3   7   1   8   1]
+ [  4   4   1   1   1   9]]
+Balanced Accuracy: 0.3860029562333261
+F1 Macro: 0.35421162573662457
+--------------------------------------------------------------------------------
+2025-06-21 14:46:21,067 - INFO - 
+Confronto Finale:
+                 Model                                        Best Params  \
+2                  SVM  {'selector__k': 'all', 'classifier__kernel': '...   
+4                  KNN  {'selector__k': 'all', 'classifier__weights': ...   
+1        Random Forest  {'selector__k': 30, 'classifier__n_estimators'...   
+0              XGBoost  {'selector__k': 30, 'classifier__n_estimators'...   
+3  Logistic Regression  {'selector__k': 30, 'classifier__solver': 'sag...   
+
+   Balanced Accuracy  F1 Macro  
+2           0.368651  0.367731  
+4           0.386003  0.354212  
+1           0.384688  0.345983  
+0           0.397197  0.331334  
+3           0.405899  0.313968  
+2025-06-21 14:48:35,110 - INFO - Best parameters for SVM: {'selector__k': 100, 'classifier__kernel': 'rbf', 'classifier__C': 1}
+2025-06-21 14:48:35,111 - INFO - Best score for SVM: 0.3940
+2025-06-21 14:48:35,199 - INFO - 
+--- Evaluation: SVM ---
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.72      0.46      0.56       268
+           1       0.45      0.64      0.53        69
+           2       0.25      0.31      0.28        87
+           3       0.16      0.20      0.18        35
+           4       0.12      0.28      0.17        29
+           5       0.54      0.70      0.61        20
+
+    accuracy                           0.44       508
+   macro avg       0.38      0.43      0.39       508
+weighted avg       0.53      0.44      0.46       508
+
+Confusion Matrix:
+[[123  36  52  18  32   7]
+ [  9  44   9   2   2   3]
+ [ 22  11  27  14  13   0]
+ [  7   2   9   7   9   1]
+ [  6   3  10   1   8   1]
+ [  3   1   1   1   0  14]]
+Balanced Accuracy: 0.4304738799754351
+F1 Macro: 0.3881522061468345
+--------------------------------------------------------------------------------
+2025-06-21 14:48:35,201 - INFO - 
+Confronto Finale:
+  Model                                        Best Params  Balanced Accuracy  \
+0   SVM  {'selector__k': 100, 'classifier__kernel': 'rb...           0.430474   
+
+   F1 Macro  
+0  0.388152  
+2025-06-21 15:03:52,055 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-06-21 15:03:52,064 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-06-21 15:04:26,771 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-06-21 15:04:26,777 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-06-21 15:04:26,902 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-06-21 15:04:26,908 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-06-21 15:05:36,820 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-06-21 15:05:36,826 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-06-21 15:05:36,950 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-06-21 15:05:36,957 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-06-21 15:05:42,977 - INFO - Best parameters for SVM: {'selector__k': 100, 'classifier__kernel': 'linear', 'classifier__C': 0.1}
+2025-06-21 15:05:42,977 - INFO - Best score for SVM: 0.6853
+2025-06-21 15:05:43,001 - INFO - 
+--- Evaluation: SVM ---
+Classification Report:
+              precision    recall  f1-score   support
+
+           2       0.99      0.94      0.96       488
+           3       0.35      0.85      0.50        20
+
+    accuracy                           0.93       508
+   macro avg       0.67      0.89      0.73       508
+weighted avg       0.97      0.93      0.95       508
+
+Confusion Matrix:
+[[457  31]
+ [  3  17]]
+Balanced Accuracy: 0.8932377049180328
+F1 Macro: 0.7320675105485233
+--------------------------------------------------------------------------------
+2025-06-21 15:05:43,004 - INFO - 
+Confronto Finale:
+  Model                                        Best Params  Balanced Accuracy  \
+0   SVM  {'selector__k': 100, 'classifier__kernel': 'li...           0.893238   
+
+   F1 Macro  
+0  0.732068  
+2025-06-21 15:30:24,115 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-06-21 15:30:24,121 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-06-21 15:32:09,419 - INFO - Best parameters for SVM: {'selector__k': 100, 'classifier__kernel': 'rbf', 'classifier__C': 10}
+2025-06-21 15:32:09,419 - INFO - Best score for SVM: 0.3759
+2025-06-21 15:32:09,495 - INFO - 
+--- Evaluation: SVM ---
+Classification Report:
+              precision    recall  f1-score   support
+
+           2       0.93      0.51      0.66       460
+           3       0.36      0.84      0.51        19
+           4       0.06      0.41      0.10        29
+
+    accuracy                           0.52       508
+   macro avg       0.45      0.59      0.42       508
+weighted avg       0.86      0.52      0.62       508
+
+Confusion Matrix:
+[[234  26 200]
+ [  2  16   1]
+ [ 15   2  12]]
+Balanced Accuracy: 0.5881980062600278
+F1 Macro: 0.4217793032522607
+--------------------------------------------------------------------------------
+2025-06-21 15:32:09,498 - INFO - 
+Confronto Finale:
+  Model                                        Best Params  Balanced Accuracy  \
+0   SVM  {'selector__k': 100, 'classifier__kernel': 'rb...           0.588198   
+
+   F1 Macro  
+0  0.421779  
+2025-06-21 15:39:24,339 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-06-21 15:39:24,345 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-06-21 15:39:24,472 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-06-21 15:39:24,478 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-06-21 15:40:53,312 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-06-21 15:40:53,337 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
