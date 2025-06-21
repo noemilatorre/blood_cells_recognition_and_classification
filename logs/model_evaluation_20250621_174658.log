@@ -140,3 +140,57 @@ Confronto Finale:
 3           0.848324  0.645302  
 4           0.833242  0.620666  
 2           0.832820  0.619697  
+2025-06-21 19:18:58,468 - INFO - Best parameters for SVM: {'selector__k': 'all', 'classifier__kernel': 'rbf', 'classifier__gamma': 'auto', 'classifier__C': 0.001}
+2025-06-21 19:18:58,474 - INFO - Best score for SVM: 0.6977
+2025-06-21 19:19:09,789 - INFO - 
+--- Evaluation: SVM ---
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.99      0.94      0.96     14214
+           1       0.30      0.79      0.43       488
+
+    accuracy                           0.93     14702
+   macro avg       0.65      0.86      0.70     14702
+weighted avg       0.97      0.93      0.95     14702
+
+Confusion Matrix:
+[[13315   899]
+ [  104   384]]
+Balanced Accuracy: 0.8618188717196391
+F1 Macro: 0.698678061155817
+--------------------------------------------------------------------------------
+2025-06-21 19:19:09,798 - INFO - 
+Confronto Finale:
+  Model                                        Best Params  Balanced Accuracy  \
+0   SVM  {'selector__k': 'all', 'classifier__kernel': '...           0.861819   
+
+   F1 Macro  
+0  0.698678  
+2025-06-21 20:23:38,828 - INFO - Best parameters for Random Forest: {'selector__k': 'all', 'classifier__n_estimators': 200, 'classifier__min_samples_split': 5, 'classifier__max_depth': None}
+2025-06-21 20:23:38,831 - INFO - Best score for Random Forest: 0.9109
+2025-06-21 20:23:40,529 - INFO - 
+--- Evaluation: Random Forest ---
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.91      0.91      0.91     14214
+           1       0.91      0.91      0.91     14214
+
+    accuracy                           0.91     28428
+   macro avg       0.91      0.91      0.91     28428
+weighted avg       0.91      0.91      0.91     28428
+
+Confusion Matrix:
+[[12882  1332]
+ [ 1301 12913]]
+Balanced Accuracy: 0.9073800478401576
+F1 Macro: 0.9073799377024981
+--------------------------------------------------------------------------------
+2025-06-21 20:23:40,534 - INFO - 
+Confronto Finale:
+           Model                                        Best Params  \
+0  Random Forest  {'selector__k': 'all', 'classifier__n_estimato...   
+
+   Balanced Accuracy  F1 Macro  
+0            0.90738   0.90738  
