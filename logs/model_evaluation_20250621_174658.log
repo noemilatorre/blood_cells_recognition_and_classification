@@ -194,3 +194,30 @@ Confronto Finale:
 
    Balanced Accuracy  F1 Macro  
 0            0.90738   0.90738  
+2025-06-21 21:03:07,161 - INFO - Best parameters for Random Forest: {'selector__k': 800, 'classifier__n_estimators': 100, 'classifier__min_samples_split': 5, 'classifier__max_depth': 20}
+2025-06-21 21:03:07,164 - INFO - Best score for Random Forest: 0.9264
+2025-06-21 21:03:08,235 - INFO - 
+--- Evaluation: Random Forest ---
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.93      0.93      0.93     14214
+           1       0.93      0.93      0.93     14214
+
+    accuracy                           0.93     28428
+   macro avg       0.93      0.93      0.93     28428
+weighted avg       0.93      0.93      0.93     28428
+
+Confusion Matrix:
+[[13175  1039]
+ [ 1057 13157]]
+Balanced Accuracy: 0.9262698747713523
+F1 Macro: 0.926269845211821
+--------------------------------------------------------------------------------
+2025-06-21 21:03:08,241 - INFO - 
+Confronto Finale:
+           Model                                        Best Params  \
+0  Random Forest  {'selector__k': 800, 'classifier__n_estimators...   
+
+   Balanced Accuracy  F1 Macro  
+0            0.92627   0.92627  
