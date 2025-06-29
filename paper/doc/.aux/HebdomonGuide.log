@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.6.24)  27 JUN 2025 11:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.6.24)  29 JUN 2025 18:42
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/home/achille/Desktop/hebdomon/doc/HebdomonGuide.tex
-(/home/achille/Desktop/hebdomon/doc/HebdomonGuide.tex
+**/home/achille/Desktop/ML/paper/doc/HebdomonGuide.tex
+(/home/achille/Desktop/ML/paper/doc/HebdomonGuide.tex
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-05-26>
 (../tex/hebdomon.cls
@@ -1307,7 +1307,24 @@ Package: transparent 2025-06-23 v1.6 Transparency with color stacks
 Package: transparent-nometadata 2025-06-23 v1.6 Transparency via pdfTeX's color stack (HO)
  (/usr/local/texlive/2025/texmf-dist/tex/latex/auxhook/auxhook.sty
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
-)))
+))) (/usr/local/texlive/2025/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2024/12/21 v2.1c Standard LaTeX package
+LaTeX Font Info:    Trying to load font information for T1+FiraSans-OsF on input line 116.
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/fira/T1FiraSans-OsF.fd
+File: T1FiraSans-OsF.fd 2019/10/10 (autoinst) Font definitions for T1/FiraSans-OsF.
+)
+LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/n' in size <10.95> not available
+(Font)              Font shape `T1/FiraSans-OsF/regular/n' tried instead on input line 116.
+LaTeX Font Info:    Font shape `T1/FiraSans-OsF/regular/n' will be
+(Font)              scaled to size 10.95pt on input line 116.
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2024/02/08 v1.3d Input encoding file
+\inpenc@prehook=\toks58
+\inpenc@posthook=\toks59
+)
+
+Package biblatex Warning: Load 'inputenc' before biblatex.
+
 \@quotelevel=\count562
 \@quotereset=\count563
 Class scrreprt Info: loading recommended package `bookmark'.
@@ -1317,53 +1334,44 @@ Class scrreprt Info: loading recommended package `bookmark'.
 (scrreprt)           `bookmarkpackage=false' before \begin{document} and
 (scrreprt)           you can avoid this message adding:
 (scrreprt)             \usepackage{bookmark}
-(scrreprt)           before \begin{document} on input line 4.
- (/usr/local/texlive/2025/texmf-dist/tex/latex/bookmark/bookmark.sty
+(scrreprt)           before \begin{document} on input line 7.
+(/usr/local/texlive/2025/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2023-12-10 v1.31 PDF bookmarks (HO)
  (/usr/local/texlive/2025/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
 File: bkm-pdftex.def 2023-12-10 v1.31 bookmark driver for pdfTeX and luaTeX (HO)
 \BKM@id=\count564
-))
-LaTeX Font Info:    Trying to load font information for OT1+FiraSans-OsF on input line 4.
- (/usr/local/texlive/2025/texmf-dist/tex/latex/fira/OT1FiraSans-OsF.fd
-File: OT1FiraSans-OsF.fd 2019/10/10 (autoinst) Font definitions for OT1/FiraSans-OsF.
-)
-LaTeX Font Info:    Font shape `OT1/FiraSans-OsF/m/n' in size <10.95> not available
-(Font)              Font shape `OT1/FiraSans-OsF/regular/n' tried instead on input line 4.
-LaTeX Font Info:    Font shape `OT1/FiraSans-OsF/regular/n' will be
-(Font)              scaled to size 10.95pt on input line 4.
- (.aux/HebdomonGuide.aux)
+)) (.aux/HebdomonGuide.aux)
 \openout1 = `HebdomonGuide.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 4.
-LaTeX Font Info:    ... okay on input line 4.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 4.
-LaTeX Font Info:    ... okay on input line 4.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 4.
-LaTeX Font Info:    ... okay on input line 4.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 4.
-LaTeX Font Info:    ... okay on input line 4.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 4.
-LaTeX Font Info:    ... okay on input line 4.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 4.
-LaTeX Font Info:    ... okay on input line 4.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 4.
-LaTeX Font Info:    ... okay on input line 4.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 4.
-LaTeX Font Info:    ... okay on input line 4.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 4.
-LaTeX Font Info:    ... okay on input line 4.
-Package scrbase Info: activating english \abstractname on input line 4.
-Package scrbase Info: activating english \partname on input line 4.
-Package scrbase Info: activating english \chaptername on input line 4.
-Package scrbase Info: activating english \appendixname on input line 4.
-Package scrbase Info: activating english \figurename on input line 4.
-Package scrbase Info: activating english \tablename on input line 4.
-Package scrbase Info: activating english \contentsname on input line 4.
-Package scrbase Info: activating english \listfigurename on input line 4.
-Package scrbase Info: activating english \listtablename on input line 4.
-Package scrbase Info: activating english \bibname on input line 4.
-Package scrbase Info: activating english \indexname on input line 4.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+Package scrbase Info: activating english \abstractname on input line 7.
+Package scrbase Info: activating english \partname on input line 7.
+Package scrbase Info: activating english \chaptername on input line 7.
+Package scrbase Info: activating english \appendixname on input line 7.
+Package scrbase Info: activating english \figurename on input line 7.
+Package scrbase Info: activating english \tablename on input line 7.
+Package scrbase Info: activating english \contentsname on input line 7.
+Package scrbase Info: activating english \listfigurename on input line 7.
+Package scrbase Info: activating english \listtablename on input line 7.
+Package scrbase Info: activating english \bibname on input line 7.
+Package scrbase Info: activating english \indexname on input line 7.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1406,15 +1414,21 @@ Package scrbase Info: activating english \indexname on input line 4.
 \scratchbox=\box100
 \nofMPsegments=\count566
 \nofMParguments=\count567
-\everyMPshowfont=\toks58
+\everyMPshowfont=\toks60
 \MPscratchCnt=\count568
 \MPscratchDim=\dimen391
 \MPnumerator=\count569
 \makeMPintoPDFobject=\count570
-\everyMPtoPDFconversion=\toks59
+\everyMPtoPDFconversion=\toks61
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/grfext/grfext.sty
+Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
+)
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 504.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
@@ -1441,8 +1455,8 @@ Package biblatex Info: Data encoding 'utf8' specified.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'HebdomonGuide.bbl' found.
  (.aux/HebdomonGuide.bbl)
-Package biblatex Info: Reference section=0 on input line 4.
-Package biblatex Info: Reference segment=0 on input line 4.
+Package biblatex Info: Reference section=0 on input line 7.
+Package biblatex Info: Reference segment=0 on input line 7.
 \c@mv@tabular=\count575
 \c@mv@boldtabular=\count576
 Package minitoc(hints) Info: I0049
@@ -1469,64 +1483,59 @@ Package minitoc(hints) Warning: W0023
 (minitoc(hints))                --- It may be the consequence 
 (minitoc(hints))                of loading the ``hyperref'' package.
 
-Package hyperref Info: Link coloring OFF on input line 4.
+Package hyperref Info: Link coloring OFF on input line 7.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count577
 Package tocbasic Info: omitting babel extension for `lol'
-(tocbasic)             because of missing \bbl@set@language on input line 4.
+(tocbasic)             because of missing \bbl@set@language on input line 7.
 \scr@dte@lstlisting@maxnumwidth=\skip101
-(/usr/local/texlive/2025/texmf-dist/tex/latex/base/inputenc.sty
-Package: inputenc 2024/02/08 v1.3d Input encoding file
-\inpenc@prehook=\toks60
-\inpenc@posthook=\toks61
-)
 Package pgfplots notification 'compat/show suggested version=true': document has been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 
 <figures/logo.png, id=43, 582.89902pt x 582.89902pt>
 File: figures/logo.png Graphic file (type png)
 <use figures/logo.png>
-Package pdftex.def Info: figures/logo.png  used on input line 21.
+Package pdftex.def Info: figures/logo.png  used on input line 18.
 (pdftex.def)             Requested size: 113.81102pt x 113.8116pt.
-LaTeX Font Info:    Font shape `OT1/FiraSans-OsF/m/sc' in size <10.95> not available
-(Font)              Font shape `OT1/FiraSans-OsF/regular/sc' tried instead on input line 25.
-LaTeX Font Info:    Font shape `OT1/FiraSans-OsF/regular/sc' will be
-(Font)              scaled to size 10.95pt on input line 25.
-LaTeX Font Info:    Font shape `OT1/FiraSans-OsF/m/sc' in size <17.28> not available
-(Font)              Font shape `OT1/FiraSans-OsF/regular/sc' tried instead on input line 25.
-LaTeX Font Info:    Font shape `OT1/FiraSans-OsF/regular/sc' will be
-(Font)              scaled to size 17.28pt on input line 25.
-LaTeX Font Info:    Font shape `OT1/FiraSans-OsF/m/n' in size <14.4> not available
-(Font)              Font shape `OT1/FiraSans-OsF/regular/n' tried instead on input line 27.
-LaTeX Font Info:    Font shape `OT1/FiraSans-OsF/regular/n' will be
-(Font)              scaled to size 14.4pt on input line 27.
-LaTeX Font Info:    Font shape `OT1/FiraSans-OsF/m/n' in size <24.88> not available
-(Font)              Font shape `OT1/FiraSans-OsF/regular/n' tried instead on input line 30.
-LaTeX Font Info:    Font shape `OT1/FiraSans-OsF/regular/n' will be
-(Font)              scaled to size 24.88pt on input line 30.
-LaTeX Font Info:    Font shape `OT1/FiraSans-OsF/b/n' in size <24.88> not available
-(Font)              Font shape `OT1/FiraSans-OsF/bold/n' tried instead on input line 30.
-LaTeX Font Info:    Font shape `OT1/FiraSans-OsF/bold/n' will be
-(Font)              scaled to size 24.88pt on input line 30.
-LaTeX Font Info:    Font shape `OT1/FiraSans-OsF/m/n' in size <12> not available
-(Font)              Font shape `OT1/FiraSans-OsF/regular/n' tried instead on input line 32.
-LaTeX Font Info:    Font shape `OT1/FiraSans-OsF/regular/n' will be
-(Font)              scaled to size 12.0pt on input line 32.
-LaTeX Font Info:    Font shape `OT1/FiraSans-OsF/b/n' in size <10.95> not available
-(Font)              Font shape `OT1/FiraSans-OsF/bold/n' tried instead on input line 37.
-LaTeX Font Info:    Font shape `OT1/FiraSans-OsF/bold/n' will be
-(Font)              scaled to size 10.95pt on input line 37.
+LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/sc' in size <10.95> not available
+(Font)              Font shape `T1/FiraSans-OsF/regular/sc' tried instead on input line 22.
+LaTeX Font Info:    Font shape `T1/FiraSans-OsF/regular/sc' will be
+(Font)              scaled to size 10.95pt on input line 22.
+LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/sc' in size <17.28> not available
+(Font)              Font shape `T1/FiraSans-OsF/regular/sc' tried instead on input line 22.
+LaTeX Font Info:    Font shape `T1/FiraSans-OsF/regular/sc' will be
+(Font)              scaled to size 17.28pt on input line 22.
+LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/n' in size <14.4> not available
+(Font)              Font shape `T1/FiraSans-OsF/regular/n' tried instead on input line 24.
+LaTeX Font Info:    Font shape `T1/FiraSans-OsF/regular/n' will be
+(Font)              scaled to size 14.4pt on input line 24.
+LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/n' in size <24.88> not available
+(Font)              Font shape `T1/FiraSans-OsF/regular/n' tried instead on input line 27.
+LaTeX Font Info:    Font shape `T1/FiraSans-OsF/regular/n' will be
+(Font)              scaled to size 24.88pt on input line 27.
+LaTeX Font Info:    Font shape `T1/FiraSans-OsF/b/n' in size <24.88> not available
+(Font)              Font shape `T1/FiraSans-OsF/bold/n' tried instead on input line 27.
+LaTeX Font Info:    Font shape `T1/FiraSans-OsF/bold/n' will be
+(Font)              scaled to size 24.88pt on input line 27.
+LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/n' in size <12> not available
+(Font)              Font shape `T1/FiraSans-OsF/regular/n' tried instead on input line 29.
+LaTeX Font Info:    Font shape `T1/FiraSans-OsF/regular/n' will be
+(Font)              scaled to size 12.0pt on input line 29.
+LaTeX Font Info:    Font shape `T1/FiraSans-OsF/b/n' in size <10.95> not available
+(Font)              Font shape `T1/FiraSans-OsF/bold/n' tried instead on input line 34.
+LaTeX Font Info:    Font shape `T1/FiraSans-OsF/bold/n' will be
+(Font)              scaled to size 10.95pt on input line 34.
 
 
 [1
 
 
 
-{/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/fira/fir_ogsljj.enc}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/fira/fir_337jzs.enc} <./figures/logo.png>]
+{/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/fira/fir_2mfh3o.enc}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/fira/fir_iln36p.enc} <./figures/logo.png>]
 Package minitoc Info: I0024
-(minitoc)             PREPARING MINITOCS FROM HebdomonGuide.toc on input line 48.
+(minitoc)             PREPARING MINITOCS FROM HebdomonGuide.toc on input line 45.
 Package minitoc Info: I0033
 (minitoc)             Writing HebdomonGuide.mtc1.
 \openout5 = `HebdomonGuide.mtc1'.
@@ -1534,6 +1543,10 @@ Package minitoc Info: I0033
 Package minitoc Info: I0033
 (minitoc)             Writing HebdomonGuide.mtc2.
 \openout5 = `HebdomonGuide.mtc2'.
+
+Package minitoc Info: I0033
+(minitoc)             Writing HebdomonGuide.mtc3.
+\openout5 = `HebdomonGuide.mtc3'.
 
 
 
@@ -1547,14 +1560,14 @@ Class scrreprt Warning: Redefinition of \@makeschapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-LaTeX Font Info:    Font shape `OT1/FiraSans-OsF/b/n' in size <20.74> not available
-(Font)              Font shape `OT1/FiraSans-OsF/bold/n' tried instead on input line 48.
-LaTeX Font Info:    Font shape `OT1/FiraSans-OsF/bold/n' will be
-(Font)              scaled to size 20.74pt on input line 48.
-LaTeX Font Info:    Font shape `OT1/FiraSans-OsF/b/n' in size <30> not available
-(Font)              Font shape `OT1/FiraSans-OsF/bold/n' tried instead on input line 48.
-LaTeX Font Info:    Font shape `OT1/FiraSans-OsF/bold/n' will be
-(Font)              scaled to size 30.0pt on input line 48.
+LaTeX Font Info:    Font shape `T1/FiraSans-OsF/b/n' in size <20.74> not available
+(Font)              Font shape `T1/FiraSans-OsF/bold/n' tried instead on input line 45.
+LaTeX Font Info:    Font shape `T1/FiraSans-OsF/bold/n' will be
+(Font)              scaled to size 20.74pt on input line 45.
+LaTeX Font Info:    Font shape `T1/FiraSans-OsF/b/n' in size <30> not available
+(Font)              Font shape `T1/FiraSans-OsF/bold/n' tried instead on input line 45.
+LaTeX Font Info:    Font shape `T1/FiraSans-OsF/bold/n' will be
+(Font)              scaled to size 30.0pt on input line 45.
 (.aux/HebdomonGuide.toc
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 2.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/ot1lmr.fd
@@ -1603,109 +1616,190 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 
 \openout5 = `HebdomonGuide.mtc'.
 
-LaTeX Font Info:    Font shape `OT1/FiraSans-OsF/m/n' in size <10> not available
-(Font)              Font shape `OT1/FiraSans-OsF/regular/n' tried instead on input line 52.
-LaTeX Font Info:    Font shape `OT1/FiraSans-OsF/regular/n' will be
-(Font)              scaled to size 10.0pt on input line 52.
+LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/n' in size <10> not available
+(Font)              Font shape `T1/FiraSans-OsF/regular/n' tried instead on input line 49.
+LaTeX Font Info:    Font shape `T1/FiraSans-OsF/regular/n' will be
+(Font)              scaled to size 10.0pt on input line 49.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 52.
+(Font)              <10> on input line 49.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 52.
+(Font)              <7> on input line 49.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 52.
+(Font)              <5> on input line 49.
 (.aux/HebdomonGuide.mtc1)
-LaTeX Font Info:    Font shape `OT1/FiraSans-OsF/b/n' in size <14.4> not available
-(Font)              Font shape `OT1/FiraSans-OsF/bold/n' tried instead on input line 52.
-LaTeX Font Info:    Font shape `OT1/FiraSans-OsF/bold/n' will be
-(Font)              scaled to size 14.4pt on input line 52.
-LaTeX Font Info:    Trying to load font information for TS1+FiraSans-OsF on input line 59.
+LaTeX Font Info:    Font shape `T1/FiraSans-OsF/b/n' in size <14.4> not available
+(Font)              Font shape `T1/FiraSans-OsF/bold/n' tried instead on input line 49.
+LaTeX Font Info:    Font shape `T1/FiraSans-OsF/bold/n' will be
+(Font)              scaled to size 14.4pt on input line 49.
+LaTeX Font Info:    Trying to load font information for TS1+FiraSans-OsF on input line 56.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/fira/TS1FiraSans-OsF.fd
 File: TS1FiraSans-OsF.fd 2019/10/10 (autoinst) Font definitions for TS1/FiraSans-OsF.
 )
 LaTeX Font Info:    Font shape `TS1/FiraSans-OsF/m/n' in size <10.95> not available
-(Font)              Font shape `TS1/FiraSans-OsF/regular/n' tried instead on input line 59.
+(Font)              Font shape `TS1/FiraSans-OsF/regular/n' tried instead on input line 56.
 LaTeX Font Info:    Font shape `TS1/FiraSans-OsF/regular/n' will be
-(Font)              scaled to size 10.95pt on input line 59.
-
-
-[3
-
-{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/fira/fir_d67aat.enc}]
-Package svg Info: Last page of `./svg-inkscape/pipeline_general_svg-tex.pdf' is 1 on input line 70.
+(Font)              scaled to size 10.95pt on input line 56.
+Package svg Info: Last page of `./svg-inkscape/pipeline_general_svg-tex.pdf' is 1 on input line 67.
  (./svg-inkscape/pipeline_general_svg-tex.pdf_tex
-<./svg-inkscape/pipeline_general_svg-tex.pdf, id=96, page=1, 1439.0011pt x 463.3561pt>
+<./svg-inkscape/pipeline_general_svg-tex.pdf, id=103, page=1, 1439.0011pt x 463.3561pt>
 File: ./svg-inkscape/pipeline_general_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/pipeline_general_svg-tex.pdf, page 1>
 Package pdftex.def Info: ./svg-inkscape/pipeline_general_svg-tex.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 455.24417pt x 146.58719pt.
 )
-LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 77.
- (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/ot1lmtt.fd
-File: ot1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) (/usr/local/texlive/2025/texmf-dist/tex/latex/base/latin1.def
-File: latin1.def 2024/02/08 v1.3d Input encoding file
-LaTeX Encoding Info:    Ignoring declaration for text command \textdegree (encoding ?) on input line 47.
-LaTeX Encoding Info:    Ignoring declaration for text command \textonehalf (encoding ?) on input line 48.
-LaTeX Encoding Info:    Ignoring declaration for text command \textonequarter (encoding ?) on input line 49.
-LaTeX Encoding Info:    Ignoring declaration for text command \textthreequarters (encoding ?) on input line 50.
-LaTeX Encoding Info:    Ignoring declaration for text command \textcent (encoding ?) on input line 51.
-LaTeX Encoding Info:    Ignoring declaration for text command \textyen (encoding ?) on input line 53.
-LaTeX Encoding Info:    Ignoring declaration for text command \textcurrency (encoding ?) on input line 55.
-LaTeX Encoding Info:    Ignoring declaration for text command \textbrokenbar (encoding ?) on input line 57.
-) (/usr/local/texlive/2025/texmf-dist/tex/latex/base/latin1.def
-File: latin1.def 2024/02/08 v1.3d Input encoding file
-LaTeX Encoding Info:    Ignoring declaration for text command \textdegree (encoding ?) on input line 47.
-LaTeX Encoding Info:    Ignoring declaration for text command \textonehalf (encoding ?) on input line 48.
-LaTeX Encoding Info:    Ignoring declaration for text command \textonequarter (encoding ?) on input line 49.
-LaTeX Encoding Info:    Ignoring declaration for text command \textthreequarters (encoding ?) on input line 50.
-LaTeX Encoding Info:    Ignoring declaration for text command \textcent (encoding ?) on input line 51.
-LaTeX Encoding Info:    Ignoring declaration for text command \textyen (encoding ?) on input line 53.
-LaTeX Encoding Info:    Ignoring declaration for text command \textcurrency (encoding ?) on input line 55.
-LaTeX Encoding Info:    Ignoring declaration for text command \textbrokenbar (encoding ?) on input line 57.
-) (/usr/local/texlive/2025/texmf-dist/tex/latex/base/latin1.def
-File: latin1.def 2024/02/08 v1.3d Input encoding file
-LaTeX Encoding Info:    Ignoring declaration for text command \textdegree (encoding ?) on input line 47.
-LaTeX Encoding Info:    Ignoring declaration for text command \textonehalf (encoding ?) on input line 48.
-LaTeX Encoding Info:    Ignoring declaration for text command \textonequarter (encoding ?) on input line 49.
-LaTeX Encoding Info:    Ignoring declaration for text command \textthreequarters (encoding ?) on input line 50.
-LaTeX Encoding Info:    Ignoring declaration for text command \textcent (encoding ?) on input line 51.
-LaTeX Encoding Info:    Ignoring declaration for text command \textyen (encoding ?) on input line 53.
-LaTeX Encoding Info:    Ignoring declaration for text command \textcurrency (encoding ?) on input line 55.
-LaTeX Encoding Info:    Ignoring declaration for text command \textbrokenbar (encoding ?) on input line 57.
-) (/usr/local/texlive/2025/texmf-dist/tex/latex/base/latin1.def
-File: latin1.def 2024/02/08 v1.3d Input encoding file
-LaTeX Encoding Info:    Ignoring declaration for text command \textdegree (encoding ?) on input line 47.
-LaTeX Encoding Info:    Ignoring declaration for text command \textonehalf (encoding ?) on input line 48.
-LaTeX Encoding Info:    Ignoring declaration for text command \textonequarter (encoding ?) on input line 49.
-LaTeX Encoding Info:    Ignoring declaration for text command \textthreequarters (encoding ?) on input line 50.
-LaTeX Encoding Info:    Ignoring declaration for text command \textcent (encoding ?) on input line 51.
-LaTeX Encoding Info:    Ignoring declaration for text command \textyen (encoding ?) on input line 53.
-LaTeX Encoding Info:    Ignoring declaration for text command \textcurrency (encoding ?) on input line 55.
-LaTeX Encoding Info:    Ignoring declaration for text command \textbrokenbar (encoding ?) on input line 57.
+LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/it' in size <10.95> not available
+(Font)              Font shape `T1/FiraSans-OsF/regular/it' tried instead on input line 74.
+LaTeX Font Info:    Font shape `T1/FiraSans-OsF/regular/it' will be
+(Font)              scaled to size 10.95pt on input line 74.
+
+
+[3
+
+{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/fira/fir_d67aat.enc}]
+Overfull \hbox (7.64949pt too wide) in paragraph at lines 77--79
+\T1/FiraSans-OsF/regular/n/10.95 learn-ing. Py-Torch si dis-tingue per la sua flessibil-ità e l'approccio di-nam-ico alla costruzione
+ []
+
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 95.
+(/usr/local/texlive/2025/texmf-dist/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
+
+[4{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc} <./svg-inkscape/pipeline_general_svg-tex.pdf>]
+Overfull \hbox (5.16795pt too wide) in paragraph at lines 106--107
+[]\T1/FiraSans-OsF/regular/n/10.95 Questo sbi-lan-ci-a-mento cos-ti-tu-isce una \T1/FiraSans-OsF/bold/n/10.95 sfida ril-e-vante per i mod-elli di clas-si-fi-cazione\T1/FiraSans-OsF/regular/n/10.95 , in quanto
+ []
+
+
+
+[5]
+chapter 2.
+
+Class scrreprt Warning: Redefinition of \@makechapterhead detected.
+(scrreprt)              Note: KOMA-Script does use styles for commands like
+(scrreprt)              \chapter. Currently it internally still provides and
+(scrreprt)              uses \@makechapterhead, but a completely different
+(scrreprt)              definition compared to the standard classes.
+(scrreprt)              So redefining or using internal \@makechapterhead
+(scrreprt)              by users or package authors may already break
+(scrreprt)              KOMA-Script and will not work with a coming version,
+(scrreprt)              that will remove this deprecated code.
+
+\openout5 = `HebdomonGuide.mtc'.
+
+\openout5 = `HebdomonGuide.mtc'.
+
+(.aux/HebdomonGuide.mtc2)
+\g__nicematrix_max_cell_width_dim=\dimen395
+\c@iRow=\count578
+\c@jCol=\count579
+\l__nicematrix_color_int=\count580
+\l__nicematrix_cell_box=\box101
+\l__nicematrix_the_array_box=\box102
+\l__nicematrix_left_delim_dim=\dimen396
+\l__nicematrix_right_delim_dim=\dimen397
+
+Underfull \hbox (badness 10000) in paragraph at lines 134--134
+[]|\T1/FiraSans-OsF/regular/n/10.95 brightness=0.2, con-trast=0.2, sat-u-ra-tion=0.2, hue=0.1,
+ []
+
+
+
+[6
+
+]
+Overfull \hbox (32.09344pt too wide) in paragraph at lines 167--168
+[]\T1/FiraSans-OsF/regular/n/10.95 Una delle trasfor-mazioni che ha avuto il mag-giore im-patto sulle prestazioni è stata la \T1/lmtt/m/n/10.95 CoarseDropout\T1/FiraSans-OsF/regular/n/10.95 ,
+ []
+
 \pydata@fh@0=\write8
 \openout8 = `_018679B249EA6FB07607F2451175FB2C.data.minted'.
 
-runsystem(latexminted config  --timestamp 20250627110809 018679B249EA6FB07607F2451175FB2C)...executed.
+runsystem(latexminted config  --timestamp 20250629184244 018679B249EA6FB07607F2451175FB2C)...executed.
 
- (.aux/_018679B249EA6FB07607F2451175FB2C.config.minted)
-runsystem(latexminted cleanconfig  --timestamp 20250627110809 018679B249EA6FB07607F2451175FB2C)...executed.
+(.aux/_018679B249EA6FB07607F2451175FB2C.config.minted)
+runsystem(latexminted cleanconfig  --timestamp 20250629184244 018679B249EA6FB07607F2451175FB2C)...executed.
 
- (./.aux/_minted/default.style.minted) (./.aux/_minted/79E4EC240BCF63B6239CDF75E21BF80C.highlight.minted)
-LaTeX Font Info:    Font shape `OT1/FiraSans-OsF/b/n' in size <12> not available
-(Font)              Font shape `OT1/FiraSans-OsF/bold/n' tried instead on input line 100.
-LaTeX Font Info:    Font shape `OT1/FiraSans-OsF/bold/n' will be
-(Font)              scaled to size 12.0pt on input line 100.
- (./.aux/_minted/420A9086BB4F483CC18FDF09861F10A7.highlight.minted) (./.aux/_minted/93267A67C0E1C322D496F5336163E5C1.highlight.minted) (./.aux/_minted/BFE44468D70693EB10B4777256A9E5F8.highlight.minted
+ (./.aux/_minted/default.style.minted) (./.aux/_minted/AE939227940DE9B4398BF26653376AD4.highlight.minted)
 
-[4{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rmtt.enc} <./svg-inkscape/pipeline_general_svg-tex.pdf>]
-LaTeX Font Info:    Font shape `OT1/lmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/lmtt/b/n' tried instead on input line 2.
+[7]
+
+LaTeX Warning: Reference `tab:custom_anchors' on page 8 undefined on input line 186.
+
+LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/n' in size <8> not available
+(Font)              Font shape `T1/FiraSans-OsF/regular/n' tried instead on input line 215.
+LaTeX Font Info:    Font shape `T1/FiraSans-OsF/regular/n' will be
+(Font)              scaled to size 8.0pt on input line 215.
+LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/n' in size <6> not available
+(Font)              Font shape `T1/FiraSans-OsF/regular/n' tried instead on input line 215.
+LaTeX Font Info:    Font shape `T1/FiraSans-OsF/regular/n' will be
+(Font)              scaled to size 6.0pt on input line 215.
+
+
+[8{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}]
+
+LaTeX Warning: Reference `fig:model_best' on page 9 undefined on input line 273.
+
+
+LaTeX Warning: Reference `fig:model_worst' on page 9 undefined on input line 277.
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/base/latin1.def
+File: latin1.def 2024/02/08 v1.3d Input encoding file
+LaTeX Encoding Info:    Ignoring declaration for text command \textdegree (encoding ?) on input line 47.
+LaTeX Encoding Info:    Ignoring declaration for text command \textonehalf (encoding ?) on input line 48.
+LaTeX Encoding Info:    Ignoring declaration for text command \textonequarter (encoding ?) on input line 49.
+LaTeX Encoding Info:    Ignoring declaration for text command \textthreequarters (encoding ?) on input line 50.
+LaTeX Encoding Info:    Ignoring declaration for text command \textcent (encoding ?) on input line 51.
+LaTeX Encoding Info:    Ignoring declaration for text command \textyen (encoding ?) on input line 53.
+LaTeX Encoding Info:    Ignoring declaration for text command \textcurrency (encoding ?) on input line 55.
+LaTeX Encoding Info:    Ignoring declaration for text command \textbrokenbar (encoding ?) on input line 57.
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/base/latin1.def
+File: latin1.def 2024/02/08 v1.3d Input encoding file
+LaTeX Encoding Info:    Ignoring declaration for text command \textdegree (encoding ?) on input line 47.
+LaTeX Encoding Info:    Ignoring declaration for text command \textonehalf (encoding ?) on input line 48.
+LaTeX Encoding Info:    Ignoring declaration for text command \textonequarter (encoding ?) on input line 49.
+LaTeX Encoding Info:    Ignoring declaration for text command \textthreequarters (encoding ?) on input line 50.
+LaTeX Encoding Info:    Ignoring declaration for text command \textcent (encoding ?) on input line 51.
+LaTeX Encoding Info:    Ignoring declaration for text command \textyen (encoding ?) on input line 53.
+LaTeX Encoding Info:    Ignoring declaration for text command \textcurrency (encoding ?) on input line 55.
+LaTeX Encoding Info:    Ignoring declaration for text command \textbrokenbar (encoding ?) on input line 57.
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/base/latin1.def
+File: latin1.def 2024/02/08 v1.3d Input encoding file
+LaTeX Encoding Info:    Ignoring declaration for text command \textdegree (encoding ?) on input line 47.
+LaTeX Encoding Info:    Ignoring declaration for text command \textonehalf (encoding ?) on input line 48.
+LaTeX Encoding Info:    Ignoring declaration for text command \textonequarter (encoding ?) on input line 49.
+LaTeX Encoding Info:    Ignoring declaration for text command \textthreequarters (encoding ?) on input line 50.
+LaTeX Encoding Info:    Ignoring declaration for text command \textcent (encoding ?) on input line 51.
+LaTeX Encoding Info:    Ignoring declaration for text command \textyen (encoding ?) on input line 53.
+LaTeX Encoding Info:    Ignoring declaration for text command \textcurrency (encoding ?) on input line 55.
+LaTeX Encoding Info:    Ignoring declaration for text command \textbrokenbar (encoding ?) on input line 57.
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/base/latin1.def
+File: latin1.def 2024/02/08 v1.3d Input encoding file
+LaTeX Encoding Info:    Ignoring declaration for text command \textdegree (encoding ?) on input line 47.
+LaTeX Encoding Info:    Ignoring declaration for text command \textonehalf (encoding ?) on input line 48.
+LaTeX Encoding Info:    Ignoring declaration for text command \textonequarter (encoding ?) on input line 49.
+LaTeX Encoding Info:    Ignoring declaration for text command \textthreequarters (encoding ?) on input line 50.
+LaTeX Encoding Info:    Ignoring declaration for text command \textcent (encoding ?) on input line 51.
+LaTeX Encoding Info:    Ignoring declaration for text command \textyen (encoding ?) on input line 53.
+LaTeX Encoding Info:    Ignoring declaration for text command \textcurrency (encoding ?) on input line 55.
+LaTeX Encoding Info:    Ignoring declaration for text command \textbrokenbar (encoding ?) on input line 57.
+) (./.aux/_minted/79E4EC240BCF63B6239CDF75E21BF80C.highlight.minted)
+LaTeX Font Info:    Font shape `T1/FiraSans-OsF/b/n' in size <12> not available
+(Font)              Font shape `T1/FiraSans-OsF/bold/n' tried instead on input line 311.
+LaTeX Font Info:    Font shape `T1/FiraSans-OsF/bold/n' will be
+(Font)              scaled to size 12.0pt on input line 311.
+ (./.aux/_minted/420A9086BB4F483CC18FDF09861F10A7.highlight.minted) (./.aux/_minted/93267A67C0E1C322D496F5336163E5C1.highlight.minted)
+
+[9] (./.aux/_minted/BFE44468D70693EB10B4777256A9E5F8.highlight.minted
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 2.
 ) (./.aux/_minted/E323723C75C95973E68072F231983069.highlight.minted) (./.aux/_minted/CDEC2D1B3FFE009CD611E0F13FF100CE.highlight.minted) (./.aux/_minted/281A8F9C2D25BC20BAA81937729374F1.highlight.minted) (./.aux/_minted/73883A460033474483F1CF64A844F751.highlight.minted) (./.aux/_minted/1740D9877617CAEED3F44884D9DFB90C.highlight.minted) (./.aux/_minted/280442CE4C308C0EF9AD17054185E09F.highlight.minted) (./.aux/_minted/C607D035E6E6B0D40AB4602DC25214D0.highlight.minted) (./.aux/_minted/99939DBC786371F1D307DDCF2453E3B9.highlight.minted)
-<figures/innsbruck.jpg, id=145, 1368.11125pt x 584.1825pt>
+
+[10]
+<figures/innsbruck.jpg, id=202, 1368.11125pt x 584.1825pt>
 File: figures/innsbruck.jpg Graphic file (type jpg)
 <use figures/innsbruck.jpg>
-Package pdftex.def Info: figures/innsbruck.jpg  used on input line 169.
+Package pdftex.def Info: figures/innsbruck.jpg  used on input line 380.
 (pdftex.def)             Requested size: 455.24417pt x 194.38531pt.
  (./.aux/_minted/E0B939EDCC6D8F11A4C2978FACC9A8C8.highlight.minted) (./.aux/_minted/E0B939EDCC6D8F11A4C2978FACC9A8C8.highlight.minted) (./.aux/_minted/876BCBF5E49202DF2317A1B4FBFF3C5A.highlight.minted) (/usr/local/texlive/2025/texmf-dist/tex/latex/base/latin1.def
 File: latin1.def 2024/02/08 v1.3d Input encoding file
@@ -1727,25 +1821,14 @@ LaTeX Encoding Info:    Ignoring declaration for text command \textcent (encodin
 LaTeX Encoding Info:    Ignoring declaration for text command \textyen (encoding ?) on input line 53.
 LaTeX Encoding Info:    Ignoring declaration for text command \textcurrency (encoding ?) on input line 55.
 LaTeX Encoding Info:    Ignoring declaration for text command \textbrokenbar (encoding ?) on input line 57.
-) (./.aux/_minted/BE39CF9ACEBEC3E12EAD286280AB6FB2.highlight.minted)
+) (./.aux/_minted/BE39CF9ACEBEC3E12EAD286280AB6FB2.highlight.minted) (./.aux/_minted/2D44C21E05D618E34ABBF8B05AFF65C7.highlight.minted) (./.aux/_minted/C577A91B6D1B1293B438CA12DAEF6184.highlight.minted
 
-[5] (./.aux/_minted/2D44C21E05D618E34ABBF8B05AFF65C7.highlight.minted) (./.aux/_minted/C577A91B6D1B1293B438CA12DAEF6184.highlight.minted) (./.aux/_minted/32453D973068646FF90DB97C336AB98A.highlight.minted) (./.aux/_minted/DCCB631AA6A7E7492B95C686AF9F3AB1.highlight.minted)
+[11 <./figures/innsbruck.jpg>]) (./.aux/_minted/32453D973068646FF90DB97C336AB98A.highlight.minted) (./.aux/_minted/DCCB631AA6A7E7492B95C686AF9F3AB1.highlight.minted) (./.aux/_minted/41474B3D4B974C79D2186A67B51FB04C.highlight.minted) (./.aux/_minted/5062DFD64CC27817CE84D9B48CF1259C.highlight.minted) (./.aux/_minted/5C65B8222EBA4D46EF5F4DD5E655725C.highlight.minted) (./.aux/_minted/1FC798FA19542D2D88BE640630D0F6FB.highlight.minted) (./.aux/_minted/059282DECBD0C86E8920672FF31A8D42.highlight.minted) (./.aux/_minted/A79D896C5AD70B9EE0090F5CA533FE66.highlight.minted) (./.aux/_minted/3EAA05539782384C7ABF7F9368DC4FEE.highlight.minted) (./.aux/_minted/3E4C96A35ED427303123E8CCB1E4FEE3.highlight.minted
 
-[6 <./figures/innsbruck.jpg>] (./.aux/_minted/41474B3D4B974C79D2186A67B51FB04C.highlight.minted) (./.aux/_minted/5062DFD64CC27817CE84D9B48CF1259C.highlight.minted) (./.aux/_minted/5C65B8222EBA4D46EF5F4DD5E655725C.highlight.minted) (./.aux/_minted/1FC798FA19542D2D88BE640630D0F6FB.highlight.minted) (./.aux/_minted/059282DECBD0C86E8920672FF31A8D42.highlight.minted) (./.aux/_minted/A79D896C5AD70B9EE0090F5CA533FE66.highlight.minted) (./.aux/_minted/3EAA05539782384C7ABF7F9368DC4FEE.highlight.minted)
-\g__nicematrix_max_cell_width_dim=\dimen395
-\c@iRow=\count578
-\c@jCol=\count579
-\l__nicematrix_color_int=\count580
-\l__nicematrix_cell_box=\box101
-\l__nicematrix_the_array_box=\box102
-\l__nicematrix_left_delim_dim=\dimen396
-\l__nicematrix_right_delim_dim=\dimen397
- (./.aux/_minted/3E4C96A35ED427303123E8CCB1E4FEE3.highlight.minted
+[12])
 
-[7{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}])
-
-[8]
-chapter 2.
+[13]
+chapter 3.
 
 Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              Note: KOMA-Script does use styles for commands like
@@ -1761,15 +1844,15 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 
 \openout5 = `HebdomonGuide.mtc'.
 
-(.aux/HebdomonGuide.mtc2)
+(.aux/HebdomonGuide.mtc3)
 
-[9
+[14
 
 ] (./.aux/_minted/738146B69B5D836588A64F514192AE37.highlight.minted) (./.aux/_minted/D52EC1A53EABD1788F4BB113B2BA0A04.highlight.minted) (./.aux/_minted/93839263E2B0DF8987136B5D3494B083.highlight.minted) (./.aux/_minted/BD3FBF45813DF3B6D75FE53D876AE6C9.highlight.minted)
 
-[10{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}] (./.aux/_minted/3D2CCC2C7BD269B498B3BAF9B0FDF9AB.highlight.minted) (./.aux/_minted/83D5D0053CAE1354685E947E7B501790.highlight.minted) (./.aux/_minted/0E5A47C6EB4555FBCE7E2F783FFEAE2C.highlight.minted)
+[15] (./.aux/_minted/3D2CCC2C7BD269B498B3BAF9B0FDF9AB.highlight.minted) (./.aux/_minted/83D5D0053CAE1354685E947E7B501790.highlight.minted) (./.aux/_minted/0E5A47C6EB4555FBCE7E2F783FFEAE2C.highlight.minted)
 
-[11] (./.aux/_minted/10FA5A7F56AB99A11598B9FC312AA230.highlight.minted)
+[16] (./.aux/_minted/10FA5A7F56AB99A11598B9FC312AA230.highlight.minted)
 Package minitoc Info: I0009
 (minitoc)             Listing minitoc auxiliary files. 
 (minitoc)             Creating the HebdomonGuide.maf file.
@@ -1793,28 +1876,32 @@ Package minitoc(hints) Warning: W0024
 
 
 
-[12] (.aux/HebdomonGuide.aux)
+[17] (.aux/HebdomonGuide.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2020/03/25>
  ***********
+
+
+LaTeX Warning: There were undefined references.
+
 Package logreq Info: Writing requests to 'HebdomonGuide.run.xml'.
 \openout1 = `HebdomonGuide.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 61156 strings out of 467886
- 1459969 string characters out of 5434045
- 2700822 words of memory out of 5000000
- 88719 multiletter control sequences out of 15000+600000
- 702663 words of font info for 79 fonts, out of 8000000 for 9000
+ 62195 strings out of 467886
+ 1478948 string characters out of 5434045
+ 2719624 words of memory out of 5000000
+ 89719 multiletter control sequences out of 15000+600000
+ 883296 words of font info for 92 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  122i,20n,131p,10960b,2362s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/fira/FiraSans-Bold.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/fira/FiraSans-Regular.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on .aux/HebdomonGuide.pdf (12 pages, 3788618 bytes).
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/fira/FiraSans-Bold.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/fira/FiraSans-Italic.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/fira/FiraSans-Regular.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
+Output written on .aux/HebdomonGuide.pdf (17 pages, 3835782 bytes).
 PDF statistics:
- 287 PDF objects out of 1000 (max. 8388607)
- 203 compressed objects within 3 object streams
- 32 named destinations out of 1000 (max. 500000)
- 273 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 371 PDF objects out of 1000 (max. 8388607)
+ 278 compressed objects within 3 object streams
+ 47 named destinations out of 1000 (max. 500000)
+ 337 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,6 +1,9 @@
 % Load the base class
 \documentclass[minted, draw]{../tex/hebdomon}
 \usepackage{svg}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc} % se usi PDFLaTeX
 \begin{document}
 
 \title{Blood Cells Detection and Classification using Deep Learning and Machine Learning}
@@ -8,13 +11,7 @@
 \StudentName{Achille Cannavale}
 \date{dtm@mci4me.at}
 
-\publishers{
-  \begin{tabular}[!b]{rl}
-  \textbf{Student Name} & Achille Cannavale \\[3pt]
-  \textbf{Student Number} & xxxxx \\[3pt]
-  \textbf{Module Name} & xxxxx
-  \end{tabular}\\[20pt]
-  }
+
 
 \begin{titlepage}
     \centering
@@ -108,13 +105,13 @@ Come si può osservare dalla distribuzione, il dataset presenta un \textbf{forte
 
 Questo sbilanciamento costituisce una \textbf{sfida rilevante per i modelli di classificazione}, in quanto tende a favorire la previsione della classe dominante a discapito delle classi minoritarie, che possono essere trascurate o predette con bassa accuratezza.
 
-%Per affrontare questo problema, durante lo sviluppo sono state considerate diverse strategie, tra cui:
-%\begin{itemize}
-%    \item il bilanciamento del dataset,
-%    \item l’uso di tecniche di \textit{data augmentation},
-%    \item l’assegnazione di pesi differenti alle classi durante l’addestramento,
-%    \item e l’adozione di metriche di valutazione più robuste rispetto alla sola accuratezza, come \textit{precision}, \textit{recall} e \textit{F1-score}.
-%\end{itemize}
+Per affrontare questo problema, durante lo sviluppo sono state considerate diverse strategie, tra cui:
+\begin{itemize}
+   \item il bilanciamento del dataset,
+   \item l’uso di tecniche di \textit{data augmentation},
+   \item l’assegnazione di pesi differenti alle classi durante l’addestramento,
+   \item e l’adozione di metriche di valutazione più robuste rispetto alla sola accuratezza, come \textit{precision}, \textit{recall} e \textit{F1-score}.
+\end{itemize}
 
 
 \Chapter{Deep Learning}
@@ -122,34 +119,33 @@ Questo sbilanciamento costituisce una \textbf{sfida rilevante per i modelli di c
 \Section{Trasformazioni}
 Per garantire una buona generalizzazione del modello, e ridurre l'overfitting, è stata utilizzata la tecnica di \textit{data augmentation} tramite la libreria \texttt{Albumentations}. Dopo una fase di sperimentazione, sono state selezionate le seguenti trasformazioni come le più efficaci per il nostro caso di studio:
 
-\begin{table}[!ht]
+%
+\begin{table}[H]
 	\begin{NiceTabular}{rX}[rules/color=[gray]{0.9},rules/width=1pt]
 		\CodeBefore
 		\rowcolors{1}{black!5}{}
 		\rowcolors{3}{blue!5}{}
 		\Body
 		\toprule
-		\textbf{Trasformazione} & \textbf{Descrizione} \\
+		\textbf{Trasformazione}      & \textbf{Parametri}                                \\
 		\midrule
-		\texttt{HorizontalFlip(p=0.5)} & Ribaltamento orizzontale casuale, utile per simmetrie spaziali. \\
-		\texttt{VerticalFlip(p=0.5)} & Ribaltamento verticale per aumentare la varietà. \\
-		\texttt{ColorJitter(...)} & Varia casualmente luminosità, contrasto, saturazione e tonalità. \\
-		\texttt{RandomBrightnessContrast(p=0.3)} & Modifica casuale della luminosità e del contrasto. \\
-		\texttt{MotionBlur(p=0.2)} & Simula sfocatura da movimento. \\
-		\texttt{GaussNoise(p=0.2)} & Aggiunge rumore gaussiano. \\
-		\texttt{CLAHE(p=0.2)} & Migliora il contrasto locale con equalizzazione adattiva. \\
-		\texttt{CoarseDropout(...)} & Oscura aree casuali, simulando occlusioni ottiche. \\
-		\texttt{Resize(Config.IMG\_SIZE)} & Ridimensiona le immagini alla dimensione target. \\
-		\texttt{Normalize(...)} & Normalizza secondo media e deviazione standard del dataset. \\
+		\textbf{A.HorizontalFlip} & p=0.5          \\
+		\textbf{A.VerticalFlip}   & p=0.5        \\
+		\textbf{A.ColorJitter} & brightness=0.2, contrast=0.2, saturation=0.2, hue=0.1, p=0.3\\
+		\textbf{A.RandomBrightnessContrast} & p=0.3\\
+		\textbf{A.MotionBlur} & p=0.2\\
+		\textbf{A.GaussNoise} & p=0.2\\
+		\textbf{A.CLAHE} & p=0.2 \\
+		\textbf{A.CoarseDropout} & num holes ange=(3, 6), hole height range=(10, 20), hole width range=(10, 20), fill="random uniform", p=0.2 \\
+		\textbf{A.Resize} & 800x800 \\
+		\textbf{A.Normalize} & mean=[0.7205, 0.7203, 0.7649], std=[0.2195, 0.2277, 0.1588] \\
 		\bottomrule
 	\end{NiceTabular}
-	\caption{Trasformazioni di \textit{data augmentation} utilizzate nel modello.}
-	\label{tab:augmentazioni}
+	\caption{Lista delle trasformazioni utilizzate per il dataset.}
 \end{table}
+%
 
-
-I parametri utilizzati per la normalizzazione RGB, calcolati direttamente sul dataset, sono riportati nella Tabella \ref{tab:normalizzazione}.
-
+In particolare, I parametri della normalizzazione sono stati calcolati dal dataset stesso:
 \begin{table}[!ht]
 	\begin{NiceTabular}{rX}[rules/color=[gray]{0.9},rules/width=1pt]
 		\CodeBefore
@@ -157,21 +153,20 @@ I parametri utilizzati per la normalizzazione RGB, calcolati direttamente sul da
 		\rowcolors{3}{blue!5}{}
 		\Body
 		\toprule
-		\textbf{Parametro} & \textbf{Valore calcolato sul dataset} \\
+		\textbf{Parametro}      & \textbf{Valore}                                \\
 		\midrule
-		Media RGB & \texttt{[0.7205, 0.7203, 0.7649]} \\
-		Deviazione standard RGB & \texttt{[0.2195, 0.2277, 0.1588]} \\
+		\textbf{Media RGB} & (0.7205, 0.7203, 0.7649) \\
+		\textbf{Deviazione standard RGB} & (0.2195, 0.2277, 0.1588) \\
 		\bottomrule
 	\end{NiceTabular}
-	\caption{Parametri di normalizzazione per canale, calcolati sul dataset.}
-	\label{tab:normalizzazione}
+	\caption{Valori di media e deviazione standard per la normalizzazione delle immagini.}
 \end{table}
 
 
 
 Una delle trasformazioni che ha avuto il maggiore impatto sulle prestazioni è stata la \texttt{CoarseDropout}, che oscura regioni rettangolari casuali dell’immagine, simulando occlusioni ottiche e migliorando la robustezza del modello in scenari reali dove gli oggetti potrebbero essere parzialmente visibili.
 
-\begin{lstlisting}[caption={Configurazione di CoarseDropout con Albumentations}]
+\begin{code}{python}
 A.CoarseDropout(
     num_holes_range=(3, 6),              # Numero casuale di buchi tra 3 e 6
     hole_height_range=(10, 20),          # Altezza dei buchi tra 10 e 20 px
@@ -179,7 +174,8 @@ A.CoarseDropout(
     fill="random_uniform",               # Riempie i buchi con valori casuali
     p=0.2                               # Probabilità di applicazione 20%
 )
-\end{lstlisting}
+\end{code}
+
 
 \Section{Personalizzazione delle Anchor Boxes}
 
@@ -189,23 +185,23 @@ A tal fine, abbiamo estratto tutte le bounding box del dataset di addestramento 
 
 Questa ottimizzazione ha permesso un miglior allineamento tra le proposte del modello e le reali dimensioni degli oggetti nel dataset, contribuendo a un incremento consistente delle metriche di accuratezza. L'impatto dell’adozione delle nuove anchor boxes è illustrato nella Tabella~\ref{tab:custom_anchors}, dove si evidenzia un miglioramento del valore di mAP rispetto alla configurazione predefinita.
 
-\begin{table}[!ht]
-	\centering
-	\begin{NiceTabular}{rX}[rules/color=[gray]{0.9},rules/width=1pt]
-		\CodeBefore
-		\rowcolors{1}{black!5}{}
-		\rowcolors{3}{blue!5}{}
-		\Body
-		\toprule
-		\textbf{Configurazione Anchor} & \textbf{mAP@0.5} \\
-		\midrule
-		Default (COCO-style)         & %valore \\
-		Personalizzate (K-Means)     & %\textbf{0.78} \\
-		\bottomrule
-	\end{NiceTabular}
-	\caption{Confronto tra ancore standard e personalizzate.}
-	\label{tab:custom_anchors}
-\end{table}
+% \begin{table}[!ht]
+% 	\centering
+% 	\begin{NiceTabular}{rX}[rules/color=[gray]{0.9},rules/width=1pt]
+% 		\CodeBefore
+% 		\rowcolors{1}{black!5}{}
+% 		\rowcolors{3}{blue!5}{}
+% 		\Body
+% 		\toprule
+% 		\textbf{Configurazione Anchor} & \textbf{mAP@0.5} \\
+% 		\midrule
+% 		Default (COCO-style)         & %valore \\
+% 		Personalizzate (K-Means)     & %\textbf{0.78} \\
+% 		\bottomrule
+% 	\end{NiceTabular}
+% 	\caption{Confronto tra ancore standard e personalizzate.}
+% 	\label{tab:custom_anchors}
+% \end{table}
 
 
 \Section{Focal Loss}
@@ -239,6 +235,31 @@ Questa scelta ha avuto un impatto positivo sulle metriche di accuratezza e recal
 \Section{Architetture del Modello}
 
 Durante lo sviluppo del progetto sono state testate diverse architetture di rete, combinando vari backbone con due principali tipologie di head: \texttt{Faster R-CNN} e \texttt{RetinaNet}. Le configurazioni provate sono le seguenti:
+
+%
+
+% \begin{table}[!ht]
+% 	\begin{center}
+%     \begin{NiceTabular}{ll}[rules/color={[gray]{0.9}},rules/width=1pt]
+%         \CodeBefore
+%         \rowcolors{1}{black!5}{}
+%         \rowcolors{3}{blue!5}{}
+%         \Body
+%         \toprule
+%         \textbf{Backbone}  & \textbf{Head}  \\
+%         \midrule
+%         ResNet50 & Faster R-CNN \\
+%         ResNet101 & Faster R-CNN \\
+%         MobileNet & Faster R-CNN \\
+%         ResNet50 & RetinaNet \\
+%         ResNet101 & Faster R-CNN \\
+%         ResNet101 & RetinaNet \\
+%         \bottomrule
+%     \end{NiceTabular}
+%     \caption{A Detailed look into the scientific method.}
+% 	\end{center}
+% \end{table}
+%
 
 \begin{itemize}
     \item \textbf{Backbone:} ResNet50 \quad \textbf{Head:} Faster R-CNN
