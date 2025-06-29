@@ -58,7 +58,7 @@ Utilizzando il dataset \hlight{P. vivax malaria infected human blood smears}, ch
 \begin{itemize}
 	\item individuare automaticamente le regioni di interesse (ROI) contenenti cellule
 	\item estrarre le feature significative dalle ROI
-	\item classificare ogni cellula in una delle categorie predefinite, tra cui cellule sane (red blood cell e leucocity) e diversi stadi del parassita infetto (trophozoite, ring, gametocyte, ecc.)
+	\item classificare ogni cellula in una delle categorie predefinite, tra cui cellule sane (red blood cell e leukocyte) e diversi stadi del parassita infetto (trophozoite, ring, gametocyte, schizont)
 \end{itemize}
 
 \begin{warning}
@@ -71,8 +71,54 @@ Utilizzando il dataset \hlight{P. vivax malaria infected human blood smears}, ch
 	\caption{Pipeline Generale del nostro progetto, suddivisa in una fase di Deep Learning per per la rilevazione delle ROI e l'estrazione delle features e una fase di Machine Learning per la classificazione delle cellule.}
 \end{figure}
 %
-\Section{Title Formatting}
 
+\Section{Strumenti utilizzati}
+
+Per lo sviluppo del progetto sono stati adottati diversi strumenti software, suddivisi in base alle funzionalità specifiche per il \textit{deep learning}, il \textit{machine learning} e l’analisi dei dati. La scelta di ciascuno di essi è stata guidata da criteri di efficienza, semplicità d’uso e ampia diffusione nella comunità scientifica.
+
+\begin{itemize}
+    \item \textbf{Deep Learning:} \textit{PyTorch} \\
+    Utilizzato per la progettazione, l’addestramento e la valutazione dei modelli di deep learning. PyTorch si distingue per la sua flessibilità e l’approccio dinamico alla costruzione delle reti neurali, risultando particolarmente adatto per attività di ricerca e prototipazione rapida.
+
+    \item \textbf{Machine Learning:} \textit{Scikit-learn} \\
+    Impiegato per l’implementazione di algoritmi di machine learning tradizionali, grazie alla sua vasta collezione di modelli predefiniti e strumenti per la valutazione delle prestazioni.
+
+    \item \textbf{Strumenti Ausiliari:}
+    \begin{itemize}
+        \item \textit{NumPy} e \textit{Pandas}: utilizzati per la manipolazione, la pulizia e l’analisi dei dati, fondamentali nella fase di preprocessing e gestione dei dataset.
+        \item \textit{Matplotlib}: utilizzata per la visualizzazione grafica dei risultati, utile per l’analisi esplorativa e la presentazione delle performance dei modelli.
+    \end{itemize}
+\end{itemize}
+
+\Section{Composizione Dataset}
+
+Il dataset utilizzato per questo progetto è composto da \textbf{1.328 immagini} contenenti in totale \textbf{86.035 oggetti annotati}. Ogni oggetto rappresenta una singola cellula o elemento biologico rilevato nelle immagini microscopiche, ed è associato a una delle seguenti \textbf{sette classi}:
+
+\begin{itemize}
+    \item \texttt{red blood cell} (83.034)
+    \item \texttt{trophozoite} (1.584)
+    \item \texttt{ring} (522)
+    \item \texttt{difficult} (446)
+    \item \texttt{schizont} (190)
+    \item \texttt{gametocyte} (156)
+    \item \texttt{leukocyte} (103)
+\end{itemize}
+
+Come si può osservare dalla distribuzione, il dataset presenta un \textbf{forte sbilanciamento tra le classi}, con la stragrande maggioranza degli oggetti appartenenti alla categoria \texttt{red blood cell}, che rappresenta da sola circa il \textbf{96{,}5\%} del totale.
+
+Questo sbilanciamento costituisce una \textbf{sfida rilevante per i modelli di classificazione}, in quanto tende a favorire la previsione della classe dominante a discapito delle classi minoritarie, che possono essere trascurate o predette con bassa accuratezza.
+
+%Per affrontare questo problema, durante lo sviluppo sono state considerate diverse strategie, tra cui:
+%\begin{itemize}
+%    \item il bilanciamento del dataset,
+%    \item l’uso di tecniche di \textit{data augmentation},
+%    \item l’assegnazione di pesi differenti alle classi durante l’addestramento,
+%    \item e l’adozione di metriche di valutazione più robuste rispetto alla sola accuratezza, come \textit{precision}, \textit{recall} e \textit{F1-score}.
+%\end{itemize}
+
+
+\Section{Title Formatting1}
+ciao noemi
 To begin a new content, always start the content with a chapter heading. To
 insert the chapter with an additional \lstinline[columns=fixed]{minitoc}
 use \lstinline[columns=fixed]{\Chapter}, which produces an heading as
