@@ -117,7 +117,151 @@ Questo sbilanciamento costituisce una \textbf{sfida rilevante per i modelli di c
 %\end{itemize}
 
 
-\Section{Title Formatting1}
+\Chapter{Deep Learning}
+
+\Section{Trasformazioni}
+Per garantire una buona generalizzazione del modello, e ridurre l'overfitting, è stata utilizzata la tecnica di \textit{data augmentation} tramite la libreria \texttt{Albumentations}. Dopo una fase di sperimentazione, sono state selezionate le seguenti trasformazioni come le più efficaci per il nostro caso di studio:
+
+\begin{table}[!ht]
+	\begin{NiceTabular}{rX}[rules/color=[gray]{0.9},rules/width=1pt]
+		\CodeBefore
+		\rowcolors{1}{black!5}{}
+		\rowcolors{3}{blue!5}{}
+		\Body
+		\toprule
+		\textbf{Trasformazione} & \textbf{Descrizione} \\
+		\midrule
+		\texttt{HorizontalFlip(p=0.5)} & Ribaltamento orizzontale casuale, utile per simmetrie spaziali. \\
+		\texttt{VerticalFlip(p=0.5)} & Ribaltamento verticale per aumentare la varietà. \\
+		\texttt{ColorJitter(...)} & Varia casualmente luminosità, contrasto, saturazione e tonalità. \\
+		\texttt{RandomBrightnessContrast(p=0.3)} & Modifica casuale della luminosità e del contrasto. \\
+		\texttt{MotionBlur(p=0.2)} & Simula sfocatura da movimento. \\
+		\texttt{GaussNoise(p=0.2)} & Aggiunge rumore gaussiano. \\
+		\texttt{CLAHE(p=0.2)} & Migliora il contrasto locale con equalizzazione adattiva. \\
+		\texttt{CoarseDropout(...)} & Oscura aree casuali, simulando occlusioni ottiche. \\
+		\texttt{Resize(Config.IMG\_SIZE)} & Ridimensiona le immagini alla dimensione target. \\
+		\texttt{Normalize(...)} & Normalizza secondo media e deviazione standard del dataset. \\
+		\bottomrule
+	\end{NiceTabular}
+	\caption{Trasformazioni di \textit{data augmentation} utilizzate nel modello.}
+	\label{tab:augmentazioni}
+\end{table}
+
+
+I parametri utilizzati per la normalizzazione RGB, calcolati direttamente sul dataset, sono riportati nella Tabella \ref{tab:normalizzazione}.
+
+\begin{table}[!ht]
+	\begin{NiceTabular}{rX}[rules/color=[gray]{0.9},rules/width=1pt]
+		\CodeBefore
+		\rowcolors{1}{black!5}{}
+		\rowcolors{3}{blue!5}{}
+		\Body
+		\toprule
+		\textbf{Parametro} & \textbf{Valore calcolato sul dataset} \\
+		\midrule
+		Media RGB & \texttt{[0.7205, 0.7203, 0.7649]} \\
+		Deviazione standard RGB & \texttt{[0.2195, 0.2277, 0.1588]} \\
+		\bottomrule
+	\end{NiceTabular}
+	\caption{Parametri di normalizzazione per canale, calcolati sul dataset.}
+	\label{tab:normalizzazione}
+\end{table}
+
+
+
+Una delle trasformazioni che ha avuto il maggiore impatto sulle prestazioni è stata la \texttt{CoarseDropout}, che oscura regioni rettangolari casuali dell’immagine, simulando occlusioni ottiche e migliorando la robustezza del modello in scenari reali dove gli oggetti potrebbero essere parzialmente visibili.
+
+\begin{lstlisting}[caption={Configurazione di CoarseDropout con Albumentations}]
+A.CoarseDropout(
+    num_holes_range=(3, 6),              # Numero casuale di buchi tra 3 e 6
+    hole_height_range=(10, 20),          # Altezza dei buchi tra 10 e 20 px
+    hole_width_range=(10, 20),           # Larghezza dei buchi tra 10 e 20 px
+    fill="random_uniform",               # Riempie i buchi con valori casuali
+    p=0.2                               # Probabilità di applicazione 20%
+)
+\end{lstlisting}
+
+\Section{Personalizzazione delle Anchor Boxes}
+
+Per migliorare le prestazioni del modello di object detection, abbiamo effettuato un’analisi approfondita della distribuzione delle dimensioni delle bounding box presenti nel dataset. Le anchor boxes predefinite, come quelle utilizzate nei dataset generici come COCO, non risultavano ottimali per il nostro caso specifico, in quanto le cellule da rilevare presentano dimensioni e proporzioni piuttosto omogenee e differenti rispetto agli oggetti comuni.
+
+A tal fine, abbiamo estratto tutte le bounding box del dataset di addestramento e calcolato le dimensioni (larghezza e altezza) di ciascuna. I dati così ottenuti sono stati utilizzati come input per un algoritmo di clustering K-Means, impostato per individuare i centroidi rappresentativi delle dimensioni più ricorrenti. In particolare, è stato scelto un numero di cluster pari a 6, corrispondente al numero di anchor boxes da definire. Le nuove ancore suggerite sono state quindi utilizzate per sostituire quelle standard all’interno del modello.
+
+Questa ottimizzazione ha permesso un miglior allineamento tra le proposte del modello e le reali dimensioni degli oggetti nel dataset, contribuendo a un incremento consistente delle metriche di accuratezza. L'impatto dell’adozione delle nuove anchor boxes è illustrato nella Tabella~\ref{tab:custom_anchors}, dove si evidenzia un miglioramento del valore di mAP rispetto alla configurazione predefinita.
+
+\begin{table}[!ht]
+	\centering
+	\begin{NiceTabular}{rX}[rules/color=[gray]{0.9},rules/width=1pt]
+		\CodeBefore
+		\rowcolors{1}{black!5}{}
+		\rowcolors{3}{blue!5}{}
+		\Body
+		\toprule
+		\textbf{Configurazione Anchor} & \textbf{mAP@0.5} \\
+		\midrule
+		Default (COCO-style)         & %valore \\
+		Personalizzate (K-Means)     & %\textbf{0.78} \\
+		\bottomrule
+	\end{NiceTabular}
+	\caption{Confronto tra ancore standard e personalizzate.}
+	\label{tab:custom_anchors}
+\end{table}
+
+
+\Section{Focal Loss}
+Un aspetto cruciale di questo problema è il forte sbilanciamento del dataset: le cellule sane (globuli rossi e leucociti) sono molto più numerose rispetto alle cellule infette, che rappresentano una minoranza spesso difficile da distinguere.
+
+Questo squilibrio comporta che durante l’addestramento i modelli tendano a privilegiare la classificazione corretta delle classi maggioritarie, a discapito di quelle minoritarie, che sono però di massima importanza per una diagnosi accurata e precoce della malaria.
+
+Per mitigare questo problema, abbiamo adottato la \textit{Focal Loss} (Lin et al., 2017), una funzione di perdita che estende la Cross Entropy introducendo un termine di modulazione. Tale termine riduce il peso degli esempi facili (correttamente classificati) e concentra l’apprendimento sugli esempi difficili o mal classificati, tipicamente appartenenti alle classi minoritarie. La formulazione della Focal Loss è:
+
+\[
+\text{FL}(p_t) = -\alpha (1 - p_t)^\gamma \log(p_t)
+\]
+
+dove \( p_t \) è la probabilità stimata per la classe corretta, \(\alpha\) è un fattore di bilanciamento tra classi e \(\gamma\), detto "focusing parameter", controlla la riduzione del peso degli esempi facili.
+
+Nel nostro caso, i parametri \(\alpha = 0.25\) e \(\gamma = 3.0\) sono stati scelti per ottenere un buon equilibrio tra stabilità e miglioramento delle performance. L’uso della Focal Loss ha permesso di:
+
+\begin{itemize}
+    \item ridurre l’impatto degli esempi di sfondo abbondanti,
+    \item aumentare la sensibilità verso le cellule infette meno rappresentate,
+    \item migliorare la convergenza e la capacità discriminativa del modello.
+\end{itemize}
+
+La funzione di perdita per la regressione delle bounding box è stata mantenuta invariata, affidandosi alla \textit{Smooth L1 Loss}, che risulta efficace per la localizzazione precisa delle cellule.
+
+Questa scelta ha avuto un impatto positivo sulle metriche di accuratezza e recall, fondamentali in ambito medico per evitare falsi negativi.
+
+
+%foto
+
+\Section{Architetture del Modello}
+
+Durante lo sviluppo del progetto sono state testate diverse architetture di rete, combinando vari backbone con due principali tipologie di head: \texttt{Faster R-CNN} e \texttt{RetinaNet}. Le configurazioni provate sono le seguenti:
+
+\begin{itemize}
+    \item \textbf{Backbone:} ResNet50 \quad \textbf{Head:} Faster R-CNN
+    \item \textbf{Backbone:} ResNet101 \quad \textbf{Head:} Faster R-CNN
+    \item \textbf{Backbone:} MobileNet \quad \textbf{Head:} Faster R-CNN
+    \item \textbf{Backbone:} ResNet50 \quad \textbf{Head:} RetinaNet
+    \item \textbf{Backbone:} ResNeXt101 \quad \textbf{Head:} Faster R-CNN
+    \item \textbf{Backbone:} ResNet101 \quad \textbf{Head:} RetinaNet
+\end{itemize}
+
+L’architettura che ha fornito i migliori risultati, sia in termini di accuratezza sia di generalizzazione, è stata quella composta da \textbf{ResNeXt101} come backbone e \textbf{Faster R-CNN} come head. In Figura \ref{fig:model_best} è riportata una rappresentazione schematica della pipeline del modello.
+
+%foto
+
+Per confronto, è utile visualizzare anche i risultati ottenuti con l’architettura meno performante (MobileNet + Faster R-CNN), mostrati in Figura \ref{fig:model_worst}. Questo confronto evidenzia chiaramente le differenze di accuratezza e qualità della predizione.
+
+%foto
+
+\Section{Valutazione del Modello}
+
+
+
+\Section{Title Formatting}
 ciao noemi
 To begin a new content, always start the content with a chapter heading. To
 insert the chapter with an additional \lstinline[columns=fixed]{minitoc}
