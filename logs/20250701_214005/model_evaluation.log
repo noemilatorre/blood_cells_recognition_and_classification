@@ -1,0 +1,41 @@
+2025-07-01 21:40:05,856 - INFO - Logger inizializzato con successo.
+2025-07-01 21:45:01,639 - INFO - [Stage 1] Best Parameters: {'selector__k': 700, 'classifier__n_estimators': 300, 'classifier__min_samples_split': 10, 'classifier__max_depth': 10}
+2025-07-01 21:45:01,934 - INFO - 
+--- Evaluation: Stage 1 - Healthy vs Infected ---
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.30      0.77      0.43       488
+           1       0.99      0.94      0.96     14214
+
+    accuracy                           0.93     14702
+   macro avg       0.65      0.86      0.70     14702
+weighted avg       0.97      0.93      0.95     14702
+
+Confusion Matrix:
+[[  378   110]
+ [  874 13340]]
+Balanced Accuracy: 0.8565507453976338
+F1 Macro: 0.6994565325781297
+--------------------------------------------------------------------------------
+2025-07-01 22:32:05,777 - INFO - [Stage 2] Best Parameters: {'selector__k': 700, 'classifier__kernel': 'rbf', 'classifier__gamma': 'scale', 'classifier__C': 0.1}
+2025-07-01 22:32:06,183 - INFO - 
+--- Evaluation: Stage 2 - Infected Subtypes ---
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00     13333
+           1       0.07      0.57      0.12         7
+
+    accuracy                           1.00     13340
+   macro avg       0.53      0.78      0.56     13340
+weighted avg       1.00      1.00      1.00     13340
+
+Confusion Matrix:
+[[13276    57]
+ [    3     4]]
+Balanced Accuracy: 0.7835767322754497
+F1 Macro: 0.5576962184242402
+--------------------------------------------------------------------------------
+2025-07-01 22:32:06,184 - INFO - 
+Pipeline Completed Successfully.

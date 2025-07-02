@@ -1,0 +1,28 @@
+2025-07-01 14:05:59,379 - INFO - Logger inizializzato con successo.
+2025-07-01 14:13:41,939 - INFO - Best parameters for Random Forest: {'selector__k': 700, 'classifier__n_estimators': 200, 'classifier__min_samples_split': 5, 'classifier__max_depth': 5}
+2025-07-01 14:13:41,943 - INFO - Best score for Random Forest: 0.9334
+2025-07-01 14:13:42,562 - INFO - 
+--- Evaluation: Random Forest ---
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.93      0.94      0.93     14214
+           1       0.94      0.93      0.93     14214
+
+    accuracy                           0.93     28428
+   macro avg       0.93      0.93      0.93     28428
+weighted avg       0.93      0.93      0.93     28428
+
+Confusion Matrix:
+[[13296   918]
+ [  997 13217]]
+Balanced Accuracy: 0.9326368369213451
+F1 Macro: 0.9326363167009263
+--------------------------------------------------------------------------------
+2025-07-01 14:13:42,577 - INFO - 
+Confronto Finale:
+           Model                                        Best Params  \
+0  Random Forest  {'selector__k': 700, 'classifier__n_estimators...   
+
+   Balanced Accuracy  F1 Macro  
+0           0.932637  0.932636  
