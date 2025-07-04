@@ -164,7 +164,7 @@ In particolare, I parametri della normalizzazione sono stati calcolati dal datas
 
 
 
-Una delle trasformazioni che ha avuto il maggiore impatto sulle prestazioni è stata la \texttt{CoarseDropout}, che oscura regioni rettangolari casuali dell’immagine, simulando occlusioni ottiche e migliorando la robustezza del modello in scenari reali dove gli oggetti potrebbero essere parzialmente visibili.
+Una delle trasformazioni che ha avuto il maggiore impatto sulle prestazioni è stata la \texttt{CoarseDropout} (fig. \ref{fig:coarse_dropout_example}), che oscura regioni rettangolari casuali dell’immagine, simulando occlusioni ottiche e migliorando la robustezza del modello in scenari reali dove gli oggetti potrebbero essere parzialmente visibili.
 
 \begin{code}{python}
 A.CoarseDropout(
@@ -177,6 +177,16 @@ A.CoarseDropout(
 \end{code}
 
 
+%
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=.2\linewidth]{figures/corse_result.png}
+	\caption{Esempio di CoarseDropout applicata su una cellula.}
+	\label{fig:coarse_dropout_example}
+\end{figure}
+%
+
+
 \Section{Personalizzazione delle Anchor Boxes}
 
 Per migliorare le prestazioni del modello di object detection, abbiamo effettuato un’analisi approfondita della distribuzione delle dimensioni delle bounding box presenti nel dataset. Le anchor boxes predefinite, come quelle utilizzate nei dataset generici come COCO, non risultavano ottimali per il nostro caso specifico, in quanto le cellule da rilevare presentano dimensioni e proporzioni piuttosto omogenee e differenti rispetto agli oggetti comuni.
@@ -185,23 +195,23 @@ A tal fine, abbiamo estratto tutte le bounding box del dataset di addestramento 
 
 Questa ottimizzazione ha permesso un miglior allineamento tra le proposte del modello e le reali dimensioni degli oggetti nel dataset, contribuendo a un incremento consistente delle metriche di accuratezza. L'impatto dell’adozione delle nuove anchor boxes è illustrato nella Tabella~\ref{tab:custom_anchors}, dove si evidenzia un miglioramento del valore di mAP rispetto alla configurazione predefinita.
 
-% \begin{table}[!ht]
-% 	\centering
-% 	\begin{NiceTabular}{rX}[rules/color=[gray]{0.9},rules/width=1pt]
-% 		\CodeBefore
-% 		\rowcolors{1}{black!5}{}
-% 		\rowcolors{3}{blue!5}{}
-% 		\Body
-% 		\toprule
-% 		\textbf{Configurazione Anchor} & \textbf{mAP@0.5} \\
-% 		\midrule
-% 		Default (COCO-style)         & %valore \\
-% 		Personalizzate (K-Means)     & %\textbf{0.78} \\
-% 		\bottomrule
-% 	\end{NiceTabular}
-% 	\caption{Confronto tra ancore standard e personalizzate.}
-% 	\label{tab:custom_anchors}
-% \end{table}
+\begin{table}[!ht]
+	\centering
+	\begin{NiceTabular}{rX}[rules/color=[gray]{0.9},rules/width=1pt]
+		\CodeBefore
+		\rowcolors{1}{black!5}{}
+		\rowcolors{3}{blue!5}{}
+		\Body
+		\toprule
+		\textbf{Configurazione Anchor} & \textbf{mAP@0.5} \\
+		\midrule
+		Default (COCO-style)         & valore \\
+		Personalizzate (K-Means)     & \textbf{0.78} \\
+		\bottomrule
+	\end{NiceTabular}
+	\caption{Confronto tra ancore standard e personalizzate.}
+	\label{tab:custom_anchors}
+\end{table}
 
 
 \Section{Focal Loss}
@@ -230,37 +240,46 @@ La funzione di perdita per la regressione delle bounding box è stata mantenuta 
 Questa scelta ha avuto un impatto positivo sulle metriche di accuratezza e recall, fondamentali in ambito medico per evitare falsi negativi.
 
 
-%foto
+%
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=.6\linewidth]{figures/focal_loss.png}
+	\caption{Grafico Focal Loss.}
+	\label{fig:focal_loss}
+\end{figure}
+%
 
 \Section{Architetture del Modello}
 
-Durante lo sviluppo del progetto sono state testate diverse architetture di rete, combinando vari backbone con due principali tipologie di head: \texttt{Faster R-CNN} e \texttt{RetinaNet}. Le configurazioni provate sono le seguenti:
+Durante lo sviluppo del progetto sono state testate diverse architetture di rete neurale, combinando vari \textbf{backbone} con due principali tipologie di \textbf{head}: \hlight{Faster R-CNN} e \hlight{RetinaNet}. L’obiettivo era identificare la combinazione più efficace in termini di accuratezza, capacità di generalizzazione e prestazioni computazionali.
+
+In un modello di object detection, il \textbf{backbone} funge da estrattore di feature: riceve l’immagine in input e produce mappe di caratteristiche utili per individuare e classificare gli oggetti. I backbone testati nel progetto includono:
+
+\begin{itemize}
+	\item \hlight{ResNet50}: una rete convoluzionale profonda basata su \hlight{residual blocks}, che permette un’ottima propagazione del gradiente anche in reti molto profonde.
+	\item \hlight{ResNet101}: una versione più profonda di ResNet50, che migliora la rappresentazione delle feature a scapito di un maggiore costo computazionale.
+	\item \hlight{MobileNet}: una rete più leggera ed efficiente, pensata per dispositivi mobili, ma con performance inferiori in contesti complessi. 
+	\item \hlight{ResNeXt101}: un’estensione di ResNet che introduce la dimensione della cardinalità (cioè il numero di percorsi paralleli in ogni blocco), migliorando la capacità di rappresentazione senza aumentare drasticamente i parametri.
+\end{itemize}
+
+
+Il \textbf{detection head}, invece, riceve le feature estratte e produce le predizioni finali (classi e bounding box). Le due architetture di head utilizzate sono:
+
+\begin{itemize}
+	\item \hlight{Faster R-CNN}: un approccio a due stadi, in cui un \hlight{Region Proposal Network (RPN)} genera proposte di oggetti che vengono successivamente classificate e regolarizzate. È noto per l’elevata accuratezza, ma è più lento rispetto ad approcci monostadio.
+	\item \hlight{RetinaNet}: un metodo \textbf{one-stage} che introduce la \hlight{Focal Loss} per gestire lo squilibrio tra oggetti e background, migliorando le performance su oggetti piccoli o rari. Offre un buon compromesso tra accuratezza e velocità.
+\end{itemize}
 
 %
-
-% \begin{table}[!ht]
-% 	\begin{center}
-%     \begin{NiceTabular}{ll}[rules/color={[gray]{0.9}},rules/width=1pt]
-%         \CodeBefore
-%         \rowcolors{1}{black!5}{}
-%         \rowcolors{3}{blue!5}{}
-%         \Body
-%         \toprule
-%         \textbf{Backbone}  & \textbf{Head}  \\
-%         \midrule
-%         ResNet50 & Faster R-CNN \\
-%         ResNet101 & Faster R-CNN \\
-%         MobileNet & Faster R-CNN \\
-%         ResNet50 & RetinaNet \\
-%         ResNet101 & Faster R-CNN \\
-%         ResNet101 & RetinaNet \\
-%         \bottomrule
-%     \end{NiceTabular}
-%     \caption{A Detailed look into the scientific method.}
-% 	\end{center}
-% \end{table}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{figures/general_pipeline.png}
+  \caption{Grafico Focal Loss.}
+  \label{fig:general_pipeline}
+\end{figure}
 %
 
+Le configurazioni testate sono le seguenti:
 \begin{itemize}
     \item \textbf{Backbone:} ResNet50 \quad \textbf{Head:} Faster R-CNN
     \item \textbf{Backbone:} ResNet101 \quad \textbf{Head:} Faster R-CNN
@@ -271,6 +290,17 @@ Durante lo sviluppo del progetto sono state testate diverse architetture di rete
 \end{itemize}
 
 L’architettura che ha fornito i migliori risultati, sia in termini di accuratezza sia di generalizzazione, è stata quella composta da \textbf{ResNeXt101} come backbone e \textbf{Faster R-CNN} come head. In Figura \ref{fig:model_best} è riportata una rappresentazione schematica della pipeline del modello.
+
+
+
+%
+\begin{figure}[ht]
+	\centering
+	\includesvg[width=.7\linewidth]{figures/resnext.svg}
+	\caption{Pipeline Generale del miglior modello, composto da ResNeXt101 come backbone e Faster R-CNN come head.}
+	\label{fig:model_best}
+\end{figure}
+%
 
 %
 \begin{table}[H]
