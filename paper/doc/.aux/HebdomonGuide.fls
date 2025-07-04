@@ -1102,6 +1102,9 @@ INPUT ./svg-inkscape/resnext_svg-tex.pdf
 INPUT ./svg-inkscape/resnext_svg-tex.pdf
 INPUT ./svg-inkscape/resnext_svg-tex.pdf
 INPUT ./svg-inkscape/resnext_svg-tex.pdf
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/fira/FiraSans-Bold-osf-t1.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/public/fira/FiraSans-Bold-osf-t1.vf
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/fira/FiraSans-Bold-osf-t1--base.tfm
 INPUT ./figures/loss.png
 INPUT ./figures/loss.png
 INPUT ./figures/loss.png
@@ -1121,6 +1124,11 @@ INPUT .aux/HebdomonGuide.mtc
 INPUT .aux/HebdomonGuide.mtc
 OUTPUT .aux/HebdomonGuide.mtc
 INPUT .aux/HebdomonGuide.mtc3
+INPUT ./figures/class_distribution.png
+INPUT ./figures/class_distribution.png
+INPUT ./figures/class_distribution.png
+INPUT ./figures/class_distribution.png
+INPUT ./figures/class_distribution.png
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmtt10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/base/latin1.def
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/base/latin1.def
@@ -1137,15 +1145,12 @@ INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/base/latin1.def
 INPUT ./.aux/_minted/79E4EC240BCF63B6239CDF75E21BF80C.highlight.minted
 INPUT ./.aux/_minted/79E4EC240BCF63B6239CDF75E21BF80C.highlight.minted
 INPUT .aux/_minted/79E4EC240BCF63B6239CDF75E21BF80C.highlight.minted
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/fira/FiraSans-Bold-osf-t1.tfm
 INPUT ./.aux/_minted/420A9086BB4F483CC18FDF09861F10A7.highlight.minted
 INPUT ./.aux/_minted/420A9086BB4F483CC18FDF09861F10A7.highlight.minted
 INPUT .aux/_minted/420A9086BB4F483CC18FDF09861F10A7.highlight.minted
 INPUT ./.aux/_minted/93267A67C0E1C322D496F5336163E5C1.highlight.minted
 INPUT ./.aux/_minted/93267A67C0E1C322D496F5336163E5C1.highlight.minted
 INPUT .aux/_minted/93267A67C0E1C322D496F5336163E5C1.highlight.minted
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/public/fira/FiraSans-Bold-osf-t1.vf
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/fira/FiraSans-Bold-osf-t1--base.tfm
 INPUT ./.aux/_minted/BFE44468D70693EB10B4777256A9E5F8.highlight.minted
 INPUT ./.aux/_minted/BFE44468D70693EB10B4777256A9E5F8.highlight.minted
 INPUT .aux/_minted/BFE44468D70693EB10B4777256A9E5F8.highlight.minted

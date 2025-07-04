@@ -274,7 +274,7 @@ Il \textbf{detection head}, invece, riceve le feature estratte e produce le pred
 \begin{figure}[H]
   \centering
   \includegraphics[width=\linewidth]{figures/general_pipeline.png}
-  \caption{Grafico Focal Loss.}
+  \caption{Pipeline Generale di una rete.}
   \label{fig:general_pipeline}
 \end{figure}
 %
@@ -332,30 +332,135 @@ L’architettura che ha fornito i migliori risultati, sia in termini di accurate
 
 %foto
 
-\Section{Valutazione del Modello}
+\Section{Valutazione}
+\Subsection{Iperparametri}
 % Tabella con i parametri
+\begin{table}[!ht]
+    \begin{NiceTabular}{rX}[rules/color={[gray]{0.9}},rules/width=1pt]
+        \CodeBefore
+        \rowcolors{1}{black!5}{}
+        \rowcolors{3}{blue!5}{}
+        \Body
+        \toprule
+        \textbf{Parameter} & \textbf{Value} \\
+        \midrule
+        \textbf{BATCH\_SIZE} & 4 \\
+        \textbf{NUM\_EPOCHS} & 5 \\
+        \textbf{LEARNING\_RATE} & 0.0003 \\
+        \textbf{WEIGHT\_DECAY} & 0.001 \\
+        \textbf{PATIENCE} & 5 \\
+        \textbf{OPTIM} & AdamW \\
+        \textbf{SCHEDULER} & ReduceLROnPlateau \\
+        \textbf{CustomAnchor} & True \\
+        \textbf{loss} & FocalLoss \\
+        \textbf{VAL\_SIZE} & 0.2 \\
+        \bottomrule
+    \end{NiceTabular}
+    \caption{Configurazione degli Iperparametri del Miglior Modello.}
+    \label{tab:hyperparameters}
+\end{table}
+%
+
+Gli iperparametri riportati nella Tabella \ref{tab:hyperparameters} sono il risultato di un'attenta fase di sperimentazione in cui sono stati confrontati diversi valori e configurazioni. In particolare, si è osservato che un numero di epoche pari a 5 è sufficiente per ottenere una buona convergenza: aumentare il numero di epoche a 10 non ha portato a miglioramenti significativi in termini di accuratezza o generalizzazione.
+
+Per quanto riguarda l’ottimizzatore, si è confrontato l’uso di Adam e \textbf{AdamW}, con quest’ultimo che ha dimostrato maggiore stabilità e performance migliori, probabilmente grazie alla gestione più efficace della regolarizzazione tramite \textbf{weight decay}.
+
+La politica di gestione del learning rate è stata valutata tra \textbf{ReduceLROnPlateau} e \textbf{CosineAnnealingLR}. \textbf{ReduceLROnPlateau} si è rivelata più adatta al nostro task, poiché riduceva il learning rate solo quando la metrica di validazione non migliorava, consentendo un adattamento più dinamico e mirato rispetto al coseno annealing, che segue un programma fisso.
+
+Infine, la scelta della funzione di perdita si è concentrata tra la \textbf{standard loss} e la \textbf{Focal Loss}. Quest’ultima ha mostrato un vantaggio concreto nella gestione dello sbilanciamento delle classi presenti nel dataset, migliorando la capacità del modello di rilevare correttamente anche le classi meno rappresentate.
+
+
+
+\subsection{Visualizzazione dei Risultati}
+In questa sezione vengono mostrati i risultati ottenuti dall’addestramento del modello. La Figura \ref{fig:loss_curve} presenta il grafico dell’andamento della \hlight{training loss} e della \hlight{validation loss} durante le epoche, evidenziando una buona convergenza e un’assenza di overfitting significativo.
+
 % Immagine della loss
 \begin{figure}[H]
   \centering
   \includegraphics[width=.6\linewidth]{figures/loss.png}
   \caption{Grafico della Training Loss e della Validation Loss.}
-  \label{fig:loss}
+  \label{fig:loss_curve}
 \end{figure}
 %
+
+La Figura \ref{fig:detection_example} mostra un esempio di output del modello su un’immagine del set di test. Le regioni di interesse (ROI) delle cellule sono rappresentate tramite rettangoli di diversi colori: le ROI esatte del dataset sono in \textcolor{teal}{verde}, quelle predette dal modello in \textcolor{red}{rosso}, mentre in \textcolor{blue}{blu} sono evidenziate le cellule non rilevate. Il modello raggiunge un valore medio di \textbf{mIoU} pari a \hlight{0.88}, confermando un’alta precisione nella localizzazione degli oggetti, con un’ottima corrispondenza tra predizioni e annotazioni di riferimento.
 % Immagine esempio di un risultato
 \begin{figure}[H]
   \centering
   \includegraphics[width=.6\linewidth]{figures/ex_result.png}
   \caption{Risultato di esempio. In rosso sono evidenziate le bounding box correttamente previste dal modello, in blu quelle mancate.}
-  \label{fig:loss}
+  \label{fig:detection_example}
 \end{figure}
 %
 
 \Section{Estrazione delle Feature}
+Per l'analisi delle rappresentazioni apprese dal modello, abbiamo implementato una procedura di estrazione delle caratteristiche visive associate alle ROIs predette. Il metodo si basa su un modello di object detection preaddestrato, nello specifico una variante di \textbf{Faster R-CNN con Feature Pyramid Network (FPN)}, che consente di sfruttare rappresentazioni multi-scala per migliorare la localizzazione e classificazione di oggetti di dimensioni variabili.
 
+Durante l'inferenza, ogni immagine del dataset viene elaborata per ottenere le predizioni del modello, comprensive di bounding boxes e punteggi di confidenza. Le predizioni con uno score inferiore a \texttt{score\_threshold} (default: 0.5) vengono scartate. Le restanti predizioni vengono confrontate con i ground truth tramite l'Intersection over Union (IoU), mantenendo solo quelle che superano una soglia di similarità. Questo matching consente di associare ciascuna ROI predetta alla corrispondente annotazione reale.
+
+Le feature vengono estratte dai livelli intermedi del modello tramite la \textbf{backbone con FPN}, che restituisce una gerarchia di mappe di attivazione a risoluzioni diverse. A partire da queste mappe, il modulo \texttt{box\_roi\_pool} seleziona e aggrega le porzioni rilevanti in base alle bounding boxes predette. Le feature pooled vengono poi elaborate dalla \texttt{box\_head}, e ulteriormente arricchite concatenando i \textbf{logit del classificatore} (cls\_score), ottenendo così una rappresentazione congiunta che riflette sia le informazioni visive locali sia le risposte semantiche del modello.
+
+
+Ogni vettore di feature viene associato a metadati espliciti, tra cui:
+\begin{itemize}
+	\item l'identificativo dell'immagine
+	\item le coordinate della bounding box predetta
+	\item il punteggio di confidenza
+	\item l’etichetta del ground truth associato
+\end{itemize}
+ 
+
+Tutti i dati raccolti vengono infine aggregati in un dataframe strutturato, che unisce metadati e rappresentazioni numeriche. Il risultato viene salvato in formato CSV per facilitarne l’analisi quantitativa e la visualizzazione.
 
 
 \Chapter{Machine Learning}
+
+\Section{Introduzione}
+La parte di Machine Learning ha come input il file csv generato nella parte di Deep Learning, che contiene le feature estratte dalle ROIs.
+
+In un primo momento, la struttura generale di questa parte era costituita da un solo Classificatore, che aveva il compito di distinguere le cellule in tutte e 7 le classi. Tuttavia, a causa della grande \hlight{class imbalance} del dataset (\ref{fig:sbilanciamento}), si è deciso di adottare un approccio diverso, creando 2 classificatori distinti:
+\begin{itemize}
+	\item \textbf{Classificatore 1:} \hlight{RBC vs Infected Cells} \\
+	Questo classificatore ha il compito di distinguere le cellule sane (RBC e Leukocyte) dalle cellule infette (tutte le altre classi).
+	\item \textbf{Classificatore 2:} \hlight{Infected Cells Classification} \\
+	Questo classificatore si occupa di distinguere le cellule infette tra loro, classificandole in \texttt{trophozoite}, \texttt{ring}, \texttt{difficult}, \texttt{schizont} e \texttt{gametocyte}
+\end{itemize}
+
+% 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.7\linewidth]{figures/class_distribution.png}
+  \caption{Distribuzione delle classi nel dataset prima del preprocessing.}
+  \label{fig:sbilanciamento}
+\end{figure}
+%
+
+\Section{Preprocessing}
+\Subsection{BorderlineSMOTE}
+Per affrontare il problema dello sbilanciamento delle classi, è stato utilizzato l'algoritmo \textbf{BorderlineSMOTE}, una variante del Synthetic Minority Over-sampling Technique (SMOTE). Questo metodo genera nuovi campioni sintetici per le classi minoritare, migliorando la capacità del modello di apprendere le caratteristiche distintive delle classi meno rappresentate.
+
+\Subsection{Variance Threshold}
+Per ridurre la dimensionalità del dataset e migliorare le prestazioni del modello, è stata applicata la tecnica di \textbf{Variance Threshold}. Questa tecnica rimuove le feature con una varianza inferiore a una soglia specificata, eliminando le caratteristiche che non apportano informazioni significative. Nel nostro caso, è stata impostata una soglia di 1e-5.
+
+\Section{Feature Selection: SelectKBest}
+
+\Section{Dimension Reduction: LDA}
+
+\Section{Classifier}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \Section{Title Formatting}
 To begin a new content, always start the content with a chapter heading. To
