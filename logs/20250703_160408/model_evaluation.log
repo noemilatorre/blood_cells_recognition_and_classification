@@ -3,3 +3,54 @@
 ========================================
 Random Search + Training Stage 1: Healthy vs Infected (svm)
 ========================================
+2025-07-03 16:26:49,039 - INFO - Best parameters for Stage 1 - svm: {'selector__k': 700, 'classifier__kernel': 'poly', 'classifier__gamma': 'auto', 'classifier__C': 100}
+2025-07-03 16:26:49,042 - INFO - Best F1 Macro Score for Stage 1 - svm: 0.7517
+2025-07-03 16:26:53,099 - INFO - 
+--- Evaluation: Stage 1 - svm ---
+2025-07-03 16:26:53,099 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.99      0.96      0.98     14195
+           1       0.40      0.66      0.50       507
+
+    accuracy                           0.95     14702
+   macro avg       0.70      0.81      0.74     14702
+weighted avg       0.97      0.95      0.96     14702
+
+2025-07-03 16:26:53,099 - INFO - Confusion Matrix:
+[[13696   499]
+ [  170   337]]
+2025-07-03 16:26:53,099 - INFO - Balanced Accuracy: 0.8147705285565312
+2025-07-03 16:26:53,099 - INFO - F1 Macro: 0.7390102930476189
+2025-07-03 16:26:53,099 - INFO - --------------------------------------------------------------------------------
+2025-07-03 16:26:57,059 - INFO - Number of classes in Stage 2: 5
+2025-07-03 16:26:57,059 - INFO - 
+========================================
+Random Search + Training Stage 2: Infected Subtype Classification (svm ➡ SVM)
+========================================
+2025-07-03 16:27:23,355 - INFO - Best parameters for Stage 2 - svm ➡ SVM: {'selector__k': 700, 'classifier__kernel': 'poly', 'classifier__gamma': 'auto', 'classifier__C': 100}
+2025-07-03 16:27:23,356 - INFO - Best F1 Macro Score for Stage 2 - svm ➡ SVM: 0.2946
+2025-07-03 16:27:23,371 - INFO - 
+--- Evaluation: Stage 2 - svm ➡ SVM ---
+2025-07-03 16:27:23,371 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.74      0.53      0.62       193
+           1       0.19      0.22      0.21        18
+           2       0.31      0.53      0.39        66
+           3       0.24      0.36      0.29        25
+           4       0.13      0.10      0.11        31
+
+    accuracy                           0.46       333
+   macro avg       0.32      0.35      0.32       333
+weighted avg       0.53      0.46      0.48       333
+
+2025-07-03 16:27:23,371 - INFO - Confusion Matrix:
+[[102  14  52  16   9]
+ [  7   4   5   0   2]
+ [ 14   0  35  10   7]
+ [  5   1   8   9   2]
+ [ 10   2  14   2   3]]
+2025-07-03 16:27:23,371 - INFO - Balanced Accuracy: 0.3475593710800129
+2025-07-03 16:27:23,371 - INFO - F1 Macro: 0.32235299703382736
+2025-07-03 16:27:23,371 - INFO - --------------------------------------------------------------------------------

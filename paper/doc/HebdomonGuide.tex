@@ -272,6 +272,30 @@ Durante lo sviluppo del progetto sono state testate diverse architetture di rete
 
 L’architettura che ha fornito i migliori risultati, sia in termini di accuratezza sia di generalizzazione, è stata quella composta da \textbf{ResNeXt101} come backbone e \textbf{Faster R-CNN} come head. In Figura \ref{fig:model_best} è riportata una rappresentazione schematica della pipeline del modello.
 
+%
+\begin{table}[H]
+	\begin{NiceTabular}{rX}[rules/color=[gray]{0.9},rules/width=1pt]
+		\CodeBefore
+		\rowcolors{1}{black!5}{}
+		\rowcolors{3}{blue!5}{}
+		\Body
+		\toprule
+		\textbf{Metric}      & \textbf{Value}                                \\
+		\midrule
+		\textbf{mIoU} & 0.8871 \\
+		\textbf{Precision} & 0.9733 \\
+		\textbf{Recall} & 0.9683 \\
+		\textbf{F1 Score} & 0.9708 \\
+		\midrule
+		\textbf{mAP} & 0.7397 \\
+		\textbf{mAP@50} & 0.9479 \\
+		\textbf{mAP@75} & 0.8874 \\
+		\bottomrule
+	\end{NiceTabular}
+	\caption{Evaluation metrics of ResNeXt101 + Faster R-CNN model.}
+\end{table}
+%
+
 %foto
 
 Per confronto, è utile visualizzare anche i risultati ottenuti con l’architettura meno performante (MobileNet + Faster R-CNN), mostrati in Figura \ref{fig:model_worst}. Questo confronto evidenzia chiaramente le differenze di accuratezza e qualità della predizione.
@@ -283,7 +307,6 @@ Per confronto, è utile visualizzare anche i risultati ottenuti con l’architet
 
 
 \Section{Title Formatting}
-ciao noemi
 To begin a new content, always start the content with a chapter heading. To
 insert the chapter with an additional \lstinline[columns=fixed]{minitoc}
 use \lstinline[columns=fixed]{\Chapter}, which produces an heading as

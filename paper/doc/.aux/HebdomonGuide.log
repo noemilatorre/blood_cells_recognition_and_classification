@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.6.24)  29 JUN 2025 18:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.6.24)  3 JUL 2025 17:39
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1715,10 +1715,10 @@ Overfull \hbox (32.09344pt too wide) in paragraph at lines 167--168
 \pydata@fh@0=\write8
 \openout8 = `_018679B249EA6FB07607F2451175FB2C.data.minted'.
 
-runsystem(latexminted config  --timestamp 20250629184244 018679B249EA6FB07607F2451175FB2C)...executed.
+runsystem(latexminted config  --timestamp 20250703173920 018679B249EA6FB07607F2451175FB2C)...executed.
 
 (.aux/_018679B249EA6FB07607F2451175FB2C.config.minted)
-runsystem(latexminted cleanconfig  --timestamp 20250629184244 018679B249EA6FB07607F2451175FB2C)...executed.
+runsystem(latexminted cleanconfig  --timestamp 20250703173920 018679B249EA6FB07607F2451175FB2C)...executed.
 
  (./.aux/_minted/default.style.minted) (./.aux/_minted/AE939227940DE9B4398BF26653376AD4.highlight.minted)
 
@@ -1741,7 +1741,7 @@ LaTeX Font Info:    Font shape `T1/FiraSans-OsF/regular/n' will be
 LaTeX Warning: Reference `fig:model_best' on page 9 undefined on input line 273.
 
 
-LaTeX Warning: Reference `fig:model_worst' on page 9 undefined on input line 277.
+LaTeX Warning: Reference `fig:model_worst' on page 9 undefined on input line 301.
 
 (/usr/local/texlive/2025/texmf-dist/tex/latex/base/latin1.def
 File: latin1.def 2024/02/08 v1.3d Input encoding file
@@ -1783,23 +1783,23 @@ LaTeX Encoding Info:    Ignoring declaration for text command \textcent (encodin
 LaTeX Encoding Info:    Ignoring declaration for text command \textyen (encoding ?) on input line 53.
 LaTeX Encoding Info:    Ignoring declaration for text command \textcurrency (encoding ?) on input line 55.
 LaTeX Encoding Info:    Ignoring declaration for text command \textbrokenbar (encoding ?) on input line 57.
-) (./.aux/_minted/79E4EC240BCF63B6239CDF75E21BF80C.highlight.minted)
-LaTeX Font Info:    Font shape `T1/FiraSans-OsF/b/n' in size <12> not available
-(Font)              Font shape `T1/FiraSans-OsF/bold/n' tried instead on input line 311.
-LaTeX Font Info:    Font shape `T1/FiraSans-OsF/bold/n' will be
-(Font)              scaled to size 12.0pt on input line 311.
- (./.aux/_minted/420A9086BB4F483CC18FDF09861F10A7.highlight.minted) (./.aux/_minted/93267A67C0E1C322D496F5336163E5C1.highlight.minted)
+) (./.aux/_minted/79E4EC240BCF63B6239CDF75E21BF80C.highlight.minted
 
-[9] (./.aux/_minted/BFE44468D70693EB10B4777256A9E5F8.highlight.minted
+[9])
+LaTeX Font Info:    Font shape `T1/FiraSans-OsF/b/n' in size <12> not available
+(Font)              Font shape `T1/FiraSans-OsF/bold/n' tried instead on input line 334.
+LaTeX Font Info:    Font shape `T1/FiraSans-OsF/bold/n' will be
+(Font)              scaled to size 12.0pt on input line 334.
+ (./.aux/_minted/420A9086BB4F483CC18FDF09861F10A7.highlight.minted) (./.aux/_minted/93267A67C0E1C322D496F5336163E5C1.highlight.minted) (./.aux/_minted/BFE44468D70693EB10B4777256A9E5F8.highlight.minted
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10.95> not available
 (Font)              Font shape `T1/lmtt/b/n' tried instead on input line 2.
-) (./.aux/_minted/E323723C75C95973E68072F231983069.highlight.minted) (./.aux/_minted/CDEC2D1B3FFE009CD611E0F13FF100CE.highlight.minted) (./.aux/_minted/281A8F9C2D25BC20BAA81937729374F1.highlight.minted) (./.aux/_minted/73883A460033474483F1CF64A844F751.highlight.minted) (./.aux/_minted/1740D9877617CAEED3F44884D9DFB90C.highlight.minted) (./.aux/_minted/280442CE4C308C0EF9AD17054185E09F.highlight.minted) (./.aux/_minted/C607D035E6E6B0D40AB4602DC25214D0.highlight.minted) (./.aux/_minted/99939DBC786371F1D307DDCF2453E3B9.highlight.minted)
+) (./.aux/_minted/E323723C75C95973E68072F231983069.highlight.minted) (./.aux/_minted/CDEC2D1B3FFE009CD611E0F13FF100CE.highlight.minted) (./.aux/_minted/281A8F9C2D25BC20BAA81937729374F1.highlight.minted) (./.aux/_minted/73883A460033474483F1CF64A844F751.highlight.minted) (./.aux/_minted/1740D9877617CAEED3F44884D9DFB90C.highlight.minted) (./.aux/_minted/280442CE4C308C0EF9AD17054185E09F.highlight.minted) (./.aux/_minted/C607D035E6E6B0D40AB4602DC25214D0.highlight.minted)
 
-[10]
-<figures/innsbruck.jpg, id=202, 1368.11125pt x 584.1825pt>
+[10] (./.aux/_minted/99939DBC786371F1D307DDCF2453E3B9.highlight.minted)
+<figures/innsbruck.jpg, id=203, 1368.11125pt x 584.1825pt>
 File: figures/innsbruck.jpg Graphic file (type jpg)
 <use figures/innsbruck.jpg>
-Package pdftex.def Info: figures/innsbruck.jpg  used on input line 380.
+Package pdftex.def Info: figures/innsbruck.jpg  used on input line 403.
 (pdftex.def)             Requested size: 455.24417pt x 194.38531pt.
  (./.aux/_minted/E0B939EDCC6D8F11A4C2978FACC9A8C8.highlight.minted) (./.aux/_minted/E0B939EDCC6D8F11A4C2978FACC9A8C8.highlight.minted) (./.aux/_minted/876BCBF5E49202DF2317A1B4FBFF3C5A.highlight.minted) (/usr/local/texlive/2025/texmf-dist/tex/latex/base/latin1.def
 File: latin1.def 2024/02/08 v1.3d Input encoding file
@@ -1821,11 +1821,11 @@ LaTeX Encoding Info:    Ignoring declaration for text command \textcent (encodin
 LaTeX Encoding Info:    Ignoring declaration for text command \textyen (encoding ?) on input line 53.
 LaTeX Encoding Info:    Ignoring declaration for text command \textcurrency (encoding ?) on input line 55.
 LaTeX Encoding Info:    Ignoring declaration for text command \textbrokenbar (encoding ?) on input line 57.
-) (./.aux/_minted/BE39CF9ACEBEC3E12EAD286280AB6FB2.highlight.minted) (./.aux/_minted/2D44C21E05D618E34ABBF8B05AFF65C7.highlight.minted) (./.aux/_minted/C577A91B6D1B1293B438CA12DAEF6184.highlight.minted
+) (./.aux/_minted/BE39CF9ACEBEC3E12EAD286280AB6FB2.highlight.minted) (./.aux/_minted/2D44C21E05D618E34ABBF8B05AFF65C7.highlight.minted)
 
-[11 <./figures/innsbruck.jpg>]) (./.aux/_minted/32453D973068646FF90DB97C336AB98A.highlight.minted) (./.aux/_minted/DCCB631AA6A7E7492B95C686AF9F3AB1.highlight.minted) (./.aux/_minted/41474B3D4B974C79D2186A67B51FB04C.highlight.minted) (./.aux/_minted/5062DFD64CC27817CE84D9B48CF1259C.highlight.minted) (./.aux/_minted/5C65B8222EBA4D46EF5F4DD5E655725C.highlight.minted) (./.aux/_minted/1FC798FA19542D2D88BE640630D0F6FB.highlight.minted) (./.aux/_minted/059282DECBD0C86E8920672FF31A8D42.highlight.minted) (./.aux/_minted/A79D896C5AD70B9EE0090F5CA533FE66.highlight.minted) (./.aux/_minted/3EAA05539782384C7ABF7F9368DC4FEE.highlight.minted) (./.aux/_minted/3E4C96A35ED427303123E8CCB1E4FEE3.highlight.minted
+[11 <./figures/innsbruck.jpg>] (./.aux/_minted/C577A91B6D1B1293B438CA12DAEF6184.highlight.minted) (./.aux/_minted/32453D973068646FF90DB97C336AB98A.highlight.minted) (./.aux/_minted/DCCB631AA6A7E7492B95C686AF9F3AB1.highlight.minted) (./.aux/_minted/41474B3D4B974C79D2186A67B51FB04C.highlight.minted) (./.aux/_minted/5062DFD64CC27817CE84D9B48CF1259C.highlight.minted) (./.aux/_minted/5C65B8222EBA4D46EF5F4DD5E655725C.highlight.minted) (./.aux/_minted/1FC798FA19542D2D88BE640630D0F6FB.highlight.minted) (./.aux/_minted/059282DECBD0C86E8920672FF31A8D42.highlight.minted
 
-[12])
+[12]) (./.aux/_minted/A79D896C5AD70B9EE0090F5CA533FE66.highlight.minted) (./.aux/_minted/3EAA05539782384C7ABF7F9368DC4FEE.highlight.minted) (./.aux/_minted/3E4C96A35ED427303123E8CCB1E4FEE3.highlight.minted)
 
 [13]
 chapter 3.
@@ -1890,18 +1890,18 @@ Package logreq Info: Writing requests to 'HebdomonGuide.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 62195 strings out of 467886
- 1478948 string characters out of 5434045
- 2719624 words of memory out of 5000000
- 89719 multiletter control sequences out of 15000+600000
+ 62609 strings out of 467886
+ 1487457 string characters out of 5434045
+ 2726288 words of memory out of 5000000
+ 90132 multiletter control sequences out of 15000+600000
  883296 words of font info for 92 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  122i,20n,131p,10960b,2362s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/fira/FiraSans-Bold.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/fira/FiraSans-Italic.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/fira/FiraSans-Regular.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on .aux/HebdomonGuide.pdf (17 pages, 3835782 bytes).
+Output written on .aux/HebdomonGuide.pdf (17 pages, 3837776 bytes).
 PDF statistics:
- 371 PDF objects out of 1000 (max. 8388607)
- 278 compressed objects within 3 object streams
- 47 named destinations out of 1000 (max. 500000)
+ 372 PDF objects out of 1000 (max. 8388607)
+ 279 compressed objects within 3 object streams
+ 48 named destinations out of 1000 (max. 500000)
  337 words of extra memory for PDF output out of 10000 (max. 10000000)
 
