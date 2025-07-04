@@ -328,13 +328,34 @@ L’architettura che ha fornito i migliori risultati, sia in termini di accurate
 
 %foto
 
-Per confronto, è utile visualizzare anche i risultati ottenuti con l’architettura meno performante (MobileNet + Faster R-CNN), mostrati in Figura \ref{fig:model_worst}. Questo confronto evidenzia chiaramente le differenze di accuratezza e qualità della predizione.
+% Per confronto, è utile visualizzare anche i risultati ottenuti con l’architettura meno performante (MobileNet + Faster R-CNN), mostrati in Figura \ref{fig:model_worst}. Questo confronto evidenzia chiaramente le differenze di accuratezza e qualità della predizione.
 
 %foto
 
 \Section{Valutazione del Modello}
+% Tabella con i parametri
+% Immagine della loss
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.6\linewidth]{figures/loss.png}
+  \caption{Grafico della Training Loss e della Validation Loss.}
+  \label{fig:loss}
+\end{figure}
+%
+% Immagine esempio di un risultato
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.6\linewidth]{figures/ex_result.png}
+  \caption{Risultato di esempio. In rosso sono evidenziate le bounding box correttamente previste dal modello, in blu quelle mancate.}
+  \label{fig:loss}
+\end{figure}
+%
+
+\Section{Estrazione delle Feature}
 
 
+
+\Chapter{Machine Learning}
 
 \Section{Title Formatting}
 To begin a new content, always start the content with a chapter heading. To
