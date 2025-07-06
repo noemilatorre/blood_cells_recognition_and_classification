@@ -554,6 +554,57 @@ dove:
 L'ottimizzazione degli iperparametri è stata effettuata mediante \texttt{RandomizedSearchCV}, con una validazione incrociata a 3 fold e ottimizzazione rispetto all'\textbf{F1 score macro}, al fine di tenere conto dell'eventuale sbilanciamento tra le classi.
 
 
+\Section{Model evaluation}
+
+Al termine della fase di addestramento, la miglior configurazione degli iper-parametri trovata utilizzando \texttt{RandomizedSearchCV} è \hlight{SVM} con :
+
+%
+\begin{code}{python}
+  param_dist = {
+        'selector__k': [700],
+        'classifier__C': [100],
+        'classifier__kernel': ['poly'],
+        'classifier__gamma': ['auto'] 
+    }
+\end{code}
+%
+
+La valutazione delle performance del modello finale è stata effettuata confrontando le predizioni sul test set con le etichette reali, utilizzando le seguenti metriche:
+
+\begin{itemize}
+\item \textbf{Balanced Accuracy}: particolarmente utile in presenza di classi sbilanciate.
+\item \textbf{F1-Score Macro}: media armonica tra precision e recall, calcolata su tutte le classi, trattandole equamente.
+\item \textbf{Precision e Recall per classe}, per una valutazione più granulare delle performance.
+\item \textbf{Matrice di confusione}, per visualizzare gli errori di classificazione tra le diverse classi.
+\end{itemize}
+
+Tutte le metriche e i risultati sono stati salvati automaticamente in un file di log, per garantire la tracciabilità e la riproducibilità degli esperimenti.
+
+% 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.8\linewidth]{figures/confusion_matrix_Stage 1 - SVM.png}
+  \caption{Matrice di Confusione del primo Classificatore.}
+  \label{fig:confusion_1}
+\end{figure}
+% 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.8\linewidth]{figures/confusion_matrix_Stage 2 - SVM ➡ SVM.png}
+  \caption{Matrice di Confusione del secondo Classificatore.}
+  \label{fig:confusion_2}
+\end{figure}
+%
+
+
+
+
+
+
+
+
+
+\iffalse
 
 \Section{Title Formatting}
 To begin a new content, always start the content with a chapter heading. To
@@ -967,6 +1018,10 @@ Some options worth mentioning are as follows:
 	on the TeX memory than 2D and making this sampling high may result in
 	exceeding the memory limit.
 \end{hgitemize}
+
+
+\fi
+
 
 \end{document}
 

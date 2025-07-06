@@ -1,7 +1,0 @@
-\begin{MintedVerbatim}[commandchars=\\\{\}]
-\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}figure\PYG{n+nb}{\PYGZcb{}}[ht]
-  \PYG{k}{\PYGZbs{}centering}
-  \PYG{k}{\PYGZbs{}includegraphics}\PYG{n+na}{[width=\PYGZbs{}textwidth]}\PYG{n+nb}{\PYGZob{}}figures/path.pdf\PYG{n+nb}{\PYGZcb{}}
-  \PYG{k}{\PYGZbs{}caption}\PYG{n+nb}{\PYGZob{}}A photo I found on the web.\PYG{n+nb}{\PYGZcb{}}\PYG{k}{\PYGZbs{}label}\PYG{n+nb}{\PYGZob{}}fig:innsbruck\PYG{n+nb}{\PYGZcb{}}
-\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}figure\PYG{n+nb}{\PYGZcb{}}
-\end{MintedVerbatim}
