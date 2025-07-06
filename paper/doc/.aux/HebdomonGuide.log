@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.6.24)  4 JUL 2025 15:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.6.24)  6 JUL 2025 10:49
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1645,7 +1645,7 @@ LaTeX Font Info:    Font shape `TS1/FiraSans-OsF/regular/n' will be
 (Font)              scaled to size 10.95pt on input line 56.
 Package svg Info: Last page of `./svg-inkscape/pipeline_general_svg-tex.pdf' is 1 on input line 67.
  (./svg-inkscape/pipeline_general_svg-tex.pdf_tex
-<./svg-inkscape/pipeline_general_svg-tex.pdf, id=125, page=1, 1439.0011pt x 463.3561pt>
+<./svg-inkscape/pipeline_general_svg-tex.pdf, id=129, page=1, 1439.0011pt x 463.3561pt>
 File: ./svg-inkscape/pipeline_general_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/pipeline_general_svg-tex.pdf, page 1>
 Package pdftex.def Info: ./svg-inkscape/pipeline_general_svg-tex.pdf , page1 used on input line 56.
@@ -1719,13 +1719,13 @@ Overfull \hbox (29.46545pt too wide) in paragraph at lines 167--168
 \pydata@fh@0=\write8
 \openout8 = `_018679B249EA6FB07607F2451175FB2C.data.minted'.
 
-runsystem(latexminted config  --timestamp 20250704151323 018679B249EA6FB07607F2451175FB2C)...executed.
+runsystem(latexminted config  --timestamp 20250706104934 018679B249EA6FB07607F2451175FB2C)...executed.
 
 (.aux/_018679B249EA6FB07607F2451175FB2C.config.minted)
-runsystem(latexminted cleanconfig  --timestamp 20250704151323 018679B249EA6FB07607F2451175FB2C)...executed.
+runsystem(latexminted cleanconfig  --timestamp 20250706104934 018679B249EA6FB07607F2451175FB2C)...executed.
 
  (./.aux/_minted/default.style.minted) (./.aux/_minted/AE939227940DE9B4398BF26653376AD4.highlight.minted)
-<figures/corse_result.png, id=198, 485.815pt x 467.7475pt>
+<figures/corse_result.png, id=202, 485.815pt x 467.7475pt>
 File: figures/corse_result.png Graphic file (type png)
 <use figures/corse_result.png>
 Package pdftex.def Info: figures/corse_result.png  used on input line 183.
@@ -1744,7 +1744,7 @@ LaTeX Font Info:    Font shape `T1/FiraSans-OsF/regular/n' will be
 
 
 [8{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}]
-<figures/focal_loss.png, id=218, 279.9258pt x 168.63pt>
+<figures/focal_loss.png, id=222, 279.9258pt x 168.63pt>
 File: figures/focal_loss.png Graphic file (type png)
 <use figures/focal_loss.png>
 Package pdftex.def Info: figures/focal_loss.png  used on input line 246.
@@ -1762,29 +1762,29 @@ Overfull \hbox (1.9373pt too wide) in paragraph at lines 256--257
 
 
 [9 <./figures/focal_loss.png>]
-<figures/general_pipeline.png, id=225, 558.888pt x 187.902pt>
+<figures/general_pipeline.png, id=229, 558.888pt x 187.902pt>
 File: figures/general_pipeline.png Graphic file (type png)
 <use figures/general_pipeline.png>
 Package pdftex.def Info: figures/general_pipeline.png  used on input line 276.
 (pdftex.def)             Requested size: 455.24417pt x 153.05705pt.
 Package svg Info: Last page of `./svg-inkscape/resnext_svg-tex.pdf' is 4 on input line 299.
  (./svg-inkscape/resnext_svg-tex.pdf_tex
-<./svg-inkscape/resnext_svg-tex.pdf, id=228, page=1, 314.29922pt x 88.83188pt>
+<./svg-inkscape/resnext_svg-tex.pdf, id=232, page=1, 314.29922pt x 88.83188pt>
 File: ./svg-inkscape/resnext_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/resnext_svg-tex.pdf, page 1>
 Package pdftex.def Info: ./svg-inkscape/resnext_svg-tex.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 318.66953pt x 90.07188pt.
-<./svg-inkscape/resnext_svg-tex.pdf, id=229, page=2, 314.29922pt x 88.83188pt>
+<./svg-inkscape/resnext_svg-tex.pdf, id=233, page=2, 314.29922pt x 88.83188pt>
 File: ./svg-inkscape/resnext_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/resnext_svg-tex.pdf, page 2>
 Package pdftex.def Info: ./svg-inkscape/resnext_svg-tex.pdf , page2 used on input line 58.
 (pdftex.def)             Requested size: 318.66953pt x 90.07188pt.
-<./svg-inkscape/resnext_svg-tex.pdf, id=230, page=3, 314.29922pt x 88.83188pt>
+<./svg-inkscape/resnext_svg-tex.pdf, id=234, page=3, 314.29922pt x 88.83188pt>
 File: ./svg-inkscape/resnext_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/resnext_svg-tex.pdf, page 3>
 Package pdftex.def Info: ./svg-inkscape/resnext_svg-tex.pdf , page3 used on input line 60.
 (pdftex.def)             Requested size: 318.66953pt x 90.07188pt.
-<./svg-inkscape/resnext_svg-tex.pdf, id=231, page=4, 314.29922pt x 88.83188pt>
+<./svg-inkscape/resnext_svg-tex.pdf, id=235, page=4, 314.29922pt x 88.83188pt>
 File: ./svg-inkscape/resnext_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/resnext_svg-tex.pdf, page 4>
 Package pdftex.def Info: ./svg-inkscape/resnext_svg-tex.pdf , page4 used on input line 62.
@@ -1808,12 +1808,12 @@ pdfTeX warning: pdflatex (file ./svg-inkscape/resnext_svg-tex.pdf): PDF inclusio
 
 pdfTeX warning: pdflatex (file ./svg-inkscape/resnext_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 >]
-<figures/loss.png, id=253, 409.7709pt x 328.8285pt>
+<figures/loss.png, id=257, 409.7709pt x 328.8285pt>
 File: figures/loss.png Graphic file (type png)
 <use figures/loss.png>
 Package pdftex.def Info: figures/loss.png  used on input line 380.
 (pdftex.def)             Requested size: 273.14928pt x 219.20006pt.
-<figures/ex_result.png, id=255, 459.6372pt x 475.5366pt>
+<figures/ex_result.png, id=259, 459.6372pt x 475.5366pt>
 File: figures/ex_result.png Graphic file (type png)
 <use figures/ex_result.png>
 Package pdftex.def Info: figures/ex_result.png  used on input line 390.
@@ -1842,67 +1842,103 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 \openout5 = `HebdomonGuide.mtc'.
 
 (.aux/HebdomonGuide.mtc3)
+Package svg Info: Last page of `./svg-inkscape/machine_pipeline.drawio_svg-tex.pdf' is 1 on input line 422.
+ (./svg-inkscape/machine_pipeline.drawio_svg-tex.pdf_tex
+<./svg-inkscape/machine_pipeline.drawio_svg-tex.pdf, id=293, page=1, 815.67235pt x 287.95078pt>
+File: ./svg-inkscape/machine_pipeline.drawio_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/machine_pipeline.drawio_svg-tex.pdf, page 1>
+Package pdftex.def Info: ./svg-inkscape/machine_pipeline.drawio_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 455.24417pt x 160.71089pt.
+)
 
 [15
 
 ]
-<figures/class_distribution.png, id=292, 722.7pt x 722.7pt>
+<figures/class_distribution.png, id=299, 722.7pt x 722.7pt>
 File: figures/class_distribution.png Graphic file (type png)
 <use figures/class_distribution.png>
-Package pdftex.def Info: figures/class_distribution.png  used on input line 432.
+Package pdftex.def Info: figures/class_distribution.png  used on input line 439.
 (pdftex.def)             Requested size: 318.66953pt x 318.67268pt.
- (/usr/local/texlive/2025/texmf-dist/tex/latex/base/latin1.def
-File: latin1.def 2024/02/08 v1.3d Input encoding file
-LaTeX Encoding Info:    Ignoring declaration for text command \textdegree (encoding ?) on input line 47.
-LaTeX Encoding Info:    Ignoring declaration for text command \textonehalf (encoding ?) on input line 48.
-LaTeX Encoding Info:    Ignoring declaration for text command \textonequarter (encoding ?) on input line 49.
-LaTeX Encoding Info:    Ignoring declaration for text command \textthreequarters (encoding ?) on input line 50.
-LaTeX Encoding Info:    Ignoring declaration for text command \textcent (encoding ?) on input line 51.
-LaTeX Encoding Info:    Ignoring declaration for text command \textyen (encoding ?) on input line 53.
-LaTeX Encoding Info:    Ignoring declaration for text command \textcurrency (encoding ?) on input line 55.
-LaTeX Encoding Info:    Ignoring declaration for text command \textbrokenbar (encoding ?) on input line 57.
-) (/usr/local/texlive/2025/texmf-dist/tex/latex/base/latin1.def
-File: latin1.def 2024/02/08 v1.3d Input encoding file
-LaTeX Encoding Info:    Ignoring declaration for text command \textdegree (encoding ?) on input line 47.
-LaTeX Encoding Info:    Ignoring declaration for text command \textonehalf (encoding ?) on input line 48.
-LaTeX Encoding Info:    Ignoring declaration for text command \textonequarter (encoding ?) on input line 49.
-LaTeX Encoding Info:    Ignoring declaration for text command \textthreequarters (encoding ?) on input line 50.
-LaTeX Encoding Info:    Ignoring declaration for text command \textcent (encoding ?) on input line 51.
-LaTeX Encoding Info:    Ignoring declaration for text command \textyen (encoding ?) on input line 53.
-LaTeX Encoding Info:    Ignoring declaration for text command \textcurrency (encoding ?) on input line 55.
-LaTeX Encoding Info:    Ignoring declaration for text command \textbrokenbar (encoding ?) on input line 57.
-) (/usr/local/texlive/2025/texmf-dist/tex/latex/base/latin1.def
-File: latin1.def 2024/02/08 v1.3d Input encoding file
-LaTeX Encoding Info:    Ignoring declaration for text command \textdegree (encoding ?) on input line 47.
-LaTeX Encoding Info:    Ignoring declaration for text command \textonehalf (encoding ?) on input line 48.
-LaTeX Encoding Info:    Ignoring declaration for text command \textonequarter (encoding ?) on input line 49.
-LaTeX Encoding Info:    Ignoring declaration for text command \textthreequarters (encoding ?) on input line 50.
-LaTeX Encoding Info:    Ignoring declaration for text command \textcent (encoding ?) on input line 51.
-LaTeX Encoding Info:    Ignoring declaration for text command \textyen (encoding ?) on input line 53.
-LaTeX Encoding Info:    Ignoring declaration for text command \textcurrency (encoding ?) on input line 55.
-LaTeX Encoding Info:    Ignoring declaration for text command \textbrokenbar (encoding ?) on input line 57.
-) (/usr/local/texlive/2025/texmf-dist/tex/latex/base/latin1.def
-File: latin1.def 2024/02/08 v1.3d Input encoding file
-LaTeX Encoding Info:    Ignoring declaration for text command \textdegree (encoding ?) on input line 47.
-LaTeX Encoding Info:    Ignoring declaration for text command \textonehalf (encoding ?) on input line 48.
-LaTeX Encoding Info:    Ignoring declaration for text command \textonequarter (encoding ?) on input line 49.
-LaTeX Encoding Info:    Ignoring declaration for text command \textthreequarters (encoding ?) on input line 50.
-LaTeX Encoding Info:    Ignoring declaration for text command \textcent (encoding ?) on input line 51.
-LaTeX Encoding Info:    Ignoring declaration for text command \textyen (encoding ?) on input line 53.
-LaTeX Encoding Info:    Ignoring declaration for text command \textcurrency (encoding ?) on input line 55.
-LaTeX Encoding Info:    Ignoring declaration for text command \textbrokenbar (encoding ?) on input line 57.
-)
 
-[16 <./figures/class_distribution.png>] (./.aux/_minted/79E4EC240BCF63B6239CDF75E21BF80C.highlight.minted) (./.aux/_minted/420A9086BB4F483CC18FDF09861F10A7.highlight.minted) (./.aux/_minted/93267A67C0E1C322D496F5336163E5C1.highlight.minted) (./.aux/_minted/BFE44468D70693EB10B4777256A9E5F8.highlight.minted
+
+[16 <./svg-inkscape/machine_pipeline.drawio_svg-tex.pdf>]
+<figures/class_distribution_after_smote.png, id=357, 867.24pt x 433.62pt>
+File: figures/class_distribution_after_smote.png Graphic file (type png)
+<use figures/class_distribution_after_smote.png>
+Package pdftex.def Info: figures/class_distribution_after_smote.png  used on input line 453.
+(pdftex.def)             Requested size: 409.71696pt x 204.86006pt.
+
+
+[17 <./figures/class_distribution.png>]
+
+[18 <./figures/class_distribution_after_smote.png>]
+<figures/lda_1.png, id=369, 849.1725pt x 471.7625pt>
+File: figures/lda_1.png Graphic file (type png)
+<use figures/lda_1.png>
+Package pdftex.def Info: figures/lda_1.png  used on input line 499.
+(pdftex.def)             Requested size: 318.66953pt x 177.04007pt.
+
+
+[19 <./figures/lda_1.png>]
+<figures/lda_distribution.png, id=377, 722.7pt x 433.62pt>
+File: figures/lda_distribution.png Graphic file (type png)
+<use figures/lda_distribution.png>
+Package pdftex.def Info: figures/lda_distribution.png  used on input line 514.
+(pdftex.def)             Requested size: 364.19672pt x 218.51653pt.
+
+
+[20 <./figures/lda_distribution.png>] (/usr/local/texlive/2025/texmf-dist/tex/latex/base/latin1.def
+File: latin1.def 2024/02/08 v1.3d Input encoding file
+LaTeX Encoding Info:    Ignoring declaration for text command \textdegree (encoding ?) on input line 47.
+LaTeX Encoding Info:    Ignoring declaration for text command \textonehalf (encoding ?) on input line 48.
+LaTeX Encoding Info:    Ignoring declaration for text command \textonequarter (encoding ?) on input line 49.
+LaTeX Encoding Info:    Ignoring declaration for text command \textthreequarters (encoding ?) on input line 50.
+LaTeX Encoding Info:    Ignoring declaration for text command \textcent (encoding ?) on input line 51.
+LaTeX Encoding Info:    Ignoring declaration for text command \textyen (encoding ?) on input line 53.
+LaTeX Encoding Info:    Ignoring declaration for text command \textcurrency (encoding ?) on input line 55.
+LaTeX Encoding Info:    Ignoring declaration for text command \textbrokenbar (encoding ?) on input line 57.
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/base/latin1.def
+File: latin1.def 2024/02/08 v1.3d Input encoding file
+LaTeX Encoding Info:    Ignoring declaration for text command \textdegree (encoding ?) on input line 47.
+LaTeX Encoding Info:    Ignoring declaration for text command \textonehalf (encoding ?) on input line 48.
+LaTeX Encoding Info:    Ignoring declaration for text command \textonequarter (encoding ?) on input line 49.
+LaTeX Encoding Info:    Ignoring declaration for text command \textthreequarters (encoding ?) on input line 50.
+LaTeX Encoding Info:    Ignoring declaration for text command \textcent (encoding ?) on input line 51.
+LaTeX Encoding Info:    Ignoring declaration for text command \textyen (encoding ?) on input line 53.
+LaTeX Encoding Info:    Ignoring declaration for text command \textcurrency (encoding ?) on input line 55.
+LaTeX Encoding Info:    Ignoring declaration for text command \textbrokenbar (encoding ?) on input line 57.
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/base/latin1.def
+File: latin1.def 2024/02/08 v1.3d Input encoding file
+LaTeX Encoding Info:    Ignoring declaration for text command \textdegree (encoding ?) on input line 47.
+LaTeX Encoding Info:    Ignoring declaration for text command \textonehalf (encoding ?) on input line 48.
+LaTeX Encoding Info:    Ignoring declaration for text command \textonequarter (encoding ?) on input line 49.
+LaTeX Encoding Info:    Ignoring declaration for text command \textthreequarters (encoding ?) on input line 50.
+LaTeX Encoding Info:    Ignoring declaration for text command \textcent (encoding ?) on input line 51.
+LaTeX Encoding Info:    Ignoring declaration for text command \textyen (encoding ?) on input line 53.
+LaTeX Encoding Info:    Ignoring declaration for text command \textcurrency (encoding ?) on input line 55.
+LaTeX Encoding Info:    Ignoring declaration for text command \textbrokenbar (encoding ?) on input line 57.
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/base/latin1.def
+File: latin1.def 2024/02/08 v1.3d Input encoding file
+LaTeX Encoding Info:    Ignoring declaration for text command \textdegree (encoding ?) on input line 47.
+LaTeX Encoding Info:    Ignoring declaration for text command \textonehalf (encoding ?) on input line 48.
+LaTeX Encoding Info:    Ignoring declaration for text command \textonequarter (encoding ?) on input line 49.
+LaTeX Encoding Info:    Ignoring declaration for text command \textthreequarters (encoding ?) on input line 50.
+LaTeX Encoding Info:    Ignoring declaration for text command \textcent (encoding ?) on input line 51.
+LaTeX Encoding Info:    Ignoring declaration for text command \textyen (encoding ?) on input line 53.
+LaTeX Encoding Info:    Ignoring declaration for text command \textcurrency (encoding ?) on input line 55.
+LaTeX Encoding Info:    Ignoring declaration for text command \textbrokenbar (encoding ?) on input line 57.
+) (./.aux/_minted/79E4EC240BCF63B6239CDF75E21BF80C.highlight.minted)
+
+[21] (./.aux/_minted/420A9086BB4F483CC18FDF09861F10A7.highlight.minted) (./.aux/_minted/93267A67C0E1C322D496F5336163E5C1.highlight.minted) (./.aux/_minted/BFE44468D70693EB10B4777256A9E5F8.highlight.minted
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10.95> not available
 (Font)              Font shape `T1/lmtt/b/n' tried instead on input line 2.
-) (./.aux/_minted/E323723C75C95973E68072F231983069.highlight.minted) (./.aux/_minted/CDEC2D1B3FFE009CD611E0F13FF100CE.highlight.minted) (./.aux/_minted/281A8F9C2D25BC20BAA81937729374F1.highlight.minted)
+) (./.aux/_minted/E323723C75C95973E68072F231983069.highlight.minted) (./.aux/_minted/CDEC2D1B3FFE009CD611E0F13FF100CE.highlight.minted) (./.aux/_minted/281A8F9C2D25BC20BAA81937729374F1.highlight.minted) (./.aux/_minted/73883A460033474483F1CF64A844F751.highlight.minted) (./.aux/_minted/1740D9877617CAEED3F44884D9DFB90C.highlight.minted) (./.aux/_minted/280442CE4C308C0EF9AD17054185E09F.highlight.minted) (./.aux/_minted/C607D035E6E6B0D40AB4602DC25214D0.highlight.minted) (./.aux/_minted/99939DBC786371F1D307DDCF2453E3B9.highlight.minted)
 
-[17] (./.aux/_minted/73883A460033474483F1CF64A844F751.highlight.minted) (./.aux/_minted/1740D9877617CAEED3F44884D9DFB90C.highlight.minted) (./.aux/_minted/280442CE4C308C0EF9AD17054185E09F.highlight.minted) (./.aux/_minted/C607D035E6E6B0D40AB4602DC25214D0.highlight.minted) (./.aux/_minted/99939DBC786371F1D307DDCF2453E3B9.highlight.minted)
-<figures/innsbruck.jpg, id=303, 1368.11125pt x 584.1825pt>
+[22]
+<figures/innsbruck.jpg, id=394, 1368.11125pt x 584.1825pt>
 File: figures/innsbruck.jpg Graphic file (type jpg)
 <use figures/innsbruck.jpg>
-Package pdftex.def Info: figures/innsbruck.jpg  used on input line 559.
+Package pdftex.def Info: figures/innsbruck.jpg  used on input line 652.
 (pdftex.def)             Requested size: 455.24417pt x 194.38531pt.
  (./.aux/_minted/E0B939EDCC6D8F11A4C2978FACC9A8C8.highlight.minted) (./.aux/_minted/E0B939EDCC6D8F11A4C2978FACC9A8C8.highlight.minted) (./.aux/_minted/876BCBF5E49202DF2317A1B4FBFF3C5A.highlight.minted) (/usr/local/texlive/2025/texmf-dist/tex/latex/base/latin1.def
 File: latin1.def 2024/02/08 v1.3d Input encoding file
@@ -1914,9 +1950,7 @@ LaTeX Encoding Info:    Ignoring declaration for text command \textcent (encodin
 LaTeX Encoding Info:    Ignoring declaration for text command \textyen (encoding ?) on input line 53.
 LaTeX Encoding Info:    Ignoring declaration for text command \textcurrency (encoding ?) on input line 55.
 LaTeX Encoding Info:    Ignoring declaration for text command \textbrokenbar (encoding ?) on input line 57.
-)
-
-[18 <./figures/innsbruck.jpg>] (/usr/local/texlive/2025/texmf-dist/tex/latex/base/latin1.def
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/base/latin1.def
 File: latin1.def 2024/02/08 v1.3d Input encoding file
 LaTeX Encoding Info:    Ignoring declaration for text command \textdegree (encoding ?) on input line 47.
 LaTeX Encoding Info:    Ignoring declaration for text command \textonehalf (encoding ?) on input line 48.
@@ -1926,13 +1960,13 @@ LaTeX Encoding Info:    Ignoring declaration for text command \textcent (encodin
 LaTeX Encoding Info:    Ignoring declaration for text command \textyen (encoding ?) on input line 53.
 LaTeX Encoding Info:    Ignoring declaration for text command \textcurrency (encoding ?) on input line 55.
 LaTeX Encoding Info:    Ignoring declaration for text command \textbrokenbar (encoding ?) on input line 57.
-) (./.aux/_minted/BE39CF9ACEBEC3E12EAD286280AB6FB2.highlight.minted) (./.aux/_minted/2D44C21E05D618E34ABBF8B05AFF65C7.highlight.minted) (./.aux/_minted/C577A91B6D1B1293B438CA12DAEF6184.highlight.minted) (./.aux/_minted/32453D973068646FF90DB97C336AB98A.highlight.minted) (./.aux/_minted/DCCB631AA6A7E7492B95C686AF9F3AB1.highlight.minted) (./.aux/_minted/41474B3D4B974C79D2186A67B51FB04C.highlight.minted)
+) (./.aux/_minted/BE39CF9ACEBEC3E12EAD286280AB6FB2.highlight.minted) (./.aux/_minted/2D44C21E05D618E34ABBF8B05AFF65C7.highlight.minted) (./.aux/_minted/C577A91B6D1B1293B438CA12DAEF6184.highlight.minted
 
-[19] (./.aux/_minted/5062DFD64CC27817CE84D9B48CF1259C.highlight.minted) (./.aux/_minted/5C65B8222EBA4D46EF5F4DD5E655725C.highlight.minted) (./.aux/_minted/1FC798FA19542D2D88BE640630D0F6FB.highlight.minted) (./.aux/_minted/059282DECBD0C86E8920672FF31A8D42.highlight.minted) (./.aux/_minted/A79D896C5AD70B9EE0090F5CA533FE66.highlight.minted) (./.aux/_minted/3EAA05539782384C7ABF7F9368DC4FEE.highlight.minted) (./.aux/_minted/3E4C96A35ED427303123E8CCB1E4FEE3.highlight.minted
+[23 <./figures/innsbruck.jpg>]) (./.aux/_minted/32453D973068646FF90DB97C336AB98A.highlight.minted) (./.aux/_minted/DCCB631AA6A7E7492B95C686AF9F3AB1.highlight.minted) (./.aux/_minted/41474B3D4B974C79D2186A67B51FB04C.highlight.minted) (./.aux/_minted/5062DFD64CC27817CE84D9B48CF1259C.highlight.minted) (./.aux/_minted/5C65B8222EBA4D46EF5F4DD5E655725C.highlight.minted) (./.aux/_minted/1FC798FA19542D2D88BE640630D0F6FB.highlight.minted) (./.aux/_minted/059282DECBD0C86E8920672FF31A8D42.highlight.minted) (./.aux/_minted/A79D896C5AD70B9EE0090F5CA533FE66.highlight.minted) (./.aux/_minted/3EAA05539782384C7ABF7F9368DC4FEE.highlight.minted) (./.aux/_minted/3E4C96A35ED427303123E8CCB1E4FEE3.highlight.minted
 
-[20])
+[24])
 
-[21]
+[25]
 chapter 4.
 
 Class scrreprt Warning: Redefinition of \@makechapterhead detected.
@@ -1951,13 +1985,13 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 
 (.aux/HebdomonGuide.mtc4)
 
-[22
+[26
 
 ] (./.aux/_minted/738146B69B5D836588A64F514192AE37.highlight.minted) (./.aux/_minted/D52EC1A53EABD1788F4BB113B2BA0A04.highlight.minted) (./.aux/_minted/93839263E2B0DF8987136B5D3494B083.highlight.minted) (./.aux/_minted/BD3FBF45813DF3B6D75FE53D876AE6C9.highlight.minted)
 
-[23] (./.aux/_minted/3D2CCC2C7BD269B498B3BAF9B0FDF9AB.highlight.minted) (./.aux/_minted/83D5D0053CAE1354685E947E7B501790.highlight.minted) (./.aux/_minted/0E5A47C6EB4555FBCE7E2F783FFEAE2C.highlight.minted)
+[27] (./.aux/_minted/3D2CCC2C7BD269B498B3BAF9B0FDF9AB.highlight.minted) (./.aux/_minted/83D5D0053CAE1354685E947E7B501790.highlight.minted) (./.aux/_minted/0E5A47C6EB4555FBCE7E2F783FFEAE2C.highlight.minted)
 
-[24] (./.aux/_minted/10FA5A7F56AB99A11598B9FC312AA230.highlight.minted)
+[28] (./.aux/_minted/10FA5A7F56AB99A11598B9FC312AA230.highlight.minted)
 Package minitoc Info: I0009
 (minitoc)             Listing minitoc auxiliary files. 
 (minitoc)             Creating the HebdomonGuide.maf file.
@@ -1981,7 +2015,7 @@ Package minitoc(hints) Warning: W0024
 
 
 
-[25] (.aux/HebdomonGuide.aux)
+[29] (.aux/HebdomonGuide.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2020/03/25>
@@ -1991,18 +2025,18 @@ Package logreq Info: Writing requests to 'HebdomonGuide.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 63470 strings out of 467886
- 1505891 string characters out of 5434045
- 2744480 words of memory out of 5000000
- 90959 multiletter control sequences out of 15000+600000
+ 63522 strings out of 467886
+ 1507717 string characters out of 5434045
+ 2744988 words of memory out of 5000000
+ 90998 multiletter control sequences out of 15000+600000
  883296 words of font info for 92 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  122i,20n,131p,10960b,2362s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/fira/FiraSans-Bold.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/fira/FiraSans-Italic.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/fira/FiraSans-Regular.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on .aux/HebdomonGuide.pdf (25 pages, 5214318 bytes).
+Output written on .aux/HebdomonGuide.pdf (29 pages, 5623116 bytes).
 PDF statistics:
- 517 PDF objects out of 1000 (max. 8388607)
- 398 compressed objects within 4 object streams
- 76 named destinations out of 1000 (max. 500000)
- 480 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 611 PDF objects out of 1000 (max. 8388607)
+ 456 compressed objects within 5 object streams
+ 86 named destinations out of 1000 (max. 500000)
+ 521 words of extra memory for PDF output out of 10000 (max. 10000000)
 

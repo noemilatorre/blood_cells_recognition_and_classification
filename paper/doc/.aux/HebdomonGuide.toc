@@ -12,21 +12,23 @@
 \contentsline {subsection}{\numberline {2.5.2}Visualizzazione dei Risultati}{12}{subsection.2.5.2}%
 \contentsline {section}{\numberline {2.6}\textcolor {mciBlue}{Estrazione delle Feature}}{13}{section.2.6}%
 \contentsline {chapter}{\numberline {3}\textcolor {mciBlue}{Machine Learning}}{15}{chapter.3}%
-\contentsline {section}{\numberline {3.1}\textcolor {mciBlue}{Introduzione}}{15}{section.3.1}%
-\contentsline {section}{\numberline {3.2}\textcolor {mciBlue}{Preprocessing}}{16}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}\textcolor {mciBlue}{BorderlineSMOTE}}{16}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}\textcolor {mciBlue}{Variance Threshold}}{16}{subsection.3.2.2}%
-\contentsline {section}{\numberline {3.3}\textcolor {mciBlue}{Feature Selection: SelectKBest}}{17}{section.3.3}%
-\contentsline {section}{\numberline {3.4}\textcolor {mciBlue}{Dimension Reduction: LDA}}{17}{section.3.4}%
-\contentsline {section}{\numberline {3.5}\textcolor {mciBlue}{Classifier}}{17}{section.3.5}%
-\contentsline {section}{\numberline {3.6}\textcolor {mciBlue}{Title Formatting}}{17}{section.3.6}%
-\contentsline {subsection}{\numberline {3.6.1}\textcolor {mciBlue}{Page Geometry}}{17}{subsection.3.6.1}%
-\contentsline {section}{\numberline {3.7}\textcolor {mciBlue}{Image Positioning}}{17}{section.3.7}%
-\contentsline {section}{\numberline {3.8}\textcolor {mciBlue}{Defined Environments}}{19}{section.3.8}%
-\contentsline {subsection}{\numberline {3.8.1}\textcolor {mciBlue}{Writing Equations}}{20}{subsection.3.8.1}%
-\contentsline {subsection}{\numberline {3.8.2}\textcolor {mciBlue}{Designing a Table}}{20}{subsection.3.8.2}%
-\contentsline {chapter}{\numberline {4}\textcolor {mciBlue}{Plotting your data using PGF/TikZ}}{22}{chapter.4}%
-\contentsline {section}{\numberline {4.1}\textcolor {mciBlue}{Introduction}}{22}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}\textcolor {mciBlue}{A Simple 2D Plot}}{23}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}\textcolor {mciBlue}{Plotting 3D plots}}{24}{subsection.4.1.2}%
+\contentsline {section}{\numberline {3.1}\textcolor {mciBlue}{Introduzione}}{16}{section.3.1}%
+\contentsline {section}{\numberline {3.2}\textcolor {mciBlue}{Preparazione del Dataset}}{17}{section.3.2}%
+\contentsline {section}{\numberline {3.3}\textcolor {mciBlue}{Oversampling: BorderlineSMOTE}}{17}{section.3.3}%
+\contentsline {section}{\numberline {3.4}\textcolor {mciBlue}{Variance Threshold}}{18}{section.3.4}%
+\contentsline {section}{\numberline {3.5}\textcolor {mciBlue}{Normalizzazione}}{18}{section.3.5}%
+\contentsline {section}{\numberline {3.6}\textcolor {mciBlue}{Feature Selection: SelectKBest}}{18}{section.3.6}%
+\contentsline {section}{\numberline {3.7}\textcolor {mciBlue}{Dimensionality Reduction: LDA}}{18}{section.3.7}%
+\contentsline {section}{\numberline {3.8}\textcolor {mciBlue}{Approccio Gerarchico alla Classificazione}}{19}{section.3.8}%
+\contentsline {section}{\numberline {3.9}\textcolor {mciBlue}{Model training}}{20}{section.3.9}%
+\contentsline {section}{\numberline {3.10}\textcolor {mciBlue}{Title Formatting}}{21}{section.3.10}%
+\contentsline {subsection}{\numberline {3.10.1}\textcolor {mciBlue}{Page Geometry}}{22}{subsection.3.10.1}%
+\contentsline {section}{\numberline {3.11}\textcolor {mciBlue}{Image Positioning}}{22}{section.3.11}%
+\contentsline {section}{\numberline {3.12}\textcolor {mciBlue}{Defined Environments}}{23}{section.3.12}%
+\contentsline {subsection}{\numberline {3.12.1}\textcolor {mciBlue}{Writing Equations}}{24}{subsection.3.12.1}%
+\contentsline {subsection}{\numberline {3.12.2}\textcolor {mciBlue}{Designing a Table}}{25}{subsection.3.12.2}%
+\contentsline {chapter}{\numberline {4}\textcolor {mciBlue}{Plotting your data using PGF/TikZ}}{26}{chapter.4}%
+\contentsline {section}{\numberline {4.1}\textcolor {mciBlue}{Introduction}}{26}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}\textcolor {mciBlue}{A Simple 2D Plot}}{27}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}\textcolor {mciBlue}{Plotting 3D plots}}{28}{subsection.4.1.2}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

@@ -416,6 +416,13 @@ Tutti i dati raccolti vengono infine aggregati in un dataframe strutturato, che 
 \Chapter{Machine Learning}
 
 \Section{Introduzione}
+%
+\begin{figure}[H]
+	\centering
+	\includesvg[width=\linewidth]{figures/machine_pipeline.drawio.svg}
+	\caption{Pipeline generale della parte di Machine Learning.}
+\end{figure}
+%
 La parte di Machine Learning ha come input il file csv generato nella parte di Deep Learning, che contiene le feature estratte dalle ROIs.
 
 In un primo momento, la struttura generale di questa parte era costituita da un solo Classificatore, che aveva il compito di distinguere le cellule in tutte e 7 le classi. Tuttavia, a causa della grande \hlight{class imbalance} del dataset (\ref{fig:sbilanciamento}), si è deciso di adottare un approccio diverso, creando 2 classificatori distinti:
@@ -435,30 +442,116 @@ In un primo momento, la struttura generale di questa parte era costituita da un 
 \end{figure}
 %
 
-\Section{Preprocessing}
-\Subsection{BorderlineSMOTE}
-Per affrontare il problema dello sbilanciamento delle classi, è stato utilizzato l'algoritmo \textbf{BorderlineSMOTE}, una variante del Synthetic Minority Over-sampling Technique (SMOTE). Questo metodo genera nuovi campioni sintetici per le classi minoritare, migliorando la capacità del modello di apprendere le caratteristiche distintive delle classi meno rappresentate.
+\Section{Preparazione del Dataset}
+Il dataset non presenta valori mancanti, quindi non è stato necessario effettuare operazioni di \textbf{data cleaning}. Le etichette sono state codificate utilizzando un \textbf{LabelEncoder}, trasformando le classi da etichette testuali o intere non sequenziali in valori numerici consecutivi, come richiesto dalla maggior parte dei modelli di classificazione supervisionata.
 
-\Subsection{Variance Threshold}
-Per ridurre la dimensionalità del dataset e migliorare le prestazioni del modello, è stata applicata la tecnica di \textbf{Variance Threshold}. Questa tecnica rimuove le feature con una varianza inferiore a una soglia specificata, eliminando le caratteristiche che non apportano informazioni significative. Nel nostro caso, è stata impostata una soglia di 1e-5.
+\Section{Oversampling: BorderlineSMOTE}
+Per affrontare il problema dello sbilanciamento delle classi, è stato utilizzato l'algoritmo \textbf{BorderlineSMOTE}, una variante del Synthetic Minority Over-sampling Technique (SMOTE). Questo metodo genera nuovi campioni sintetici per le classi minoritare, migliorando la capacità del modello di apprendere le caratteristiche distintive delle classi meno rappresentate.
+% 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.9\linewidth]{figures/class_distribution_after_smote.png}
+  \caption{Distribuzione delle classi nel dataset dopo BorderlineSMOTE.}
+  \label{fig:BorderlineSMOTE}
+\end{figure}
+%
+
+\Section{Variance Threshold}
+Per ridurre la dimensionalità del dataset e migliorare le prestazioni del modello, è stata applicata la tecnica di \textbf{Variance Threshold}. Questa tecnica rimuove le feature con una varianza inferiore a una soglia specificata, eliminando le caratteristiche che non apportano informazioni significative. Nel nostro caso, è stata impostata una soglia di 1e-5, portando le features da \hlight{1024 a 767.}
+
+\Section{Normalizzazione}
+Poiché le feature presentano range e scale molto differenti, è stata applicata una \textbf{standardizzazione} tramite \textbf{StandardScaler}, che porta ogni variabile ad avere media nulla e deviazione standard unitaria. Questo step è fondamentale per tutti gli algoritmi sensibili alla scala delle feature (come SVM, LDA, KNN), in quanto garantisce pari rilevanza a tutte le variabili numeriche.
+
 
 \Section{Feature Selection: SelectKBest}
+Per contenere la dimensionalità del dataset e ridurre l’overfitting, è stata effettuata una selezione automatica delle feature tramite il metodo \hlight{SelectKBest}, basato su test ANOVA F-test (\texttt{f\_classif}). Questo metodo assegna un punteggio a ogni feature in base alla sua correlazione con la variabile target, selezionando le $k$ migliori.
 
-\Section{Dimension Reduction: LDA}
+\Section{Dimensionality Reduction: LDA}
+A valle della selezione, è stata applicata anche una tecnica di \textbf{riduzione dimensionale supervisata} tramite \hlight{Linear Discriminant Analysis} (LDA), che proietta i dati in uno spazio a dimensionalità ridotta (fino a $n_{classi} - 1$) massimizzando la separabilità tra le classi. Questo aiuta il modello a concentrarsi solo sulle direzioni rilevanti per la classificazione.
 
-\Section{Classifier}
+LDA si basa su un principio statistico: cerca di massimizzare il rapporto tra la \textbf{varianza inter-classe} e la \textbf{varianza intra-classe}. Formalmente, l'obiettivo è trovare una proiezione $W$ tale che:
+
+\[
+W = \arg\max_W \frac{|W^T S_B W|}{|W^T S_W W|}
+\]
+
+dove:
+\begin{itemize}
+\item $S_B$ è la matrice di \textbf{scatter inter-classe}, che misura la distanza tra i centri delle varie classi.
+\item $S_W$ è la matrice di \textbf{scatter intra-classe}, che misura la dispersione dei dati all'interno delle stesse classi.
+\end{itemize}
+
+Il risultato è uno spazio trasformato in cui le classi sono, idealmente, più separabili. Inoltre, il numero massimo di componenti ottenibili con LDA è pari a $C - 1$, dove $C$ è il numero di classi.
+
+
+\Section{Approccio Gerarchico alla Classificazione}
+Al fine di affrontare in modo più efficace lo sbilanciamento del dataset e migliorare la precisione della classificazione, si è scelto di adottare un \textbf{approccio gerarchico} suddiviso in due stadi:
+
+\begin{itemize}
+
+\item \textbf{Primo stadio – Classificazione Sano vs Infetto:} \
+
+Il primo classificatore ha il compito di distinguere tra cellule sane (globuli rossi e globuli bianchi) e cellule infette. Questa distinzione è particolarmente rilevante per evitare confusione tra classi visivamente simili ma semanticamente diverse. Per aumentare la separabilità tra le due categorie, è stata applicata la \textbf{Linear Discriminant Analysis (LDA)} come tecnica di riduzione dimensionale in uno spazio monodimensionale (1D), massimizzando la distanza tra le due classi target.
+
+% 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.7\linewidth]{figures/lda_1.png}
+  \caption{Distribuzione delle classi Cellule Sane e Cellule Infette.}
+  \label{fig:lda_sano_infetto}
+\end{figure}
+%
+
+Come mostrato in Figura~\ref{fig:lda_sano_infetto}, l’LDA consente di ottenere una buona separazione tra cellule sane e infette lungo una singola componente discriminante, facilitando il compito del classificatore.
+
+\item \textbf{Secondo stadio – Classificazione delle cellule infette:} \\
+Una volta identificate le cellule infette, esse vengono passate a un secondo classificatore, il cui obiettivo è quello di distinguere tra le sottoclassi patologiche: \texttt{trophozoite}, \texttt{ring}, \texttt{difficult}, \texttt{schizont} e \texttt{gametocyte}. In questo caso, il numero massimo di componenti LDA applicabili è $n_{classi} - 1 = 5$. È stata quindi eseguita un’ulteriore riduzione dimensionale tramite LDA, al fine di valutare la separabilità delle classi anche in questo sottoinsieme.
+
+
+% 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.8\linewidth]{figures/lda_distribution.png}
+  \caption{Distribuzione delle classi delle Cellule Infette.}
+  \label{fig:lda_infette}
+\end{figure}
+%
+
+Come evidenziato dalla Figura~\ref{fig:lda_infette}, la separabilità tra alcune classi migliora (si distinguono bene i globuli bianchi) mentre altre classi infette presentano una parziale sovrapposizione. Questo supporta l’efficacia dell’approccio gerarchico, in quanto la prima distinzione grossolana permette di alleggerire il carico del secondo classificatore, migliorando la performance complessiva del sistema.
+
+\end{itemize}
+
+\Section{Model training}
+Sono stati valutati diversi modelli di classificazione, tra cui:
+
+Possiamo fare o una tabella oppure un diagramma del genere
 
 
 
+\begin{itemize}
+\item \textbf{Non parametrici}: K-Nearest Neighbors (KNN)
+\item \textbf{Lineari}: Logistic Regression
+\item \textbf{Support Vector Machine (SVM)}: SVM con kernel lineare e non lineare (?)  
+\item \textbf{Classificatori d’insieme}: Random Forest, XGBoost
+\end{itemize}
 
+dove:
 
+\begin{itemize}
 
+\item \textbf{K-Nearest Neighbors (KNN)}: È un algoritmo non parametrico basato sulla distanza. Per classificare un'istanza, considera i kkk esempi più vicini (in genere in termini di distanza euclidea) e assegna la classe più rappresentata tra questi. KNN non assume alcuna forma funzionale dei dati e può adattarsi bene a problemi non lineari, ma può essere sensibile alla scelta di kkk e alle caratteristiche dei dati (come la scala delle feature).
 
+\item \textbf{Logistic Regression}: È un modello lineare di classificazione che stima la probabilità che un'osservazione appartenga a una certa classe utilizzando la funzione logistica (sigmoide). È semplice, interpretabile ed efficace quando le classi sono linearmente separabili, ma può avere prestazioni limitate su problemi complessi e non lineari.
 
+\item \textbf{Support Vector Machine (SVM)}: L'SVM cerca l'iperpiano che massimizza il margine tra le classi. Grazie all'uso del kernel trick, può proiettare i dati in spazi di dimensioni superiori, permettendo la separazione anche in casi non linearmente separabili. È efficace in spazi ad alta dimensionalità ma può richiedere una buona scelta di iperparametri (come CCC e il tipo di kernel).
 
+\item \textbf{Random Forest}: È un metodo ensemble basato su una collezione di alberi decisionali addestrati su diversi sottocampioni del dataset. La classificazione viene effettuata tramite voto di maggioranza. È robusto, gestisce bene l'overfitting e può modellare relazioni complesse, ma tende ad essere meno interpretabile.
 
+\item \textbf{XGBoost (Extreme Gradient Boosting)}: È un potente algoritmo di boosting che costruisce alberi in sequenza, dove ciascun nuovo albero corregge gli errori dei precedenti. Ottimizza una funzione di perdita tramite gradient boosting ed è noto per la sua alta accuratezza e efficienza computazionale. Tuttavia, richiede una maggiore attenzione nell’ottimizzazione degli iperparametri per evitare overfitting.
 
+\end{itemize}
 
+L'ottimizzazione degli iperparametri è stata effettuata mediante \texttt{RandomizedSearchCV}, con una validazione incrociata a 3 fold e ottimizzazione rispetto all'\textbf{F1 score macro}, al fine di tenere conto dell'eventuale sbilanciamento tra le classi.
 
 
 
