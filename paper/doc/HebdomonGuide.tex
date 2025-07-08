@@ -10,7 +10,7 @@
 \begin{document}
 
 \title{Blood Cells Detection and Classification using Deep Learning and Machine Learning}
-\author{v0.1}
+
 \StudentName{Achille Cannavale}
 \date{dtm@mci4me.at}
 
@@ -29,7 +29,6 @@
     \vspace{2cm}
     {\Huge\bfseries Blood Cells Detection and Classification using Deep Learning and Machine Learning\par}
     \vspace{1cm}
-    {\large Versione 0.1}
 
     \vfill
 
@@ -53,22 +52,23 @@
 
 La malaria è una delle principali malattie infettive a livello globale, con un impatto significativo sulla salute pubblica, in particolare nei paesi tropicali e subtropicali. Tra i diversi parassiti responsabili di questa patologia, il \hlight{Plasmodium vivax} rappresenta una delle specie più diffuse. La diagnosi precoce e accurata è fondamentale per un trattamento tempestivo ed efficace, e l’analisi microscopica degli strisci ematici rimane uno degli strumenti diagnostici più affidabili.
 In questo progetto, viene affrontato il problema della rilevazione e classificazione automatica delle cellule del sangue infettate da P. vivax, attraverso tecniche di machine e deep learning.
-Utilizzando il dataset \hlight{P. vivax malaria infected human blood smears}, che contiene oltre \textbf{1.300} immagini microscopiche annotate con più di \textbf{86.000} cellule identificate e classificate, si propone una pipeline [FOTO] che combina \textbf{Deep Learning} e \textbf{Machine Learning} per:
+Utilizzando il dataset \hlight{P. vivax malaria infected human blood smears}, che contiene oltre \textbf{1.300} immagini microscopiche annotate con più di \textbf{86.000} cellule identificate e classificate, si propone una pipeline, in figura \ref{fig:pipeline_general} che combina \textbf{Deep Learning} e \textbf{Machine Learning} per:
 
 \begin{itemize}
-	\item individuare automaticamente le regioni di interesse (ROI) contenenti cellule
-	\item estrarre le feature significative dalle ROI
-	\item classificare ogni cellula in una delle categorie predefinite, tra cui cellule sane (red blood cell e leukocyte) e diversi stadi del parassita infetto (trophozoite, ring, gametocyte, schizont)
+	\item individuare automaticamente le regioni di interesse (\textbf{ROI}) contenenti cellule
+	\item estrarre le \textbf{feature} significative dalle ROI
+	\item classificare ogni cellula in una delle categorie predefinite, tra cui cellule sane (\hlight{red blood cell} e \hlight{leukocyte}) e diversi stadi del parassita infetto (\hlight{trophozoite}, \hlight{ring}, \hlight{gametocyte}, \hlight{schizont})
 \end{itemize}
 
 \begin{warning}
-	L’analisi di questo lavoro ha evidenziato una marcata sbilanciatura del dataset, aspetto che ha richiesto un’attenta progettazione delle strategie di addestramento.
+	L’analisi di questo lavoro ha evidenziato una marcata \hlight{sbilanciatura} del dataset, aspetto che ha richiesto un’attenta progettazione delle strategie di addestramento.
 \end{warning}
 %
 \begin{figure}[ht]
 	\centering
 	\includesvg[width=\linewidth]{figures/pipeline_general.svg}
 	\caption{Pipeline Generale del nostro progetto, suddivisa in una fase di Deep Learning per per la rilevazione delle ROI e l'estrazione delle features e una fase di Machine Learning per la classificazione delle cellule.}
+	\label{fig:pipeline_general}
 \end{figure}
 %
 
@@ -92,7 +92,7 @@ Per lo sviluppo del progetto sono stati adottati diversi strumenti software, sud
 
 \Section{Composizione Dataset}
 
-Il dataset utilizzato per questo progetto è composto da \textbf{1.328 immagini} contenenti in totale \textbf{86.035 oggetti annotati}. Ogni oggetto rappresenta una singola cellula o elemento biologico rilevato nelle immagini microscopiche, ed è associato a una delle seguenti \textbf{sette classi}:
+Il dataset utilizzato per questo progetto è composto da \textbf{1.328 immagini}, con una risoluzione di (1600 x  1200) contenenti in totale \textbf{86.035 oggetti annotati}. Ogni oggetto rappresenta una singola cellula o elemento biologico rilevato nelle immagini microscopiche, ed è associato a una delle seguenti \textbf{sette classi}:
 
 \begin{itemize}
     \item \texttt{red blood cell} (83.034)
@@ -104,7 +104,7 @@ Il dataset utilizzato per questo progetto è composto da \textbf{1.328 immagini}
     \item \texttt{leukocyte} (103)
 \end{itemize}
 
-Come si può osservare dalla distribuzione, il dataset presenta un \textbf{forte sbilanciamento tra le classi}, con la stragrande maggioranza degli oggetti appartenenti alla categoria \texttt{red blood cell}, che rappresenta da sola circa il \textbf{96{,}5\%} del totale.
+Come si può osservare dalla distribuzione, il dataset presenta un \textbf{forte sbilanciamento tra le classi}, con la stragrande maggioranza degli oggetti appartenenti alla categoria \hlight{red blood cell}, che rappresenta da sola circa il \textbf{96{,}5\%} del totale.
 
 Questo sbilanciamento costituisce una \textbf{sfida rilevante per i modelli di classificazione}, in quanto tende a favorire la previsione della classe dominante a discapito delle classi minoritarie, che possono essere trascurate o predette con bassa accuratezza.
 
@@ -176,7 +176,7 @@ A.CoarseDropout(
     hole_height_range=(10, 20),          # Altezza dei buchi tra 10 e 20 px
     hole_width_range=(10, 20),           # Larghezza dei buchi tra 10 e 20 px
     fill="random_uniform",               # Riempie i buchi con valori casuali
-    p=0.2                               # Probabilità di applicazione 20%
+    p=0.2                                # Probabilità di applicazione 20%
 )
 \end{code}
 \fi
@@ -194,7 +194,7 @@ A.CoarseDropout(
 
 Per migliorare le prestazioni del modello di object detection, abbiamo effettuato un’analisi approfondita della distribuzione delle dimensioni delle bounding box presenti nel dataset. Le anchor boxes predefinite, come quelle utilizzate nei dataset generici come COCO, non risultavano ottimali per il nostro caso specifico, in quanto le cellule da rilevare presentano dimensioni e proporzioni piuttosto omogenee e differenti rispetto agli oggetti comuni.
 
-A tal fine, abbiamo estratto tutte le bounding box del dataset di addestramento e calcolato le dimensioni (larghezza e altezza) di ciascuna. I dati così ottenuti sono stati utilizzati come input per un algoritmo di clustering K-Means, impostato per individuare i centroidi rappresentativi delle dimensioni più ricorrenti. In particolare, è stato scelto un numero di cluster pari a 6, corrispondente al numero di anchor boxes da definire. Le nuove ancore suggerite sono state quindi utilizzate per sostituire quelle standard all’interno del modello.
+A tal fine, abbiamo estratto tutte le bounding box del dataset di addestramento e calcolato le dimensioni (larghezza e altezza) di ciascuna. I dati così ottenuti sono stati utilizzati come input per un algoritmo di clustering \hlight{K-Means}, impostato per individuare i centroidi rappresentativi delle dimensioni più ricorrenti. In particolare, è stato scelto un numero di cluster pari a 6, corrispondente al numero di anchor boxes da definire. Le nuove ancore suggerite sono state quindi utilizzate per sostituire quelle standard all’interno del modello.
 
 Questa ottimizzazione ha permesso un miglior allineamento tra le proposte del modello e le reali dimensioni degli oggetti nel dataset, contribuendo a un incremento consistente delle metriche di accuratezza. L'impatto dell’adozione delle nuove anchor boxes è illustrato nella Tabella~\ref{tab:custom_anchors}, dove si evidenzia un miglioramento del valore di mAP rispetto alla configurazione predefinita.
 
@@ -208,7 +208,7 @@ Questa ottimizzazione ha permesso un miglior allineamento tra le proposte del mo
 		\toprule
 		\textbf{Configurazione Anchor} & \textbf{mAP@0.5} \\
 		\midrule
-		Default (COCO-style)         & valore \\
+		Default (COCO-style)         & \textbf{0.75} \\
 		Personalizzate (K-Means)     & \textbf{0.78} \\
 		\bottomrule
 	\end{NiceTabular}
@@ -225,22 +225,14 @@ Questo squilibrio comporta che durante l’addestramento i modelli tendano a pri
 Per mitigare questo problema, abbiamo adottato la \textit{Focal Loss} (Lin et al., 2017), una funzione di perdita che estende la Cross Entropy introducendo un termine di modulazione. Tale termine riduce il peso degli esempi facili (correttamente classificati) e concentra l’apprendimento sugli esempi difficili o mal classificati, tipicamente appartenenti alle classi minoritarie. La formulazione della Focal Loss è:
 
 \[
-\text{FL}(p_t) = -\alpha (1 - p_t)^\gamma \log(p_t)
+\text{FL}(p_t) = -\alpha (1 - p_t)^\gamma \log(p_t) \quad \ref{fig:focal_loss}
 \]
 
 dove \( p_t \) è la probabilità stimata per la classe corretta, \(\alpha\) è un fattore di bilanciamento tra classi e \(\gamma\), detto "focusing parameter", controlla la riduzione del peso degli esempi facili.
 
-Nel nostro caso, i parametri \(\alpha = 0.25\) e \(\gamma = 3.0\) sono stati scelti per ottenere un buon equilibrio tra stabilità e miglioramento delle performance. L’uso della Focal Loss ha permesso di:
+Nel nostro caso, i parametri \(\alpha = 0.25\) e \(\gamma = 3.0\) sono stati scelti per ottenere un buon equilibrio tra stabilità e miglioramento delle performance.
 
-\begin{itemize}
-    \item ridurre l’impatto degli esempi di sfondo abbondanti,
-    \item aumentare la sensibilità verso le cellule infette meno rappresentate,
-    \item migliorare la convergenza e la capacità discriminativa del modello.
-\end{itemize}
 
-La funzione di perdita per la regressione delle bounding box è stata mantenuta invariata, affidandosi alla \textit{Smooth L1 Loss}, che risulta efficace per la localizzazione precisa delle cellule.
-
-Questa scelta ha avuto un impatto positivo sulle metriche di accuratezza e recall, fondamentali in ambito medico per evitare falsi negativi.
 
 
 %
@@ -292,7 +284,7 @@ Le configurazioni testate sono le seguenti:
     \item \textbf{Backbone:} ResNet101 \quad \textbf{Head:} RetinaNet
 \end{itemize}
 
-L’architettura che ha fornito i migliori risultati, sia in termini di accuratezza sia di generalizzazione, è stata quella composta da \textbf{ResNeXt101} come backbone e \textbf{Faster R-CNN} come head. In Figura \ref{fig:model_best} è riportata una rappresentazione schematica della pipeline del modello.
+L’architettura che ha fornito i migliori risultati, sia in termini di accuratezza sia di generalizzazione, è stata quella composta da \hlight{ResNeXt101} come backbone e \hlight{Faster R-CNN} come head. In Figura \ref{fig:model_best} è riportata una rappresentazione schematica della pipeline del modello.
 
 
 
@@ -305,37 +297,17 @@ L’architettura che ha fornito i migliori risultati, sia in termini di accurate
 \end{figure}
 %
 
-%
-\begin{table}[H]
-	\begin{NiceTabular}{rX}[rules/color=[gray]{0.9},rules/width=1pt]
-		\CodeBefore
-		\rowcolors{1}{black!5}{}
-		\rowcolors{3}{blue!5}{}
-		\Body
-		\toprule
-		\textbf{Metric}      & \textbf{Value}                                \\
-		\midrule
-		\textbf{mIoU} & 0.8871 \\
-		\textbf{Precision} & 0.9733 \\
-		\textbf{Recall} & 0.9683 \\
-		\textbf{F1 Score} & 0.9708 \\
-		\midrule
-		\textbf{mAP} & 0.7397 \\
-		\textbf{mAP@50} & 0.9479 \\
-		\textbf{mAP@75} & 0.8874 \\
-		\bottomrule
-	\end{NiceTabular}
-	\caption{Evaluation metrics of ResNeXt101 + Faster R-CNN model.}
-\end{table}
-%
 
-%foto
 
 % Per confronto, è utile visualizzare anche i risultati ottenuti con l’architettura meno performante (MobileNet + Faster R-CNN), mostrati in Figura \ref{fig:model_worst}. Questo confronto evidenzia chiaramente le differenze di accuratezza e qualità della predizione.
 
-%foto
 
 \Section{Valutazione}
+
+
+
+
+
 \Subsection{Iperparametri}
 % Tabella con i parametri
 \begin{table}[!ht]
@@ -366,15 +338,39 @@ L’architettura che ha fornito i migliori risultati, sia in termini di accurate
 
 Gli iperparametri riportati nella Tabella \ref{tab:hyperparameters} sono il risultato di un'attenta fase di sperimentazione in cui sono stati confrontati diversi valori e configurazioni. In particolare, si è osservato che un numero di epoche pari a 5 è sufficiente per ottenere una buona convergenza: aumentare il numero di epoche a 10 non ha portato a miglioramenti significativi in termini di accuratezza o generalizzazione.
 
-Per quanto riguarda l’ottimizzatore, si è confrontato l’uso di Adam e \textbf{AdamW}, con quest’ultimo che ha dimostrato maggiore stabilità e performance migliori, probabilmente grazie alla gestione più efficace della regolarizzazione tramite \textbf{weight decay}.
+Per quanto riguarda l’ottimizzatore, si è confrontato l’uso di \textbf{Adam} e \hlight{AdamW}, con quest’ultimo che ha dimostrato maggiore stabilità e performance migliori, probabilmente grazie alla gestione più efficace della regolarizzazione tramite \textbf{weight decay}.
 
-La politica di gestione del learning rate è stata valutata tra \textbf{ReduceLROnPlateau} e \textbf{CosineAnnealingLR}. \textbf{ReduceLROnPlateau} si è rivelata più adatta al nostro task, poiché riduceva il learning rate solo quando la metrica di validazione non migliorava, consentendo un adattamento più dinamico e mirato rispetto al coseno annealing, che segue un programma fisso.
+La politica di gestione del learning rate è stata valutata tra \textbf{ReduceLROnPlateau} e \textbf{CosineAnnealingLR}. \hlight{ReduceLROnPlateau} si è rivelata più adatta al nostro task, poiché riduceva il learning rate solo quando la metrica di validazione non migliorava, consentendo un adattamento più dinamico e mirato rispetto al coseno annealing, che segue un programma fisso.
 
-Infine, la scelta della funzione di perdita si è concentrata tra la \textbf{standard loss} e la \textbf{Focal Loss}. Quest’ultima ha mostrato un vantaggio concreto nella gestione dello sbilanciamento delle classi presenti nel dataset, migliorando la capacità del modello di rilevare correttamente anche le classi meno rappresentate.
+Infine, la scelta della funzione di perdita si è concentrata tra la \textbf{standard loss} e la \hlight{Focal Loss}. Quest’ultima ha mostrato un vantaggio concreto nella gestione dello sbilanciamento delle classi presenti nel dataset, migliorando la capacità del modello di rilevare correttamente anche le classi meno rappresentate. Nella tabella \ref{tab:evaluation_metrics} sono riportate le metriche di valutazione ottenute con questa configurazione ottimizzata.
 
 
+%
+\begin{table}[H]
+	\begin{NiceTabular}{rX}[rules/color=[gray]{0.9},rules/width=1pt]
+		\CodeBefore
+		\rowcolors{1}{black!5}{}
+		\rowcolors{3}{blue!5}{}
+		\Body
+		\toprule
+		\textbf{Metric}      & \textbf{Value}                                \\
+		\midrule
+		\textbf{mIoU} & 0.8871 \\
+		\textbf{Precision} & 0.9733 \\
+		\textbf{Recall} & 0.9683 \\
+		\textbf{F1 Score} & 0.9708 \\
+		\midrule
+		\textbf{mAP} & 0.7397 \\
+		\textbf{mAP@50} & 0.9479 \\
+		\textbf{mAP@75} & 0.8874 \\
+		\bottomrule
+	\end{NiceTabular}
+	\caption{Evaluation metrics of ResNeXt101 + Faster R-CNN model.}
+	\label{tab:evaluation_metrics}
+\end{table}
+%
 
-\subsection{Visualizzazione dei Risultati}
+\Subsection{Visualizzazione dei Risultati}
 In questa sezione vengono mostrati i risultati ottenuti dall’addestramento del modello. La Figura \ref{fig:loss_curve} presenta il grafico dell’andamento della \hlight{training loss} e della \hlight{validation loss} durante le epoche, evidenziando una buona convergenza e un’assenza di overfitting significativo.
 
 % Immagine della loss
@@ -428,7 +424,7 @@ Tutti i dati raccolti vengono infine aggregati in un dataframe strutturato, che 
 %
 La parte di Machine Learning ha come input il file csv generato nella parte di Deep Learning, che contiene le feature estratte dalle ROIs.
 
-In un primo momento, la struttura generale di questa parte era costituita da un solo Classificatore, che aveva il compito di distinguere le cellule in tutte e 7 le classi. Tuttavia, a causa della grande \hlight{class imbalance} del dataset (\ref{fig:sbilanciamento}), si è deciso di adottare un approccio diverso, creando 2 classificatori distinti:
+In un primo momento, la struttura generale di questa parte era costituita da un solo Classificatore, che aveva il compito di distinguere le cellule in tutte e 7 le classi. Tuttavia, a causa della grande \hlight{class imbalance} del dataset (in figura \ref{fig:sbilanciamento}), si è deciso di adottare un approccio diverso, creando 2 classificatori distinti:
 \begin{itemize}
 	\item \textbf{Classificatore 1:} \hlight{RBC vs Infected Cells} \\
 	Questo classificatore ha il compito di distinguere le cellule sane (RBC e Leukocyte) dalle cellule infette (tutte le altre classi).
@@ -449,7 +445,7 @@ In un primo momento, la struttura generale di questa parte era costituita da un 
 Il dataset non presenta valori mancanti, quindi non è stato necessario effettuare operazioni di \textbf{data cleaning}. Le etichette sono state codificate utilizzando un \textbf{LabelEncoder}, trasformando le classi da etichette testuali o intere non sequenziali in valori numerici consecutivi, come richiesto dalla maggior parte dei modelli di classificazione supervisionata.
 
 \Section{Oversampling: BorderlineSMOTE}
-Per affrontare il problema dello sbilanciamento delle classi, è stato utilizzato l'algoritmo \textbf{BorderlineSMOTE}, una variante del Synthetic Minority Over-sampling Technique (SMOTE). Questo metodo genera nuovi campioni sintetici per le classi minoritare, migliorando la capacità del modello di apprendere le caratteristiche distintive delle classi meno rappresentate.
+Per affrontare il problema dello sbilanciamento delle classi, è stato utilizzato l'algoritmo \textbf{BorderlineSMOTE} (in figura \ref{fig:BorderlineSMOTE}), una variante del Synthetic Minority Over-sampling Technique (SMOTE). Questo metodo genera nuovi campioni sintetici per le classi minoritare, migliorando la capacità del modello di apprendere le caratteristiche distintive delle classi meno rappresentate.
 % 
 \begin{figure}[H]
   \centering
@@ -485,6 +481,9 @@ dove:
 \end{itemize}
 
 Il risultato è uno spazio trasformato in cui le classi sono, idealmente, più separabili. Inoltre, il numero massimo di componenti ottenibili con LDA è pari a $C - 1$, dove $C$ è il numero di classi.
+
+
+
 
 
 \Section{Approccio Gerarchico alla Classificazione}
@@ -527,14 +526,11 @@ Come evidenziato dalla Figura~\ref{fig:lda_infette}, la separabilità tra alcune
 \Section{Model training}
 Sono stati valutati diversi modelli di classificazione, tra cui:
 
-Possiamo fare o una tabella oppure un diagramma del genere
-
-
 
 \begin{itemize}
 \item \textbf{Non parametrici}: K-Nearest Neighbors (KNN)
 \item \textbf{Lineari}: Logistic Regression
-\item \textbf{Support Vector Machine (SVM)}: SVM con kernel lineare e non lineare (?)  
+\item \textbf{Support Vector Machine (SVM)}: SVM con kernel lineare, polinomiale e RBF 
 \item \textbf{Classificatori d’insieme}: Random Forest, XGBoost
 \end{itemize}
 
@@ -542,11 +538,11 @@ dove:
 
 \begin{itemize}
 
-\item \textbf{K-Nearest Neighbors (KNN)}: È un algoritmo non parametrico basato sulla distanza. Per classificare un'istanza, considera i kkk esempi più vicini (in genere in termini di distanza euclidea) e assegna la classe più rappresentata tra questi. KNN non assume alcuna forma funzionale dei dati e può adattarsi bene a problemi non lineari, ma può essere sensibile alla scelta di kkk e alle caratteristiche dei dati (come la scala delle feature).
+\item \textbf{K-Nearest Neighbors (KNN)}: È un algoritmo non parametrico basato sulla distanza. Per classificare un'istanza, considera i $k$ esempi più vicini (in genere in termini di distanza euclidea) e assegna la classe più rappresentata tra questi. KNN non assume alcuna forma funzionale dei dati e può adattarsi bene a problemi non lineari, ma può essere sensibile alla scelta di $k$ e alle caratteristiche dei dati (come la scala delle feature).
 
 \item \textbf{Logistic Regression}: È un modello lineare di classificazione che stima la probabilità che un'osservazione appartenga a una certa classe utilizzando la funzione logistica (sigmoide). È semplice, interpretabile ed efficace quando le classi sono linearmente separabili, ma può avere prestazioni limitate su problemi complessi e non lineari.
 
-\item \textbf{Support Vector Machine (SVM)}: L'SVM cerca l'iperpiano che massimizza il margine tra le classi. Grazie all'uso del kernel trick, può proiettare i dati in spazi di dimensioni superiori, permettendo la separazione anche in casi non linearmente separabili. È efficace in spazi ad alta dimensionalità ma può richiedere una buona scelta di iperparametri (come CCC e il tipo di kernel).
+\item \textbf{Support Vector Machine (SVM)}: L'SVM cerca l'iperpiano che massimizza il margine tra le classi. Grazie all'uso del kernel trick, può proiettare i dati in spazi di dimensioni superiori, permettendo la separazione anche in casi non linearmente separabili. È efficace in spazi ad alta dimensionalità ma può richiedere una buona scelta di iperparametri (come $C$ e il tipo di kernel).
 
 \item \textbf{Random Forest}: È un metodo ensemble basato su una collezione di alberi decisionali addestrati su diversi sottocampioni del dataset. La classificazione viene effettuata tramite voto di maggioranza. È robusto, gestisce bene l'overfitting e può modellare relazioni complesse, ma tende ad essere meno interpretabile.
 
@@ -554,12 +550,12 @@ dove:
 
 \end{itemize}
 
-L'ottimizzazione degli iperparametri è stata effettuata mediante \texttt{RandomizedSearchCV}, con una validazione incrociata a 3 fold e ottimizzazione rispetto all'\textbf{F1 score macro}, al fine di tenere conto dell'eventuale sbilanciamento tra le classi.
+L'ottimizzazione degli iperparametri è stata effettuata mediante \texttt{RandomizedSearchCV}, con una validazione incrociata a \textbf{3 fold} e ottimizzazione rispetto all'\textbf{F1 score macro}, al fine di tenere conto dell'eventuale sbilanciamento tra le classi.
 
 
 \Section{Model evaluation}
 
-Al termine della fase di addestramento, la miglior configurazione degli iper-parametri trovata utilizzando \texttt{RandomizedSearchCV} è \hlight{SVM} con :
+Al termine della fase di addestramento, la miglior configurazione degli iper-parametri trovata utilizzando \texttt{RandomizedSearchCV} è \hlight{SVM} in entrambi gli stage, con :\\
 \ifshowcode
 %
 \begin{code}{python}
