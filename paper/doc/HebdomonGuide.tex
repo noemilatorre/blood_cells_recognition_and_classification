@@ -2,6 +2,9 @@
 \documentclass[minted, draw]{../tex/hebdomon}
 \usepackage{svg}
 
+\newif\ifshowcode
+\showcodefalse % or \showcodetrue
+
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc} % se usi PDFLaTeX
 \begin{document}
@@ -166,6 +169,7 @@ In particolare, I parametri della normalizzazione sono stati calcolati dal datas
 
 Una delle trasformazioni che ha avuto il maggiore impatto sulle prestazioni è stata la \texttt{CoarseDropout} (fig. \ref{fig:coarse_dropout_example}), che oscura regioni rettangolari casuali dell’immagine, simulando occlusioni ottiche e migliorando la robustezza del modello in scenari reali dove gli oggetti potrebbero essere parzialmente visibili.
 
+\ifshowcode
 \begin{code}{python}
 A.CoarseDropout(
     num_holes_range=(3, 6),              # Numero casuale di buchi tra 3 e 6
@@ -175,9 +179,8 @@ A.CoarseDropout(
     p=0.2                               # Probabilità di applicazione 20%
 )
 \end{code}
+\fi
 
-
-%
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=.2\linewidth]{figures/corse_result.png}
@@ -557,7 +560,7 @@ L'ottimizzazione degli iperparametri è stata effettuata mediante \texttt{Random
 \Section{Model evaluation}
 
 Al termine della fase di addestramento, la miglior configurazione degli iper-parametri trovata utilizzando \texttt{RandomizedSearchCV} è \hlight{SVM} con :
-
+\ifshowcode
 %
 \begin{code}{python}
   param_dist = {
@@ -568,7 +571,7 @@ Al termine della fase di addestramento, la miglior configurazione degli iper-par
     }
 \end{code}
 %
-
+\fi
 La valutazione delle performance del modello finale è stata effettuata confrontando le predizioni sul test set con le etichette reali, utilizzando le seguenti metriche:
 
 \begin{itemize}
