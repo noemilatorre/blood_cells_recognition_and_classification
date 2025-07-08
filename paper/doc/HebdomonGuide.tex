@@ -1,6 +1,7 @@
 % Load the base class
 \documentclass[minted, draw]{../tex/hebdomon}
 \usepackage{svg}
+\usepackage{parskip}
 
 \newif\ifshowcode
 \showcodefalse % or \showcodetrue
@@ -305,9 +306,6 @@ L’architettura che ha fornito i migliori risultati, sia in termini di accurate
 \Section{Valutazione}
 
 
-
-
-
 \Subsection{Iperparametri}
 % Tabella con i parametri
 \begin{table}[!ht]
@@ -424,14 +422,57 @@ Tutti i dati raccolti vengono infine aggregati in un dataframe strutturato, che 
 %
 La parte di Machine Learning ha come input il file csv generato nella parte di Deep Learning, che contiene le feature estratte dalle ROIs.
 
-In un primo momento, la struttura generale di questa parte era costituita da un solo Classificatore, che aveva il compito di distinguere le cellule in tutte e 7 le classi. Tuttavia, a causa della grande \hlight{class imbalance} del dataset (in figura \ref{fig:sbilanciamento}), si è deciso di adottare un approccio diverso, creando 2 classificatori distinti:
+
+Inizialmente abbiamo tentato di classificare tutte le 7 classi contemporaneamente, utilizzando tecniche standard per l’analisi di dataset sbilanciati, come SMOTE e PCA per la riduzione dimensionale. Tuttavia, le classi risultavano difficilmente separabili nello spazio delle feature: la \textbf{PCA} \ref{fig:pca_result}  mostrava un forte accavallamento tra le classi, con particolare predominanza dei globuli rossi (RBC), i quali rappresentavano la maggioranza nel dataset. Questo sbilanciamento si rifletteva anche nelle metriche di performance: i RBC raggiungevano un F1-score del 90\%, mentre le altre classi ottenevano valori molto bassi, indicando una classificazione inefficace.
+
+%
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=.5\linewidth]{figures/pca_result.png}
+	\caption{Risultato classificazione con PCA.}
+	\label{fig:pca_result}
+\end{figure}
+%
+
+
+Per comprendere meglio la distribuzione delle sole cellule infette, abbiamo temporaneamente escluso i globuli rossi dal training, filtrando manualmente le etichette, e sostituito la PCA con la tecnica SelectKBest per la selezione delle feature. Questo approccio ha portato a un significativo miglioramento delle performance: utilizzando un classificatore SVM si è raggiunta un’accuracy dell’89\%. 
+
+
+% 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.8\linewidth]{figures/lda_distribution.png}
+  \caption{Distribuzione delle classi delle Cellule Infette.}
+  \label{fig:lda_infette}
+\end{figure}
+%
+
+
+L’introduzione della validazione incrociata (k-fold) ha causato un leggero calo delle performance, ma l’applicazione di una variante più sofisticata di SMOTE, il borderline-SMOTE, ha contribuito a migliorare nuovamente i risultati.
+
+Durante l'analisi esplorativa, è emerso che la distinzione tra globuli rossi (RBC) e globuli bianchi (leukocyte) era particolarmente netta, raggiungendo un F1-score del 99\% in un setting binario limitato a queste due classi. 
+
+Questo ha suggerito un nuovo approccio: suddividere il problema in due fasi distinte. La prima fase consiste in una classificazione binaria che separa le \textbf{cellule sane} (RBC + leukocyte) da quelle \textbf{infette} (tutte le altre). In questa configurazione, utilizzando LDA (Linear Discriminant Analysis) in 1D, è stato possibile ottenere una buona separabilità tra i gruppi, con un F1-score macro del 93\% usando Random Forest.
+
+Successivamente, si è provato a costruire un classificatore a 3 classi (RBC vs leukocyte vs cellule infette), ma le performance si sono abbassate significativamente, con un F1-score medio del 71\%. 
+
+Questa osservazione ha portato all’adozione di un \textbf{approccio a cascata}, composto da due stadi:
+
 \begin{itemize}
-	\item \textbf{Classificatore 1:} \hlight{RBC vs Infected Cells} \\
-	Questo classificatore ha il compito di distinguere le cellule sane (RBC e Leukocyte) dalle cellule infette (tutte le altre classi).
-	\item \textbf{Classificatore 2:} \hlight{Infected Cells Classification} \\
-	Questo classificatore si occupa di distinguere le cellule infette tra loro, classificandole in \texttt{trophozoite}, \texttt{ring}, \texttt{difficult}, \texttt{schizont} e \texttt{gametocyte}
+	\item  \textbf{Classificatore 1 – Cellule sane vs Infected Cells:} distingue le cellule sane da quelle infette.
+	\item \textbf{Classificatore 2 – Infected Cells Classification:} classifica solo le cellule infette nelle rispettive cinque sottoclassi.
 \end{itemize}
 
+
+Questo approccio modulare ha permesso di affrontare in maniera più efficace il problema dello sbilanciamento e della sovrapposizione tra classi, migliorando la robustezza e l’accuratezza complessiva del sistema di classificazione.
+
+
+
+
+
+
+
+%  Tuttavia, a causa della grande \hlight{class imbalance} del dataset (in figura \ref{fig:sbilanciamento}), si è deciso di adottare un approccio diverso
 % 
 \begin{figure}[H]
   \centering
@@ -510,14 +551,7 @@ Come mostrato in Figura~\ref{fig:lda_sano_infetto}, l’LDA consente di ottenere
 Una volta identificate le cellule infette, esse vengono passate a un secondo classificatore, il cui obiettivo è quello di distinguere tra le sottoclassi patologiche: \texttt{trophozoite}, \texttt{ring}, \texttt{difficult}, \texttt{schizont} e \texttt{gametocyte}. In questo caso, il numero massimo di componenti LDA applicabili è $n_{classi} - 1 = 5$. È stata quindi eseguita un’ulteriore riduzione dimensionale tramite LDA, al fine di valutare la separabilità delle classi anche in questo sottoinsieme.
 
 
-% 
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=.8\linewidth]{figures/lda_distribution.png}
-  \caption{Distribuzione delle classi delle Cellule Infette.}
-  \label{fig:lda_infette}
-\end{figure}
-%
+
 
 Come evidenziato dalla Figura~\ref{fig:lda_infette}, la separabilità tra alcune classi migliora (si distinguono bene i globuli bianchi) mentre altre classi infette presentano una parziale sovrapposizione. Questo supporta l’efficacia dell’approccio gerarchico, in quanto la prima distinzione grossolana permette di alleggerire il carico del secondo classificatore, migliorando la performance complessiva del sistema.
 
