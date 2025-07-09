@@ -1162,6 +1162,20 @@ INPUT ./figures/lda_1.png
 INPUT ./figures/lda_1.png
 INPUT ./figures/lda_1.png
 INPUT ./figures/lda_1.png
+INPUT ./figures/grafico_esplicativo.svg
+INPUT ./figures/grafico_esplicativo.svg
+INPUT ./figures/grafico_esplicativo.svg
+INPUT ./svg-inkscape/grafico_esplicativo_svg-tex.pdf
+INPUT ./svg-inkscape/grafico_esplicativo_svg-tex.pdf_tex
+INPUT ./svg-inkscape/grafico_esplicativo_svg-tex.pdf_tex
+INPUT ./svg-inkscape/grafico_esplicativo_svg-tex.pdf
+INPUT ./svg-inkscape/grafico_esplicativo_svg-tex.pdf
+INPUT ./svg-inkscape/grafico_esplicativo_svg-tex.pdf_tex
+INPUT ./svg-inkscape/grafico_esplicativo_svg-tex.pdf_tex
+INPUT ./svg-inkscape/grafico_esplicativo_svg-tex.pdf
+INPUT ./svg-inkscape/grafico_esplicativo_svg-tex.pdf_tex
+INPUT ./svg-inkscape/grafico_esplicativo_svg-tex.pdf
+INPUT ./svg-inkscape/grafico_esplicativo_svg-tex.pdf
 INPUT ./figures/confusion_matrix_Stage 1 - SVM.png
 INPUT ./figures/confusion_matrix_Stage 1 - SVM.png
 INPUT ./figures/confusion_matrix_Stage 1 - SVM.png

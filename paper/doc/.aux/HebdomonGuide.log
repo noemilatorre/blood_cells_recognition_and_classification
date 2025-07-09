@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.6.24)  8 JUL 2025 16:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.6.24)  9 JUL 2025 10:46
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1892,24 +1892,33 @@ Package pdftex.def Info: figures/lda_1.png  used on input line 544.
 [19]
 
 [20 <./figures/lda_1.png>]
-\g__nicematrix_block_box_1_box=\box103
-\g__nicematrix_block_box_2_box=\box104
-
 
 [21]
-<figures/confusion_matrix_Stage 1 - SVM.png, id=379, 578.16pt x 433.62pt>
+\g__nicematrix_block_box_1_box=\box103
+\g__nicematrix_block_box_2_box=\box104
+Package svg Info: Last page of `./svg-inkscape/grafico_esplicativo_svg-tex.pdf' is 1 on input line 658.
+ (./svg-inkscape/grafico_esplicativo_svg-tex.pdf_tex
+<./svg-inkscape/grafico_esplicativo_svg-tex.pdf, id=378, page=1, 211.91672pt x 189.33234pt>
+File: ./svg-inkscape/grafico_esplicativo_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/grafico_esplicativo_svg-tex.pdf, page 1>
+Package pdftex.def Info: ./svg-inkscape/grafico_esplicativo_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 204.85847pt x 183.03389pt.
+)
+
+[22 <./svg-inkscape/grafico_esplicativo_svg-tex.pdf>]
+<figures/confusion_matrix_Stage 1 - SVM.png, id=412, 578.16pt x 433.62pt>
 File: figures/confusion_matrix_Stage 1 - SVM.png Graphic file (type png)
 <use figures/confusion_matrix_Stage 1 - SVM.png>
-Package pdftex.def Info: figures/confusion_matrix_Stage 1 - SVM.png  used on input line 666.
+Package pdftex.def Info: figures/confusion_matrix_Stage 1 - SVM.png  used on input line 676.
 (pdftex.def)             Requested size: 364.19672pt x 273.14235pt.
-<figures/confusion_matrix_Stage 2 - SVM ➡ SVM.png, id=380, 578.16pt x 433.62pt>
+<figures/confusion_matrix_Stage 2 - SVM ➡ SVM.png, id=413, 578.16pt x 433.62pt>
 File: figures/confusion_matrix_Stage 2 - SVM ➡ SVM.png Graphic file (type png)
 <use figures/confusion_matrix_Stage 2 - SVM ➡ SVM.png>
-Package pdftex.def Info: figures/confusion_matrix_Stage 2 - SVM ➡ SVM.png  used on input line 673.
+Package pdftex.def Info: figures/confusion_matrix_Stage 2 - SVM ➡ SVM.png  used on input line 683.
 (pdftex.def)             Requested size: 364.19672pt x 273.14235pt.
 
 
-[22]
+[23 <./figures/confusion_matrix_Stage 1 - SVM.png>]
 Package minitoc Info: I0009
 (minitoc)             Listing minitoc auxiliary files. 
 (minitoc)             Creating the HebdomonGuide.maf file.
@@ -1933,8 +1942,8 @@ Package minitoc(hints) Warning: W0024
 
 
 
-[23 <./figures/confusion_matrix_Stage 1 - SVM.png> <./figures/confusion_matrix_Stage 2 - SVM ➡ SVM.png>]
-runsystem(latexminted cleantemp  --timestamp 20250708162031 018679B249EA6FB07607F2451175FB2C)...executed.
+[24 <./figures/confusion_matrix_Stage 2 - SVM ➡ SVM.png>]
+runsystem(latexminted cleantemp  --timestamp 20250709104620 018679B249EA6FB07607F2451175FB2C)...executed.
 
  (.aux/HebdomonGuide.aux)
  ***********
@@ -1946,18 +1955,18 @@ Package logreq Info: Writing requests to 'HebdomonGuide.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 63724 strings out of 467886
- 1501092 string characters out of 5434045
- 2621838 words of memory out of 5000000
- 91333 multiletter control sequences out of 15000+600000
+ 63743 strings out of 467886
+ 1501962 string characters out of 5434045
+ 2619913 words of memory out of 5000000
+ 91347 multiletter control sequences out of 15000+600000
  882659 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  122i,16n,131p,10960b,1865s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/fira/FiraSans-Bold.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/fira/FiraSans-Italic.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/fira/FiraSans-Regular.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on .aux/HebdomonGuide.pdf (23 pages, 5814654 bytes).
+Output written on .aux/HebdomonGuide.pdf (24 pages, 5837015 bytes).
 PDF statistics:
- 530 PDF objects out of 1000 (max. 8388607)
- 382 compressed objects within 4 object streams
- 70 named destinations out of 1000 (max. 500000)
- 459 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 560 PDF objects out of 1000 (max. 8388607)
+ 399 compressed objects within 4 object streams
+ 72 named destinations out of 1000 (max. 500000)
+ 469 words of extra memory for PDF output out of 10000 (max. 10000000)
 

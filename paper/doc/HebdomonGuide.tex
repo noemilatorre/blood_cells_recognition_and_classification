@@ -614,7 +614,7 @@ La valutazione delle performance del modello finale è stata effettuata confront
 \end{itemize}
 
 
-Si è mantenuta come principale metrica di valutazione l'\textbf{F1-Score Macro}, che ha raggiunto nel primo stadio un valore di \hlight{0.75} e nel secondo stadio un valore di \hlight{0.32}. Questi risultati (tabella \ref{tab:full_report}) indicano una buona capacità del modello di distinguere tra le cellule sane e quelle infette, nonché tra le diverse sottoclassi di cellule infette.
+Si è mantenuta come principale metrica di valutazione l'\textbf{F1-Score Macro}, che ha raggiunto nel primo stadio un valore di \hlight{0.75} e nel secondo stadio un valore di \hlight{0.32}. Questi risultati (tabella \ref{tab:full_report}) indicano una buona capacità del modello di distinguere tra le cellule sane e quelle infette, tuttavia le performance del secondo stadio sono inferiori a causa del grande numero di \textbf{falsi negativi} in output al primo stadio (come visto in figura \ref{fig:performance_graph}) e per la complessità intrinseca della classificazione tra le sottoclassi infette.
 
 \begin{table}[!ht]
     \begin{NiceTabular}{rXXXXX}[rules/color={[gray]{0.9}},rules/width=1pt]
@@ -650,6 +650,16 @@ Si è mantenuta come principale metrica di valutazione l'\textbf{F1-Score Macro}
 
 
 Tutte le metriche e i risultati sono stati salvati automaticamente in un file di log, per garantire la tracciabilità e la riproducibilità degli esperimenti.
+
+
+% 
+\begin{figure}[H]
+  \centering
+  \includesvg[width=.45\linewidth]{figures/grafico_esplicativo.svg}
+  \caption{Grafico esplicativo del sistema a cascata.}
+  \label{fig:performance_graph}
+\end{figure}
+%
 
 
 Le matrici di confusione riportate in Figura \ref{fig:confusion_1} e Figura \ref{fig:confusion_2} illustrano i risultati ottenuti rispettivamente dal primo e dal secondo classificatore del sistema a cascata.
