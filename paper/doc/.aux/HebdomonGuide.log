@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.6.24)  9 JUL 2025 10:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.6.24)  9 JUL 2025 17:04
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1672,7 +1672,7 @@ LaTeX Font Info:    Font shape `TS1/FiraSans-OsF/regular/n' will be
 (Font)              scaled to size 10.95pt on input line 59.
 Package svg Info: Last page of `./svg-inkscape/pipeline_general_svg-tex.pdf' is 1 on input line 70.
  (./svg-inkscape/pipeline_general_svg-tex.pdf_tex
-<./svg-inkscape/pipeline_general_svg-tex.pdf, id=112, page=1, 1439.0011pt x 463.3561pt>
+<./svg-inkscape/pipeline_general_svg-tex.pdf, id=114, page=1, 1439.0011pt x 463.3561pt>
 File: ./svg-inkscape/pipeline_general_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/pipeline_general_svg-tex.pdf, page 1>
 Package pdftex.def Info: ./svg-inkscape/pipeline_general_svg-tex.pdf , page1 used on input line 56.
@@ -1712,6 +1712,10 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 \openout5 = `HebdomonGuide.mtc'.
 
 (.aux/HebdomonGuide.mtc2)
+
+[6
+
+]
 \g__nicematrix_max_cell_width_dim=\dimen396
 \c@iRow=\count583
 \c@jCol=\count584
@@ -1721,81 +1725,78 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 \l__nicematrix_left_delim_dim=\dimen397
 \l__nicematrix_right_delim_dim=\dimen398
 
-Underfull \hbox (badness 10000) in paragraph at lines 138--138
+Underfull \hbox (badness 10000) in paragraph at lines 145--145
 []|\T1/FiraSans-OsF/regular/n/10.95 brightness=0.2, con-tra-st=0.2, sa-tu-ra-tion=0.2, hue=0.1,
  []
 
 
-
-[6
-
-]
-Overfull \hbox (29.46545pt too wide) in paragraph at lines 171--172
+Overfull \hbox (29.46545pt too wide) in paragraph at lines 178--179
 []\T1/FiraSans-OsF/regular/n/10.95 Una del-le tra-sfor-ma-zio-ni che ha avu-to il mag-gio-re im-pat-to sul-le pre-sta-zio-ni � sta-ta la \T1/lmtt/m/n/10.95 CoarseDropout
  []
 
-<figures/corse_result.png, id=184, 485.815pt x 467.7475pt>
+<figures/corse_result.png, id=188, 485.815pt x 467.7475pt>
 File: figures/corse_result.png Graphic file (type png)
 <use figures/corse_result.png>
-Package pdftex.def Info: figures/corse_result.png  used on input line 187.
+Package pdftex.def Info: figures/corse_result.png  used on input line 194.
 (pdftex.def)             Requested size: 91.04744pt x 87.6596pt.
 
 
-[7 <./figures/corse_result.png>]
+[7]
+
+[8 <./figures/corse_result.png>]
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/n' in size <8> not available
-(Font)              Font shape `T1/FiraSans-OsF/regular/n' tried instead on input line 229.
+(Font)              Font shape `T1/FiraSans-OsF/regular/n' tried instead on input line 236.
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/regular/n' will be
-(Font)              scaled to size 8.0pt on input line 229.
+(Font)              scaled to size 8.0pt on input line 236.
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/n' in size <6> not available
-(Font)              Font shape `T1/FiraSans-OsF/regular/n' tried instead on input line 229.
+(Font)              Font shape `T1/FiraSans-OsF/regular/n' tried instead on input line 236.
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/regular/n' will be
-(Font)              scaled to size 6.0pt on input line 229.
-<figures/focal_loss.png, id=197, 279.9258pt x 168.63pt>
+(Font)              scaled to size 6.0pt on input line 236.
+<figures/focal_loss.png, id=205, 279.9258pt x 168.63pt>
 File: figures/focal_loss.png Graphic file (type png)
 <use figures/focal_loss.png>
-Package pdftex.def Info: figures/focal_loss.png  used on input line 242.
+Package pdftex.def Info: figures/focal_loss.png  used on input line 249.
 (pdftex.def)             Requested size: 273.14928pt x 164.55638pt.
 
 
-[8{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}]
-<figures/general_pipeline.png, id=208, 558.888pt x 187.902pt>
+[9{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc} <./figures/focal_loss.png>]
+<figures/general_pipeline.png, id=216, 558.888pt x 187.902pt>
 File: figures/general_pipeline.png Graphic file (type png)
 <use figures/general_pipeline.png>
-Package pdftex.def Info: figures/general_pipeline.png  used on input line 272.
+Package pdftex.def Info: figures/general_pipeline.png  used on input line 279.
 (pdftex.def)             Requested size: 455.24417pt x 153.05705pt.
-
-
-[9 <./figures/focal_loss.png>]
-Package svg Info: Last page of `./svg-inkscape/resnext_svg-tex.pdf' is 4 on input line 295.
+Package svg Info: Last page of `./svg-inkscape/resnext_svg-tex.pdf' is 4 on input line 302.
  (./svg-inkscape/resnext_svg-tex.pdf_tex
-<./svg-inkscape/resnext_svg-tex.pdf, id=216, page=1, 314.29922pt x 88.83188pt>
+<./svg-inkscape/resnext_svg-tex.pdf, id=219, page=1, 314.29922pt x 88.83188pt>
 File: ./svg-inkscape/resnext_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/resnext_svg-tex.pdf, page 1>
 Package pdftex.def Info: ./svg-inkscape/resnext_svg-tex.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 318.66953pt x 90.07188pt.
-<./svg-inkscape/resnext_svg-tex.pdf, id=217, page=2, 314.29922pt x 88.83188pt>
+<./svg-inkscape/resnext_svg-tex.pdf, id=220, page=2, 314.29922pt x 88.83188pt>
 File: ./svg-inkscape/resnext_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/resnext_svg-tex.pdf, page 2>
 Package pdftex.def Info: ./svg-inkscape/resnext_svg-tex.pdf , page2 used on input line 58.
 (pdftex.def)             Requested size: 318.66953pt x 90.07188pt.
-<./svg-inkscape/resnext_svg-tex.pdf, id=218, page=3, 314.29922pt x 88.83188pt>
+<./svg-inkscape/resnext_svg-tex.pdf, id=221, page=3, 314.29922pt x 88.83188pt>
 File: ./svg-inkscape/resnext_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/resnext_svg-tex.pdf, page 3>
 Package pdftex.def Info: ./svg-inkscape/resnext_svg-tex.pdf , page3 used on input line 60.
 (pdftex.def)             Requested size: 318.66953pt x 90.07188pt.
-<./svg-inkscape/resnext_svg-tex.pdf, id=219, page=4, 314.29922pt x 88.83188pt>
+<./svg-inkscape/resnext_svg-tex.pdf, id=222, page=4, 314.29922pt x 88.83188pt>
 File: ./svg-inkscape/resnext_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/resnext_svg-tex.pdf, page 4>
 Package pdftex.def Info: ./svg-inkscape/resnext_svg-tex.pdf , page4 used on input line 62.
 (pdftex.def)             Requested size: 318.66953pt x 90.07188pt.
 )
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/b/n' in size <12> not available
-(Font)              Font shape `T1/FiraSans-OsF/bold/n' tried instead on input line 309.
+(Font)              Font shape `T1/FiraSans-OsF/bold/n' tried instead on input line 316.
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/bold/n' will be
-(Font)              scaled to size 12.0pt on input line 309.
+(Font)              scaled to size 12.0pt on input line 316.
 
 
-[10 <./figures/general_pipeline.png> <./svg-inkscape/resnext_svg-tex.pdf> <./svg-inkscape/resnext_svg-tex.pdf
+[10 <./figures/general_pipeline.png>]
+
+[11 <./svg-inkscape/resnext_svg-tex.pdf> <./svg-inkscape/resnext_svg-tex.pdf
 
 pdfTeX warning: pdflatex (file ./svg-inkscape/resnext_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 > <./svg-inkscape/resnext_svg-tex.pdf
@@ -1805,24 +1806,23 @@ pdfTeX warning: pdflatex (file ./svg-inkscape/resnext_svg-tex.pdf): PDF inclusio
 
 pdfTeX warning: pdflatex (file ./svg-inkscape/resnext_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 >]
-<figures/loss.png, id=236, 409.7709pt x 328.8285pt>
+<figures/loss.png, id=245, 409.7709pt x 328.8285pt>
 File: figures/loss.png Graphic file (type png)
 <use figures/loss.png>
-Package pdftex.def Info: figures/loss.png  used on input line 377.
+Package pdftex.def Info: figures/loss.png  used on input line 384.
 (pdftex.def)             Requested size: 273.14928pt x 219.20006pt.
-
-
-[11]
-<figures/ex_result.png, id=244, 459.6372pt x 475.5366pt>
+<figures/ex_result.png, id=247, 459.6372pt x 475.5366pt>
 File: figures/ex_result.png Graphic file (type png)
 <use figures/ex_result.png>
-Package pdftex.def Info: figures/ex_result.png  used on input line 387.
+Package pdftex.def Info: figures/ex_result.png  used on input line 394.
 (pdftex.def)             Requested size: 273.14928pt x 282.60312pt.
 
 
-[12 <./figures/loss.png> <./figures/ex_result.png>]
+[12 <./figures/loss.png>]
 
-[13]
+[13 <./figures/ex_result.png>]
+
+[14]
 chapter 3.
 
 Class scrreprt Warning: Redefinition of \@makechapterhead detected.
@@ -1840,85 +1840,85 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 \openout5 = `HebdomonGuide.mtc'.
 
 (.aux/HebdomonGuide.mtc3)
-Package svg Info: Last page of `./svg-inkscape/machine_pipeline.drawio_svg-tex.pdf' is 1 on input line 419.
+Package svg Info: Last page of `./svg-inkscape/machine_pipeline.drawio_svg-tex.pdf' is 1 on input line 426.
  (./svg-inkscape/machine_pipeline.drawio_svg-tex.pdf_tex
-<./svg-inkscape/machine_pipeline.drawio_svg-tex.pdf, id=268, page=1, 815.67235pt x 287.95078pt>
+<./svg-inkscape/machine_pipeline.drawio_svg-tex.pdf, id=276, page=1, 815.67235pt x 287.95078pt>
 File: ./svg-inkscape/machine_pipeline.drawio_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/machine_pipeline.drawio_svg-tex.pdf, page 1>
 Package pdftex.def Info: ./svg-inkscape/machine_pipeline.drawio_svg-tex.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 455.24417pt x 160.71089pt.
 )
 
-[14
+[15
 
  <./svg-inkscape/machine_pipeline.drawio_svg-tex.pdf>]
-<figures/pca_result.png, id=326, 810.02625pt x 609.02531pt>
+<figures/pca_result.png, id=334, 810.02625pt x 609.02531pt>
 File: figures/pca_result.png Graphic file (type png)
 <use figures/pca_result.png>
-Package pdftex.def Info: figures/pca_result.png  used on input line 431.
+Package pdftex.def Info: figures/pca_result.png  used on input line 438.
 (pdftex.def)             Requested size: 227.62209pt x 171.13925pt.
-<figures/lda_distribution.png, id=328, 722.7pt x 433.62pt>
+<figures/lda_distribution.png, id=336, 722.7pt x 433.62pt>
 File: figures/lda_distribution.png Graphic file (type png)
 <use figures/lda_distribution.png>
-Package pdftex.def Info: figures/lda_distribution.png  used on input line 444.
+Package pdftex.def Info: figures/lda_distribution.png  used on input line 451.
 (pdftex.def)             Requested size: 364.19672pt x 218.51653pt.
 
 
-[15 <./figures/pca_result.png>]
+[16 <./figures/pca_result.png>]
 
-[16 <./figures/lda_distribution.png>]
-<figures/class_distribution.png, id=343, 722.7pt x 722.7pt>
+[17 <./figures/lda_distribution.png>]
+<figures/class_distribution.png, id=351, 722.7pt x 722.7pt>
 File: figures/class_distribution.png Graphic file (type png)
 <use figures/class_distribution.png>
-Package pdftex.def Info: figures/class_distribution.png  used on input line 481.
+Package pdftex.def Info: figures/class_distribution.png  used on input line 488.
 (pdftex.def)             Requested size: 318.66953pt x 318.67268pt.
-<figures/class_distribution_after_smote.png, id=345, 867.24pt x 433.62pt>
+<figures/class_distribution_after_smote.png, id=353, 867.24pt x 433.62pt>
 File: figures/class_distribution_after_smote.png Graphic file (type png)
 <use figures/class_distribution_after_smote.png>
-Package pdftex.def Info: figures/class_distribution_after_smote.png  used on input line 495.
+Package pdftex.def Info: figures/class_distribution_after_smote.png  used on input line 502.
 (pdftex.def)             Requested size: 409.71696pt x 204.86006pt.
 
 
-[17 <./figures/class_distribution.png>]
+[18 <./figures/class_distribution.png>]
 
-[18 <./figures/class_distribution_after_smote.png>]
-<figures/lda_1.png, id=357, 849.1725pt x 471.7625pt>
+[19 <./figures/class_distribution_after_smote.png>]
+<figures/lda_1.png, id=366, 849.1725pt x 471.7625pt>
 File: figures/lda_1.png Graphic file (type png)
 <use figures/lda_1.png>
-Package pdftex.def Info: figures/lda_1.png  used on input line 544.
+Package pdftex.def Info: figures/lda_1.png  used on input line 551.
 (pdftex.def)             Requested size: 318.66953pt x 177.04007pt.
 
 
-[19]
+[20]
 
-[20 <./figures/lda_1.png>]
+[21 <./figures/lda_1.png>]
 
-[21]
+[22]
 \g__nicematrix_block_box_1_box=\box103
 \g__nicematrix_block_box_2_box=\box104
-Package svg Info: Last page of `./svg-inkscape/grafico_esplicativo_svg-tex.pdf' is 1 on input line 658.
+Package svg Info: Last page of `./svg-inkscape/grafico_esplicativo_svg-tex.pdf' is 1 on input line 665.
  (./svg-inkscape/grafico_esplicativo_svg-tex.pdf_tex
-<./svg-inkscape/grafico_esplicativo_svg-tex.pdf, id=378, page=1, 211.91672pt x 189.33234pt>
+<./svg-inkscape/grafico_esplicativo_svg-tex.pdf, id=386, page=1, 211.91672pt x 189.33234pt>
 File: ./svg-inkscape/grafico_esplicativo_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/grafico_esplicativo_svg-tex.pdf, page 1>
 Package pdftex.def Info: ./svg-inkscape/grafico_esplicativo_svg-tex.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 204.85847pt x 183.03389pt.
 )
 
-[22 <./svg-inkscape/grafico_esplicativo_svg-tex.pdf>]
-<figures/confusion_matrix_Stage 1 - SVM.png, id=412, 578.16pt x 433.62pt>
+[23 <./svg-inkscape/grafico_esplicativo_svg-tex.pdf>]
+<figures/confusion_matrix_Stage 1 - SVM.png, id=420, 578.16pt x 433.62pt>
 File: figures/confusion_matrix_Stage 1 - SVM.png Graphic file (type png)
 <use figures/confusion_matrix_Stage 1 - SVM.png>
-Package pdftex.def Info: figures/confusion_matrix_Stage 1 - SVM.png  used on input line 676.
+Package pdftex.def Info: figures/confusion_matrix_Stage 1 - SVM.png  used on input line 683.
 (pdftex.def)             Requested size: 364.19672pt x 273.14235pt.
-<figures/confusion_matrix_Stage 2 - SVM ➡ SVM.png, id=413, 578.16pt x 433.62pt>
+<figures/confusion_matrix_Stage 2 - SVM ➡ SVM.png, id=421, 578.16pt x 433.62pt>
 File: figures/confusion_matrix_Stage 2 - SVM ➡ SVM.png Graphic file (type png)
 <use figures/confusion_matrix_Stage 2 - SVM ➡ SVM.png>
-Package pdftex.def Info: figures/confusion_matrix_Stage 2 - SVM ➡ SVM.png  used on input line 683.
+Package pdftex.def Info: figures/confusion_matrix_Stage 2 - SVM ➡ SVM.png  used on input line 690.
 (pdftex.def)             Requested size: 364.19672pt x 273.14235pt.
 
 
-[23 <./figures/confusion_matrix_Stage 1 - SVM.png>]
+[24 <./figures/confusion_matrix_Stage 1 - SVM.png>]
 Package minitoc Info: I0009
 (minitoc)             Listing minitoc auxiliary files. 
 (minitoc)             Creating the HebdomonGuide.maf file.
@@ -1942,8 +1942,8 @@ Package minitoc(hints) Warning: W0024
 
 
 
-[24 <./figures/confusion_matrix_Stage 2 - SVM ➡ SVM.png>]
-runsystem(latexminted cleantemp  --timestamp 20250709104620 018679B249EA6FB07607F2451175FB2C)...executed.
+[25 <./figures/confusion_matrix_Stage 2 - SVM ➡ SVM.png>]
+runsystem(latexminted cleantemp  --timestamp 20250709170418 018679B249EA6FB07607F2451175FB2C)...executed.
 
  (.aux/HebdomonGuide.aux)
  ***********
@@ -1955,18 +1955,18 @@ Package logreq Info: Writing requests to 'HebdomonGuide.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 63743 strings out of 467886
- 1501962 string characters out of 5434045
- 2619913 words of memory out of 5000000
- 91347 multiletter control sequences out of 15000+600000
+ 63746 strings out of 467886
+ 1501986 string characters out of 5434045
+ 2619914 words of memory out of 5000000
+ 91348 multiletter control sequences out of 15000+600000
  882659 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  122i,16n,131p,10960b,1865s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/fira/FiraSans-Bold.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/fira/FiraSans-Italic.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/fira/FiraSans-Regular.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on .aux/HebdomonGuide.pdf (24 pages, 5837015 bytes).
+Output written on .aux/HebdomonGuide.pdf (25 pages, 5839429 bytes).
 PDF statistics:
- 560 PDF objects out of 1000 (max. 8388607)
- 399 compressed objects within 4 object streams
- 72 named destinations out of 1000 (max. 500000)
- 469 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 575 PDF objects out of 1000 (max. 8388607)
+ 411 compressed objects within 5 object streams
+ 74 named destinations out of 1000 (max. 500000)
+ 477 words of extra memory for PDF output out of 10000 (max. 10000000)
 

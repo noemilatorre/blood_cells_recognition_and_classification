@@ -1,24 +1,24 @@
 # Fdb version 4
-["bibtex .aux/HebdomonGuide"] 1752050779.92796 ".aux/HebdomonGuide.aux" ".aux/HebdomonGuide.bbl" ".aux/HebdomonGuide" 1752050783.94528 0
-  ".aux/HebdomonGuide-blx.bib" 1752050783.64727 342 20d1170ef6c1d70c658d70e011e08dba "pdflatex"
-  ".aux/HebdomonGuide.aux" 1752050783.62727 39302 1be169cd98b91f2594ff56654df57bf9 "pdflatex"
+["bibtex .aux/HebdomonGuide"] 1752073444.58552 ".aux/HebdomonGuide.aux" ".aux/HebdomonGuide.bbl" ".aux/HebdomonGuide" 1752073462.61913 0
+  ".aux/HebdomonGuide-blx.bib" 1752073462.23123 342 20d1170ef6c1d70c658d70e011e08dba "pdflatex"
+  ".aux/HebdomonGuide.aux" 1752073462.21123 39638 f88e6f53c2c74718a3156e268b6aa7ea "pdflatex"
   "/usr/local/texlive/2025/texmf-dist/bibtex/bst/biblatex/biblatex.bst" 1711143581 65510 b1f696b0241395385f422f67543c37fd ""
   (generated)
   ".aux/HebdomonGuide.bbl"
   ".aux/HebdomonGuide.blg"
   (rewritten before read)
-["pdflatex"] 1752050780.03797 "/home/achille/Desktop/ML/paper/doc/HebdomonGuide.tex" ".aux/HebdomonGuide.pdf" "HebdomonGuide" 1752050783.94547 0
+["pdflatex"] 1752073458.56602 "/home/achille/Desktop/ML/paper/doc/HebdomonGuide.tex" ".aux/HebdomonGuide.pdf" "HebdomonGuide" 1752073462.61933 0
   "../tex/hebdomon.cls" 1751817319.8083 10319 d62d23a1bc49a0a3f35204da85a5e881 ""
-  ".aux/HebdomonGuide.aux" 1752050783.62727 39302 1be169cd98b91f2594ff56654df57bf9 "pdflatex"
-  ".aux/HebdomonGuide.bbl" 1752050780.02424 519 9b1193ea42022b65f5e4436756b83bc1 "bibtex .aux/HebdomonGuide"
-  ".aux/HebdomonGuide.mtc" 1752050782.84126 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  ".aux/HebdomonGuide.mtc0" 1752050780.95625 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  ".aux/HebdomonGuide.mtc1" 1752050782.31426 520 57846881bdc7c1b850b201e2e9894992 "pdflatex"
-  ".aux/HebdomonGuide.mtc2" 1752050782.31526 1437 cbb36ad0f154c3d56a71b7c7f68d36da "pdflatex"
-  ".aux/HebdomonGuide.mtc3" 1752050782.31526 1800 b9f031d3a34b96c8d7c7e91637edea8a "pdflatex"
-  ".aux/HebdomonGuide.run.xml" 1752050783.64727 2569 8a0facfdb8bc4ab95e89e3e496b3bc7c "pdflatex"
-  ".aux/HebdomonGuide.toc" 1752050783.64727 2588 e3bd3a3bf6daa0db3c58428814509ab3 "pdflatex"
-  "/home/achille/Desktop/ML/paper/doc/HebdomonGuide.tex" 1752050775.78522 55629 962e65a2feffd9b6656997b1a4c25634 ""
+  ".aux/HebdomonGuide.aux" 1752073462.21123 39638 f88e6f53c2c74718a3156e268b6aa7ea "pdflatex"
+  ".aux/HebdomonGuide.bbl" 1752073444.69605 519 9b1193ea42022b65f5e4436756b83bc1 "bibtex .aux/HebdomonGuide"
+  ".aux/HebdomonGuide.mtc" 1752073461.39122 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  ".aux/HebdomonGuide.mtc0" 1752073459.4632 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  ".aux/HebdomonGuide.mtc1" 1752073460.85021 520 57846881bdc7c1b850b201e2e9894992 "pdflatex"
+  ".aux/HebdomonGuide.mtc2" 1752073460.85121 1605 7cc7321b4efaed78359a1287cc479c03 "pdflatex"
+  ".aux/HebdomonGuide.mtc3" 1752073460.85121 1800 94c9707f24bf246ab502cfe1e761df53 "pdflatex"
+  ".aux/HebdomonGuide.run.xml" 1752073462.23223 2569 8a0facfdb8bc4ab95e89e3e496b3bc7c "pdflatex"
+  ".aux/HebdomonGuide.toc" 1752073462.23223 2682 1d77affe4f750f458318652ebeadd99e "pdflatex"
+  "/home/achille/Desktop/ML/paper/doc/HebdomonGuide.tex" 1752073458.35719 57000 977cecc2a77d68213439e6e9c431ee44 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/fira/fir_2mfh3o.enc" 1570828436 3443 c184b8b1bd90c3ec5d4289b992e64d96 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/fira/fir_d67aat.enc" 1570828436 3385 21a7e8c8dac3c39de5acda2c56e7bd7e ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/fira/fir_iln36p.enc" 1570828436 3071 cfa92ee28d698dd9275559d9d1c3a233 ""
@@ -556,7 +556,7 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1750790290 5523539 cbe340ff87ac4cfddcdc6361a84e52ac ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1750790419 3599570 9573da2e898a1f80dba1459fc11b5bf4 ""
   "/usr/local/texlive/2025/texmf.cnf" 1750790286.27446 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
-  "HebdomonGuide.tex" 1752050775.78522 55629 962e65a2feffd9b6656997b1a4c25634 ""
+  "HebdomonGuide.tex" 1752073458.35719 57000 977cecc2a77d68213439e6e9c431ee44 ""
   "figures/class_distribution.png" 1751634485.5855 40828 bfe41c0b9c4d6d2e227ee939e5ee500e ""
   "figures/class_distribution_after_smote.png" 1751636339.41456 28095 77eaa281e554acf77cf11be8213e1659 ""
   "figures/confusion_matrix_Stage 1 - SVM.png" 1751805658.42465 14506 1142e131e8790fbd8742a8b7ea870d87 ""

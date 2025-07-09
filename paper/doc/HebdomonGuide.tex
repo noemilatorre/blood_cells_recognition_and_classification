@@ -120,6 +120,13 @@ Per affrontare questo problema, durante lo sviluppo sono state considerate diver
 
 \Chapter{Deep Learning}
 
+\Section{Introduzione}
+Come primo passo preliminare allo sviluppo del sistema completo, è stato effettuato un test esplorativo utilizzando il modello \hlight{YOLO} (You Only Look Once), una delle architetture più diffuse per il rilevamento e la classificazione di oggetti in immagini. L’obiettivo di questa prova iniziale era quello di valutare la complessità del dataset e ottenere un’indicazione generale sulla difficoltà del compito di classificazione delle cellule, prima di procedere con pipeline più specializzate.
+
+YOLO è stato scelto in quanto permette una rapida sperimentazione ed è noto per la sua capacità di eseguire inferenza in tempo reale su immagini contenenti più oggetti, rendendolo un buon punto di partenza per una valutazione qualitativa del problema. Il dataset, costituito da immagini delle cellule e relative annotazioni, è stato quindi adattato al formato richiesto da YOLO e sottoposto a training utilizzando una configurazione standard.
+
+Il risultato ottenuto, un \hlight{mAP@50} pari a \hlight{0.39}, ha confermato che il problema presenta un certo grado di complessità. Questo valore, relativamente basso rispetto a quelli comunemente ottenuti su dataset più strutturati, suggerisce che le classi sono tra loro visivamente molto simili e difficilmente distinguibili solo attraverso un approccio diretto di object detection.
+
 \Section{Trasformazioni}
 Per garantire una buona generalizzazione del modello, e ridurre l'overfitting, è stata utilizzata la tecnica di \textit{data augmentation} tramite la libreria \texttt{Albumentations}. Dopo una fase di sperimentazione, sono state selezionate le seguenti trasformazioni come le più efficaci per il nostro caso di studio:
 
