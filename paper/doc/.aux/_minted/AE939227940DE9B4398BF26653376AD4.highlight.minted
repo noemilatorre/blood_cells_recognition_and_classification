@@ -1,9 +1,0 @@
-\begin{MintedVerbatim}[commandchars=\\\{\}]
-\PYG{n}{A}\PYG{o}{.}\PYG{n}{CoarseDropout}\PYG{p}{(}
-    \PYG{n}{num\PYGZus{}holes\PYGZus{}range}\PYG{o}{=}\PYG{p}{(}\PYG{l+m+mi}{3}\PYG{p}{,} \PYG{l+m+mi}{6}\PYG{p}{),}              \PYG{c+c1}{\PYGZsh{} Numero casuale di buchi tra 3 e 6}
-    \PYG{n}{hole\PYGZus{}height\PYGZus{}range}\PYG{o}{=}\PYG{p}{(}\PYG{l+m+mi}{10}\PYG{p}{,} \PYG{l+m+mi}{20}\PYG{p}{),}          \PYG{c+c1}{\PYGZsh{} Altezza dei buchi tra 10 e 20 px}
-    \PYG{n}{hole\PYGZus{}width\PYGZus{}range}\PYG{o}{=}\PYG{p}{(}\PYG{l+m+mi}{10}\PYG{p}{,} \PYG{l+m+mi}{20}\PYG{p}{),}           \PYG{c+c1}{\PYGZsh{} Larghezza dei buchi tra 10 e 20 px}
-    \PYG{n}{fill}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}random\PYGZus{}uniform\PYGZdq{}}\PYG{p}{,}               \PYG{c+c1}{\PYGZsh{} Riempie i buchi con valori casuali}
-    \PYG{n}{p}\PYG{o}{=}\PYG{l+m+mf}{0.2}                               \PYG{c+c1}{\PYGZsh{} Probabilità di applicazione 20\PYGZpc{}}
-\PYG{p}{)}
-\end{MintedVerbatim}

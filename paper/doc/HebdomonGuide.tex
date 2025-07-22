@@ -4,7 +4,7 @@
 \usepackage{parskip}
 
 \newif\ifshowcode
-\showcodefalse % or \showcodetrue
+\showcodetrue % or \showcodetrue \showcodefalse
 
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc} % se usi PDFLaTeX
@@ -121,7 +121,7 @@ Per affrontare questo problema, durante lo sviluppo sono state considerate diver
 \Chapter{Deep Learning}
 
 \Section{Introduzione}
-Come primo passo preliminare allo sviluppo del sistema completo, è stato effettuato un test esplorativo utilizzando il modello \hlight{YOLO} (You Only Look Once), una delle architetture più diffuse per il rilevamento e la classificazione di oggetti in immagini. L’obiettivo di questa prova iniziale era quello di valutare la complessità del dataset e ottenere un’indicazione generale sulla difficoltà del compito di classificazione delle cellule, prima di procedere con pipeline più specializzate.
+Come primo passo preliminare allo sviluppo del sistema completo, è stato effettuato un test esplorativo utilizzando il modello \hlight{YOLO Ultralytics 8} (You Only Look Once), una delle architetture più diffuse per il rilevamento e la classificazione di oggetti in immagini. L’obiettivo di questa prova iniziale era quello di valutare la complessità del dataset e ottenere un’indicazione generale sulla difficoltà del compito di classificazione delle cellule, prima di procedere con pipeline più specializzate.
 
 YOLO è stato scelto in quanto permette una rapida sperimentazione ed è noto per la sua capacità di eseguire inferenza in tempo reale su immagini contenenti più oggetti, rendendolo un buon punto di partenza per una valutazione qualitativa del problema. Il dataset, costituito da immagini delle cellule e relative annotazioni, è stato quindi adattato al formato richiesto da YOLO e sottoposto a training utilizzando una configurazione standard.
 
@@ -345,7 +345,7 @@ Gli iperparametri riportati nella Tabella \ref{tab:hyperparameters} sono il risu
 
 Per quanto riguarda l’ottimizzatore, si è confrontato l’uso di \textbf{Adam} e \hlight{AdamW}, con quest’ultimo che ha dimostrato maggiore stabilità e performance migliori, probabilmente grazie alla gestione più efficace della regolarizzazione tramite \textbf{weight decay}.
 
-La politica di gestione del learning rate è stata valutata tra \textbf{ReduceLROnPlateau} e \textbf{CosineAnnealingLR}. \hlight{ReduceLROnPlateau} si è rivelata più adatta al nostro task, poiché riduceva il learning rate solo quando la metrica di validazione non migliorava, consentendo un adattamento più dinamico e mirato rispetto al coseno annealing, che segue un programma fisso.
+La politica di gestione del learning rate è stata valutata tra \textbf{ReduceLROnPlateau} e \textbf{CosineAnnealingLR}. \hlight{ReduceLROnPlateau} si è rivelata più adatta al nostro task, poiché riduceva il learning rate solo quando la metrica di validazione non migliorava, consentendo un adattamento più dinamico e mirato rispetto al cosine annealing, che segue un programma fisso.
 
 Infine, la scelta della funzione di perdita si è concentrata tra la \textbf{standard loss} e la \hlight{Focal Loss}. Quest’ultima ha mostrato un vantaggio concreto nella gestione dello sbilanciamento delle classi presenti nel dataset, migliorando la capacità del modello di rilevare correttamente anche le classi meno rappresentate. Nella tabella \ref{tab:evaluation_metrics} sono riportate le metriche di valutazione ottenute con questa configurazione ottimizzata.
 
@@ -442,7 +442,7 @@ Inizialmente abbiamo tentato di classificare tutte le 7 classi contemporaneament
 %
 
 
-Per comprendere meglio la distribuzione delle sole cellule infette, abbiamo temporaneamente escluso i globuli rossi dal training, filtrando manualmente le etichette, e sostituito la PCA con la tecnica \hlight{SelectKBest} per la selezione delle feature. Questo approccio ha portato a un significativo miglioramento delle performance: utilizzando un classificatore \hlight{SVM} si è raggiunto un \hlight{F1-score dell’89\%}, da come è possibile evincere in figura \ref{fig:lda_infette}, che mostra la distribuzione delle classi delle cellule infette dopo l’applicazione di LDA (Linear Discriminant Analysis) in 1D.
+Per comprendere meglio la distribuzione delle sole cellule infette, abbiamo temporaneamente escluso le cellule sane dal training, filtrando manualmente le etichette, e sostituito la PCA con la tecnica \hlight{SelectKBest} per la selezione delle feature. Questo approccio ha portato a un significativo miglioramento delle performance: utilizzando un classificatore \hlight{SVM} si è raggiunto un \hlight{F1-score dell’89\%}, da come è possibile evincere in figura \ref{fig:lda_infette}, che mostra la distribuzione delle classi delle cellule infette dopo l’applicazione di LDA (Linear Discriminant Analysis) in n\_component=5.
 
 
 % 
@@ -559,10 +559,7 @@ Come mostrato in Figura~\ref{fig:lda_sano_infetto}, l’LDA consente di ottenere
 \item \textbf{Secondo stadio – Classificazione delle cellule infette:} \\
 Una volta identificate le cellule infette, esse vengono passate a un secondo classificatore, il cui obiettivo è quello di distinguere tra le sottoclassi patologiche: \texttt{trophozoite}, \texttt{ring}, \texttt{difficult}, \texttt{schizont} e \texttt{gametocyte}. In questo caso, il numero massimo di componenti LDA applicabili è $n_{classi} - 1 = 5$. È stata quindi eseguita un’ulteriore riduzione dimensionale tramite LDA, al fine di valutare la separabilità delle classi anche in questo sottoinsieme.
 
-
-
-
-Come evidenziato dalla Figura~\ref{fig:lda_infette}, la separabilità tra alcune classi migliora (si distinguono bene i globuli bianchi) mentre altre classi infette presentano una parziale sovrapposizione. Questo supporta l’efficacia dell’approccio gerarchico, in quanto la prima distinzione grossolana permette di alleggerire il carico del secondo classificatore, migliorando la performance complessiva del sistema.
+Questo supporta l’efficacia dell’approccio gerarchico, in quanto la prima distinzione grossolana permette di alleggerire il carico del secondo classificatore, migliorando la performance complessiva del sistema.
 
 \end{itemize}
 
@@ -598,7 +595,7 @@ L'ottimizzazione degli iperparametri è stata effettuata mediante \texttt{Random
 
 \Section{Model evaluation}
 
-Al termine della fase di addestramento, la miglior configurazione degli iper-parametri trovata utilizzando \texttt{RandomizedSearchCV} è \hlight{SVM} in entrambi gli stage, con :\\
+Al termine della fase di addestramento, il miglior modello di classificazione trovato si è rivelato essere \hlight{SVM} in entrambi gli stage, con la corrispettiva miglior configurazione degli iper-parametri, trovata utilizzando \texttt{RandomizedSearchCV}:\\
 \ifshowcode
 %
 \begin{code}{python}
@@ -671,9 +668,9 @@ Tutte le metriche e i risultati sono stati salvati automaticamente in un file di
 
 Le matrici di confusione riportate in Figura \ref{fig:confusion_1} e Figura \ref{fig:confusion_2} illustrano i risultati ottenuti rispettivamente dal primo e dal secondo classificatore del sistema a cascata.
 
-Nel primo classificatore (Figura \ref{fig:confusion_1}), che ha il compito di distinguere le cellule sane (\textbf{globuli rossi} e \textbf{globuli bianchi}) da \textbf{quelle infette}, si osserva una netta separazione tra le due classi. La maggioranza delle cellule sane viene correttamente classificata (\textbf{13.696} su \textbf{14.195}), mentre le \textbf{cellule infette}, pur essendo in netta minoranza, vengono identificate con un’accuratezza soddisfacente (\textbf{337} su \textbf{507}), pur con \textbf{170 falsi negativi}. Questo risultato è comunque positivo, considerando lo sbilanciamento del dataset, e dimostra l'efficacia del primo stadio nel filtrare correttamente la maggior parte delle cellule sane.
+Nel primo classificatore (Figura \ref{fig:confusion_1}), che ha il compito di distinguere le cellule sane (\textbf{globuli rossi} e \textbf{globuli bianchi}) da \textbf{quelle infette}, si osserva una netta separazione tra le due classi. La maggioranza delle cellule sane viene correttamente classificata (\textbf{13.696} su \textbf{14.195}), mentre le \textbf{cellule infette}, pur essendo in netta minoranza, vengono identificate con un’accuratezza soddisfacente (\textbf{337} su \textbf{507}), pur con \textbf{170 falsi positivi}. Questo risultato è comunque positivo, considerando lo sbilanciamento del dataset, e dimostra l'efficacia del primo stadio nel filtrare correttamente la maggior parte delle cellule sane.
 
-La matrice di confusione del secondo classificatore (Figura \ref{fig:confusion_2}), che si occupa della classificazione fine delle \textbf{cellule infette}, mostra invece una maggiore difficoltà nel distinguere tra le varie sottoclassi (\textbf{trophozoite, ring, difficult, schizont e gametocyte}). Alcune classi, in particolare i \hlight{ring} e i \hlight{trophozoite}, vengono spesso confuse tra loro, come evidenziato dagli alti valori fuori diagonale. Questo comportamento è atteso, data la somiglianza morfologica tra queste tipologie cellulari. Tuttavia, si nota una tendenza del classificatore a privilegiare una o due classi.
+La matrice di confusione del secondo classificatore (Figura \ref{fig:confusion_2}), che si occupa della classificazione fine delle \textbf{cellule infette}, mostra invece una maggiore difficoltà nel distinguere tra le varie sottoclassi (\textbf{trophozoite, ring, difficult, schizont e gametocyte}). Alcune classi, in particolare i \hlight{ring} e i \hlight{trophozoite}, vengono spesso confuse tra loro, come evidenziato dagli alti valori fuori diagonale. Questo comportamento è atteso, data la somiglianza morfologica tra queste tipologie cellulari.
 
 Complessivamente, l’approccio a cascata ha permesso di isolare il problema della classificazione \textbf{fine delle cellule infette}, migliorando la robustezza del sistema rispetto a una classificazione a 7 classi unica. I risultati ottenuti nel primo stadio sono solidi, mentre nel secondo stadio le performance sono minori a causa della complessità intrinseca della classificazione tra le sottoclassi infette.
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.6.24)  9 JUL 2025 17:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.6.24)  15 JUL 2025 14:34
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1734,14 +1734,23 @@ Overfull \hbox (29.46545pt too wide) in paragraph at lines 178--179
 []\T1/FiraSans-OsF/regular/n/10.95 Una del-le tra-sfor-ma-zio-ni che ha avu-to il mag-gio-re im-pat-to sul-le pre-sta-zio-ni � sta-ta la \T1/lmtt/m/n/10.95 CoarseDropout
  []
 
-<figures/corse_result.png, id=188, 485.815pt x 467.7475pt>
+\pydata@fh@0=\write8
+\openout8 = `_018679B249EA6FB07607F2451175FB2C.data.minted'.
+
+runsystem(latexminted config  --timestamp 20250715143445 018679B249EA6FB07607F2451175FB2C)...executed.
+
+(.aux/_018679B249EA6FB07607F2451175FB2C.config.minted)
+runsystem(latexminted cleanconfig  --timestamp 20250715143445 018679B249EA6FB07607F2451175FB2C)...executed.
+
+ (./.aux/_minted/default.style.minted) (./.aux/_minted/2A51456702E8CB21D8ECB88679173D98.highlight.minted
+
+[7])
+<figures/corse_result.png, id=196, 485.815pt x 467.7475pt>
 File: figures/corse_result.png Graphic file (type png)
 <use figures/corse_result.png>
 Package pdftex.def Info: figures/corse_result.png  used on input line 194.
 (pdftex.def)             Requested size: 91.04744pt x 87.6596pt.
 
-
-[7]
 
 [8 <./figures/corse_result.png>]
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/n' in size <8> not available
@@ -1891,14 +1900,22 @@ Package pdftex.def Info: figures/lda_1.png  used on input line 551.
 
 [20]
 
-[21 <./figures/lda_1.png>]
+[21 <./figures/lda_1.png>] (./.aux/_minted/E3309B9CD9DBCBBD10BD1130B48A7F2F.highlight.minted
+Underfull \hbox (badness 10000) in paragraph at lines 598--1
 
-[22]
+ []
+
+LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 3.
+(/usr/local/texlive/2025/texmf-dist/tex/latex/lm/ts1lmtt.fd
+File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+))
+
+[22{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
 \g__nicematrix_block_box_1_box=\box103
 \g__nicematrix_block_box_2_box=\box104
-Package svg Info: Last page of `./svg-inkscape/grafico_esplicativo_svg-tex.pdf' is 1 on input line 665.
+Package svg Info: Last page of `./svg-inkscape/grafico_esplicativo_svg-tex.pdf' is 1 on input line 662.
  (./svg-inkscape/grafico_esplicativo_svg-tex.pdf_tex
-<./svg-inkscape/grafico_esplicativo_svg-tex.pdf, id=386, page=1, 211.91672pt x 189.33234pt>
+<./svg-inkscape/grafico_esplicativo_svg-tex.pdf, id=385, page=1, 211.91672pt x 189.33234pt>
 File: ./svg-inkscape/grafico_esplicativo_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/grafico_esplicativo_svg-tex.pdf, page 1>
 Package pdftex.def Info: ./svg-inkscape/grafico_esplicativo_svg-tex.pdf , page1 used on input line 56.
@@ -1906,15 +1923,15 @@ Package pdftex.def Info: ./svg-inkscape/grafico_esplicativo_svg-tex.pdf , page1 
 )
 
 [23 <./svg-inkscape/grafico_esplicativo_svg-tex.pdf>]
-<figures/confusion_matrix_Stage 1 - SVM.png, id=420, 578.16pt x 433.62pt>
+<figures/confusion_matrix_Stage 1 - SVM.png, id=418, 578.16pt x 433.62pt>
 File: figures/confusion_matrix_Stage 1 - SVM.png Graphic file (type png)
 <use figures/confusion_matrix_Stage 1 - SVM.png>
-Package pdftex.def Info: figures/confusion_matrix_Stage 1 - SVM.png  used on input line 683.
+Package pdftex.def Info: figures/confusion_matrix_Stage 1 - SVM.png  used on input line 680.
 (pdftex.def)             Requested size: 364.19672pt x 273.14235pt.
-<figures/confusion_matrix_Stage 2 - SVM ➡ SVM.png, id=421, 578.16pt x 433.62pt>
+<figures/confusion_matrix_Stage 2 - SVM ➡ SVM.png, id=419, 578.16pt x 433.62pt>
 File: figures/confusion_matrix_Stage 2 - SVM ➡ SVM.png Graphic file (type png)
 <use figures/confusion_matrix_Stage 2 - SVM ➡ SVM.png>
-Package pdftex.def Info: figures/confusion_matrix_Stage 2 - SVM ➡ SVM.png  used on input line 690.
+Package pdftex.def Info: figures/confusion_matrix_Stage 2 - SVM ➡ SVM.png  used on input line 687.
 (pdftex.def)             Requested size: 364.19672pt x 273.14235pt.
 
 
@@ -1942,10 +1959,7 @@ Package minitoc(hints) Warning: W0024
 
 
 
-[25 <./figures/confusion_matrix_Stage 2 - SVM ➡ SVM.png>]
-runsystem(latexminted cleantemp  --timestamp 20250709170418 018679B249EA6FB07607F2451175FB2C)...executed.
-
- (.aux/HebdomonGuide.aux)
+[25 <./figures/confusion_matrix_Stage 2 - SVM ➡ SVM.png>] (.aux/HebdomonGuide.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2020/03/25>
@@ -1955,18 +1969,18 @@ Package logreq Info: Writing requests to 'HebdomonGuide.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 63746 strings out of 467886
- 1501986 string characters out of 5434045
- 2619914 words of memory out of 5000000
- 91348 multiletter control sequences out of 15000+600000
- 882659 words of font info for 90 fonts, out of 8000000 for 9000
+ 64081 strings out of 467886
+ 1509469 string characters out of 5434045
+ 2617926 words of memory out of 5000000
+ 91663 multiletter control sequences out of 15000+600000
+ 882964 words of font info for 91 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  122i,16n,131p,10960b,1865s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/fira/FiraSans-Bold.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/fira/FiraSans-Italic.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/fira/FiraSans-Regular.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on .aux/HebdomonGuide.pdf (25 pages, 5839429 bytes).
+Output written on .aux/HebdomonGuide.pdf (25 pages, 5844473 bytes).
 PDF statistics:
- 575 PDF objects out of 1000 (max. 8388607)
- 411 compressed objects within 5 object streams
+ 578 PDF objects out of 1000 (max. 8388607)
+ 413 compressed objects within 5 object streams
  74 named destinations out of 1000 (max. 500000)
  477 words of extra memory for PDF output out of 10000 (max. 10000000)
 
