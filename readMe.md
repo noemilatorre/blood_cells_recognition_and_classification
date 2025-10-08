@@ -3,9 +3,14 @@
 
 Progetto di tesi magistrale presso l'Università degli Studi di Cassino e del Lazio Meridionale, focalizzato sull'identificazione automatica delle cellule del sangue infette da **Plasmodium vivax** tramite tecniche avanzate di **Deep Learning** e **Machine Learning**.
 
+
+<p align="center">
+  <img width="415" height="433" alt="image" src="https://github.com/user-attachments/assets/f954e0a4-3a23-4a24-a452-1cf0a57eb102" />
+</p>
+
 ---
 
-## 📌 Obiettivo
+## Obiettivo
 
 Realizzare un sistema automatico in grado di:
 - Rilevare le **regioni di interesse (ROI)** contenenti cellule ematiche.
@@ -14,9 +19,15 @@ Realizzare un sistema automatico in grado di:
   - Cellule sane: `Red blood cell`, `Leukocyte`
   - Cellule infette: `Trophozoite`, `Ring`, `Gametocyte`, `Schizont`, `Difficult`
 
+
+<p align="center">
+  <img src="paper/doc/figures/general_pipeline.png" alt="alt text" width="400"/>
+</p>
+
+
 ---
 
-## 📁 Dataset
+## Dataset
 
 - Dataset: [P. vivax malaria infected human blood smears](https://www.kaggle.com/datasets)
 - Dimensioni: 1.328 immagini (1600x1200), 86.035 oggetti annotati
@@ -26,9 +37,14 @@ Realizzare un sistema automatico in grado di:
 
 ⚠️ **Estremo sbilanciamento** tra classi gestito tramite tecniche di bilanciamento, data augmentation e Focal Loss.
 
+<p align="center">
+  <img src="paper/doc/figures/class_distribution.png" alt="alt text" width="400"/>
+</p>
+
+
 ---
 
-## 🛠️ Strumenti Utilizzati
+## Strumenti Utilizzati
 
 - **Deep Learning**: PyTorch, Albumentations, YOLOv8, Faster R-CNN, RetinaNet
 - **Machine Learning**: Scikit-learn, XGBoost
@@ -37,9 +53,9 @@ Realizzare un sistema automatico in grado di:
 
 ---
 
-## 🧠 Architettura del Sistema
+## Architettura del Sistema
 
-### 🔹 Fase 1: Deep Learning
+### Fase 1: Deep Learning
 - Rilevamento automatico delle ROI con modelli di object detection.
 - Miglior modello: `Faster R-CNN + ResNeXt101`
 - Tecniche:
@@ -49,7 +65,7 @@ Realizzare un sistema automatico in grado di:
 - Metriche:
   - `mAP@50 = 0.9479`, `F1 Score = 0.9708`
 
-### 🔸 Fase 2: Machine Learning
+### Fase 2: Machine Learning
 - Classificazione delle feature estratte (da ROI rilevate)
 - Approccio a **2 stadi**:
   1. Classificazione binaria (Cellule sane vs infette)
@@ -59,7 +75,7 @@ Realizzare un sistema automatico in grado di:
 
 ---
 
-## 📊 Risultati
+## Risultati
 
 | Stage | Tipo | F1 Score |
 |------:|------|----------|
@@ -68,9 +84,14 @@ Realizzare un sistema automatico in grado di:
 
 > Performance migliori nella prima fase, con difficoltà crescenti nella classificazione fine delle classi infette.
 
+<p align="center">
+  <img src="paper/doc/figures/confusion_matrix_Stage 2 - SVM ➡ SVM.png" alt="alt text" width="400"/>
+</p>
+
+
 ---
 
-## 👨‍🔬 Autori
+## Autori
 
 
 - **Achille Cannavale**  
